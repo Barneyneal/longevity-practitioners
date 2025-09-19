@@ -33,8 +33,9 @@ export default async function handler(req: any, res: any) {
       return res.status(400).send('Email and password are required');
     }
 
-    const dbClient = await getClient();
-    const db = dbClient.db('ld-quiz');
+    const client = await getClient();
+    const dbName = process.env.MONGODB_DB || 'longevity-practitioners';
+    const db = client.db(dbName);
     const users = db.collection('users');
 
     const user = await users.findOne({ email });

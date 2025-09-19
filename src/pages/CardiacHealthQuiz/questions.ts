@@ -1,24 +1,25 @@
 export type QuestionType = {
   id: string;
   type:
-  | 'multiple-choice'
-  | 'text'
-  | 'section-title'
-  | 'title'
-  | 'privacy'
-  | 'date'
-  | 'multi-choice'
-  | 'height'
-  | 'slider'
-  | 'name'
-  | 'email';
+    | 'name'
+    | 'multiple-choice'
+    | 'text'
+    | 'section-title'
+    | 'title'
+    | 'privacy'
+    | 'date'
+    | 'multi-choice'
+    | 'height'
+    | 'slider'
+    | 'email'
+    | 'password';
   text: string;
   subtext?: string;
   citation?: string;
   options?: any[];
   condition?: {
-  questionId: string;
-  value: any;
+    questionId: string;
+    value: any | any[];
   };
   min?: number;
   max?: number;

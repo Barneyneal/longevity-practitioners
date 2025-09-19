@@ -1,4 +1,4 @@
-import { type QuestionType } from './pages/LongevityQuiz/questions';
+import { type QuestionType } from './pages/CardiacHealthQuiz/questions';
 import { create } from 'zustand';
 import { questions as longevityQuestions } from './pages/LongevityQuiz/questions';
 import { questions as cardiacQuestions } from './pages/CardiacHealthQuiz/questions';
@@ -65,8 +65,11 @@ const getQuestionsForQuiz = (quizId: string): QuestionType[] => {
 const doesConditionPass = (answers: Record<string, any>, question: QuestionType): boolean => {
   if (!question.condition) return true;
   const { questionId, value } = question.condition;
-  const given = answers[questionId];
-  return Array.isArray(value) ? value.includes(given) : given === value;
+  const actualAnswer = answers[questionId];
+  if (Array.isArray(value)) {
+    return value.includes(actualAnswer);
+  }
+  return actualAnswer === value;
 };
 
 const getPersisted = <T,>(key: string, fallback: T): T => {

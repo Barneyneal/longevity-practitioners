@@ -37,38 +37,14 @@ export default async function handler(req: any, res: any) {
       return res.status(401).send('Unauthorized');
     }
 
-    const dbClient = await getClient();
-    const db = dbClient.db('ld-quiz');
-    const submissions = db.collection('submissions');
+    const client = await getClient();
+    const dbName = process.env.MONGODB_DB || 'longevity-practitioners';
+    const db = client.db(dbName);
 
-    const userSubmissions = await submissions.aggregate([
-      { $match: { userId: decodedToken.userId } },
-      {
-        $lookup: {
-          from: 'results',
-          let: { submissionIdStr: { $toString: '$_id' } },
-          pipeline: [
-            {
-              $match: {
-                $expr: {
-                  $eq: [ { $toString: '$submissionId' }, '$$submissionIdStr' ]
-                }
-              }
-            }
-          ],
-          as: 'result'
-        }
-      },
-      {
-        $unwind: {
-          path: '$result',
-          preserveNullAndEmptyArrays: true
-        }
-      },
-      { $sort: { submittedAt: -1 } }
-    ]).toArray();
+    // Find submissions for the user
+    const submissions = await db.collection('submissions').find({ userId: decodedToken.userId }).toArray();
 
-    return res.status(200).json(userSubmissions);
+    return res.status(200).json(submissions);
   } catch (err) {
     console.error('Error in /api/submissions/me:', err);
     return res.status(500).send('Server error');

@@ -15,10 +15,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'GET') return res.status(405).send('Method Not Allowed');
   try {
     const submissionId = (req.query.submissionId as string) || (req.query.submission_id as string);
-    if (!submissionId) return res.status(400).json({ message: 'submissionId is required' });
+    if (!submissionId || typeof submissionId !== 'string') return res.status(400).json({ message: 'submission_id_required' });
 
-    const dbClient = await getClient();
-    const db = dbClient.db('ld-quiz');
+    const client = await getClient();
+    const dbName = process.env.MONGODB_DB || 'longevity-practitioners';
+    const db = client.db(dbName);
     const results = db.collection('results');
 
     const doc = await results.findOne({ submission_id: submissionId });

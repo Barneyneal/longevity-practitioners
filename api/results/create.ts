@@ -18,12 +18,13 @@ export default async function handler(req: any, res: any) {
   try {
     const { submissionId, content, quizId, userId } = req.body;
 
-    if (!submissionId || !content) {
-      return res.status(400).send('submissionId and content are required');
+    if (!submissionId) {
+      return res.status(400).json({ message: 'submissionId_missing' });
     }
 
-    const dbClient = await getClient();
-    const db = dbClient.db('ld-quiz');
+    const client = await getClient();
+    const dbName = process.env.MONGODB_DB || 'longevity-practitioners';
+    const db = client.db(dbName);
     const results = db.collection('results');
 
     const resultData = {

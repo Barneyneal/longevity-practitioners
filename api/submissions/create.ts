@@ -26,7 +26,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     const dbClient = await getClient();
-    const db = dbClient.db('ld-quiz');
+    const dbName = process.env.MONGODB_DB || 'longevity-practitioners';
+    const db = dbClient.db(dbName);
     const users = db.collection('users');
     const submissions = db.collection('submissions');
 
@@ -52,6 +53,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     // Compute assessment fields
     let augmented: any = null;
+    /*
     if (quizId === 'longevity') {
       try {
         const assessmentInput: AssessmentInput = {
@@ -110,6 +112,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         return res.status(500).json({ message: 'scoring_failed', code: 'CARDIAC_SCORING_ERROR' });
       }
     }
+    */
 
     const newId = new ObjectId();
     const baseDoc: any = {

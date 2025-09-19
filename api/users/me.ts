@@ -35,8 +35,9 @@ export default async function handler(req: any, res: any) {
       return res.status(401).send('Unauthorized');
     }
 
-    const dbClient = await getClient();
-    const db = dbClient.db('ld-quiz');
+    const client = await getClient();
+    const dbName = process.env.MONGODB_DB || 'longevity-practitioners';
+    const db = client.db(dbName);
     const users = db.collection('users');
 
     const user = await users.findOne({ _id: new ObjectId(decodedToken.userId) });
