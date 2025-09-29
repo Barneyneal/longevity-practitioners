@@ -12,8 +12,10 @@ import ResetPasswordPage from './pages/ResetPasswordPage';
 import OnboardingPage from "./pages/Onboarding/OnboardingPage";
 import MasteringHealthspanFrameworkPage from "./pages/MasteringHealthspanFramework/MasteringHealthspanFrameworkPage";
 import LessonSlidePage from './pages/LessonSlidePage';
+import LessonQuizPage from './pages/LessonQuizPage';
 
 import { Toaster } from 'react-hot-toast';
+import useQuizStore from './store';
 
 const MainLayout: React.FC = () => (
   <div className="max-w-[650px] w-full mx-auto h-[100dvh] flex flex-col text-gray-800">
@@ -29,6 +31,16 @@ function App() {
     <>
       <Toaster position="bottom-center" />
       <Routes>
+        {/* Main application routes with shared layout */}
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="dashboard" element={<DashboardPage />} />
+          <Route path="onboarding" element={<OnboardingPage />} />
+          <Route path="results/:submissionId" element={<ResultsPage />} />
+          <Route path="mastering-longevity" element={<MasteringHealthspanFrameworkPage />} />
+          <Route path="course/:moduleSlug/:lessonSlug/quiz" element={<LessonQuizPage />} />
+        </Route>
+
         {/* Full screen lesson page route */}
         <Route path="/course/:moduleSlug/:lessonSlug" element={<LessonSlidePage />} />
 
@@ -37,17 +49,6 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/reset-password" element={<ResetPasswordPage />} />
-        
-        {/* Main application routes with shared layout */}
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/onboarding" element={<OnboardingPage />} />
-          <Route path="/mastering-longevity" element={<MasteringHealthspanFrameworkPage />} />
-          <Route path="/dashboard" element={<DashboardPage />} />
-          <Route element={<ProtectedRoute />}>
-            <Route path="/results/:submissionId" element={<ResultsPage />} />
-          </Route>
-        </Route>
       </Routes>
     </>
   );

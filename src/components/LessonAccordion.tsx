@@ -58,9 +58,11 @@ const LessonAccordion: React.FC<LessonAccordionProps> = ({ lesson, moduleSlug })
                             ))}
                         </ul>
                         <div className="flex items-center gap-2.5">
-                            <button className="w-1/2 bg-gray-200 text-gray-500 font-semibold py-2 px-6 rounded-full cursor-not-allowed">
-                                Take Quiz
-                            </button>
+                            <Link to={`/course/${moduleSlug}/${lesson.lessonSlug}/quiz`} className="w-1/2">
+                                <button className="w-full bg-gray-200 text-gray-800 font-semibold py-2 px-6 rounded-full hover:bg-gray-300 transition-colors">
+                                    Take Quiz
+                                </button>
+                            </Link>
                             <Link to={`/course/${moduleSlug}/${lesson.lessonSlug}`} className="w-1/2">
                                 <button className="w-full bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition-colors">
                                     Start Now

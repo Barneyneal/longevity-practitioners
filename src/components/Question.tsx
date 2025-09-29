@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import useQuizStore from '../store';
 import AnimatedText from './AnimatedText';
 import { motion } from 'framer-motion';
@@ -15,6 +16,7 @@ interface QuestionProps {
   subtext?: string;
   sliderLabels?: string[];
   isLastQuestion: boolean;
+  isLessonQuiz?: boolean;
 }
 
 const getInitialValue = (type: QuestionProps['questionType'], min?: number) => {
@@ -41,8 +43,10 @@ const Question: React.FC<QuestionProps> = ({
   subtext,
   sliderLabels,
   isLastQuestion,
+  isLessonQuiz,
 }) => {
   const { submitAnswer, previousQuestion, quizzes } = useQuizStore();
+  const navigate = useNavigate();
   const { answers, currentQuestion } = quizzes[quizId];
   const [value, setValue] = useState<any>(
     answers[questionId] || getInitialValue(questionType, min)
@@ -298,7 +302,7 @@ const Question: React.FC<QuestionProps> = ({
         className="flex justify-between items-center mt-auto pt-6"
       >
         {currentQuestion >= 0 && (
-          <button onClick={() => previousQuestion(quizId)} className="flex items-center justify-center h-12 w-12 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors duration-300">
+          <button onClick={() => (isLessonQuiz && currentQuestion === 0) ? navigate('/mastering-longevity') : previousQuestion(quizId)} className="flex items-center justify-center h-12 w-12 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors duration-300">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-gray-600"

@@ -1,22 +1,25 @@
-# Ultimate Longevity Quiz
+# Longevity Practitioners Learning Platform
 
-This project is a modular, extensible quiz application built with React, TypeScript, and Vite. It is designed to be easily adaptable for various types of quizzes, with the initial implementation being a Longevity Quiz.
+This project is a learning management system built with React, TypeScript, and Vite. It is designed to deliver in-depth courses, with the initial implementation being the "Mastering Longevity: The 5-Hour Foundational Framework" course.
 
 ## Project Structure
 
-The application is structured to support multiple quizzes, with a clear separation between shared components and quiz-specific logic.
+The application is structured to support multiple courses, with a clear separation between shared components and course-specific content and logic.
 
--   `src/components`: Contains all the reusable components that can be shared across different quizzes (e.g., `Question`, `TitlePage`, `Header`).
--   `src/pages`: Contains the different quizzes, with each quiz in its own subdirectory.
-    -   `src/pages/LongevityQuiz`: Contains all the files specific to the Longevity Quiz, including the questions and the main quiz page component.
--   `src/store.ts`: The Zustand store, which is designed to manage the state of multiple quizzes simultaneously.
+-   `src/components`: Contains all the reusable components that can be shared across different courses (e.g., `ModuleAccordion`, `LessonAccordion`, `Header`).
+-   `src/pages`: Contains the main pages of the application.
+    -   `src/pages/Onboarding`: Contains the initial user assessment.
+    -   `src/pages/MasteringHealthspanFramework`: The main page for the "Mastering Longevity" course, which displays the curriculum.
+    -   `src/pages/LessonSlidePage.tsx`: The template for displaying individual lesson slides with audio and citations.
+-   `src/course-data`: Contains the content for each course, separated by module and lesson.
+-   `src/store.ts`: The Zustand store, which manages application state.
 
 ## Getting Started
 
 To get started with the project, follow these steps:
 
 1.  **Install Dependencies:**
-    Navigate to the `frontend` directory and run the following command to install the required dependencies:
+    Navigate to the project directory and run the following command to install the required dependencies:
     ```bash
     npm install
     ```
@@ -26,20 +29,20 @@ To get started with the project, follow these steps:
     ```bash
     npm run dev
     ```
-    This will start the application on a local server, typically at `http://localhost:5173`.
+    This will start the application on a local server, typically at `http://localhost:3000`.
 
-## Adding a New Quiz
+## Adding a New Course
 
-To add a new quiz (e.g., a "Cardiac Health Quiz"), you would follow these steps:
+To add a new course, you would follow these steps:
 
-1.  **Create a New Quiz Directory:**
-    Create a new directory for your quiz under `src/pages` (e.g., `src/pages/CardiacHealthQuiz`).
+1.  **Create a New Course Content Directory:**
+    Create a new directory for your course under `src/course-data` (e.g., `src/course-data/new-course-name`). Structure it with module and lesson subdirectories.
 
-2.  **Add Questions:**
-    Create a `questions.ts` file in your new directory with the questions for your quiz.
+2.  **Add Course Content:**
+    Populate the lesson directories with `slides.md`, `index.json`, `citations.json`, and audio files. Update the main `CuriculumBreakdown.json` with the new module and lesson structure.
 
-3.  **Create the Quiz Page:**
-    Create a main page component for your quiz (e.g., `CardiacHealthQuizPage.tsx`) that will render the questions and other components.
+3.  **Create the Course Page:**
+    Create a main page component for your course (e.g., `NewCoursePage.tsx`) that will render the curriculum, likely by reusing the components from `MasteringHealthspanFrameworkPage`.
 
 4.  **Add a Route:**
-    In `App.tsx`, add a new route for your quiz in the `<Routes>` section.
+    In `App.tsx`, add a new route for your course in the `<Routes>` section and add a link to it from the `DashboardPage`.

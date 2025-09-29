@@ -12,7 +12,7 @@ import { Navigate } from 'react-router-dom';
 
 const OnboardingPage: React.FC = () => {
   const { quizzes, activeQuiz, startQuiz, nextQuestion, user } = useQuizStore();
-  const quizId = "longevity";
+  const quizId = "onboarding";
 
   const [submissionId, setSubmissionId] = useState<string | null>(null);
 

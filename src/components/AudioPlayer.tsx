@@ -119,7 +119,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, onNext, onPrevious, isFi
                 {/* Column 3: Slide Counter (1/3 of the container) */}
                 <div className="w-1/3 text-right">
                     <span className="text-sm text-gray-500">
-                        Slide {currentSlide + 1} of {totalSlides}
+                        Slide {currentSlide} of {totalSlides}
                     </span>
                 </div>
             </div>

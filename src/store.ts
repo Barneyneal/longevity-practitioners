@@ -3,6 +3,7 @@ import { create } from 'zustand';
 import { questions as longevityQuestions } from './pages/Onboarding/onboarding-questions';
 import { questions as masteringLongevityCourseContent } from './pages/MasteringHealthspanFramework/course-content';
 import { jwtDecode } from 'jwt-decode';
+import Cookies from 'js-cookie';
 
 // Single-flight and throttle helpers (module scoped)
 let userFetchInFlight: Promise<void> | null = null;
@@ -31,6 +32,7 @@ interface QuizState {
     [quizId: string]: {
       currentQuestion: number;
       answers: Record<string, any>;
+      questions?: QuestionType[]; // Optional questions array for dynamic quizzes
     };
   };
   progress: number; // Add progress to the state
@@ -46,9 +48,9 @@ interface QuizState {
   submitAnswer: (quizId: string, questionId: string, value: any) => Promise<void>;
   submitQuiz: (quizId: string) => Promise<void>;
   resetQuiz: (quizId: string) => void;
-  startQuiz: (quizId: string) => void;
+  startQuiz: (quizId: string, questions?: QuestionType[]) => void;
   setUser: (user: User) => void;
-  login: (token: string) => void;
+  login: (emailOrToken: string, password?: string) => Promise<void>;
   logout: () => void;
   setQuizCompleted: (quizId: string, meta: { completedAt: string; score?: number }) => void;
   fetchSubmissions: () => Promise<void>; // Add fetchSubmissions action
@@ -58,6 +60,11 @@ interface QuizState {
 }
 
 const getQuestionsForQuiz = (quizId: string): QuestionType[] => {
+  const quizState = useQuizStore.getState().quizzes[quizId];
+  if (quizState && quizState.questions) {
+    return quizState.questions;
+  }
+  if (quizId === 'onboarding') return longevityQuestions as unknown as QuestionType[];
   if (quizId === 'cardiac_health') return masteringLongevityCourseContent as unknown as QuestionType[];
   return longevityQuestions as unknown as QuestionType[];
 };
@@ -97,19 +104,20 @@ const useQuizStore = create<QuizState>()((set, get) => ({
   progress: 0,
   user: getPersisted('ld_user', { id: null, email: null, firstName: '', lastName: '' }),
   completedQuizzes: getPersisted('ld_completed', {} as Record<string, { completedAt: string; score?: number }>),
-  authToken: getPersisted('ld_auth_token', null),
+  authToken: Cookies.get('authToken') || null,
   submissions: [],
   isFetchingSubmissions: false,
   isFetchingUser: false,
 
-  startQuiz: (quizId: string) =>
+  startQuiz: (quizId: string, questions?: QuestionType[]) =>
     set((state) => ({
       activeQuiz: quizId,
       quizzes: {
         ...state.quizzes,
         [quizId]: {
-          currentQuestion: -2,
-          answers: {}, // Explicitly reset answers
+          currentQuestion: 0, // Start at the first question
+          answers: {},
+          questions: questions,
         },
       },
     })),
@@ -225,6 +233,47 @@ const useQuizStore = create<QuizState>()((set, get) => ({
     const { quizzes, user } = get();
     const quizQuestions = getQuestionsForQuiz(quizId);
     const { answers } = quizzes[quizId];
+
+    // Handle lesson quiz submission
+    if (quizId.endsWith('-quiz')) {
+        if (!user?.id) {
+            alert('You must be logged in to submit the quiz.');
+            window.location.href = '/login';
+            return;
+        }
+
+        const quizQuestions = getQuestionsForQuiz(quizId);
+        const submissionData = {
+            quizId,
+            userId: user?.id,
+            submittedAnswers: Object.entries(answers).map(([questionId, value]) => {
+                const question = quizQuestions.find((q) => q.id === questionId);
+                return {
+                    questionId,
+                    questionText: question ? question.text : '',
+                    value,
+                };
+            }),
+        };
+
+        // Fire-and-forget the API call
+        const apiBase = import.meta.env.PROD ? (import.meta.env.VITE_API_BASE || '') : '';
+        try {
+            await fetch(`${apiBase}/api/submissions/create`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(submissionData),
+            });
+        } catch (error) {
+            console.error('Failed to submit lesson quiz:', error);
+        }
+
+        // Immediately reset quiz and redirect
+        get().resetQuiz(quizId);
+        window.location.href = '/mastering-longevity';
+        return;
+    }
+
     const apiBase = import.meta.env.PROD
       ? ((import.meta as any).env?.VITE_API_BASE || '')
       : '';
@@ -252,7 +301,7 @@ const useQuizStore = create<QuizState>()((set, get) => ({
 
     // Resolve user based on current answers; override any stale local userId
     let effectiveUserId: string | null = user?.id ?? null;
-    if (quizId === 'longevity') {
+    if (quizId === 'onboarding') {
       const nameAnswer = (answers['name'] as any) || {};
       const emailAnswer = (answers['email'] as any) || '';
       const passwordAnswer = (answers['password'] as any) || '';
@@ -301,7 +350,7 @@ const useQuizStore = create<QuizState>()((set, get) => ({
       quizId,
       sessionId: crypto.randomUUID(),
       answers: Object.entries(answers)
-        .filter(([questionId]) => questionId !== 'name' && questionId !== 'email')
+        .filter(([questionId]) => questionId !== 'name' && questionId !== 'email' && questionId !== 'password')
         .map(([questionId, value]) => {
         const question = quizQuestions.find((q) => q.id === questionId);
         return {
@@ -385,21 +434,44 @@ const useQuizStore = create<QuizState>()((set, get) => ({
     persist('ld_user', user);
     return next;
   }),
-  login: (token: string) => {
-    try {
-      const decoded = jwtDecode<DecodedToken>(token);
-      const user: User = {
-        id: decoded.userId,
-        email: decoded.email,
-        firstName: '', // You might want to fetch this from an API after login
-        lastName: '',
-      };
-      set({ authToken: token, user });
-      persist('ld_auth_token', token);
-      persist('ld_user', user);
-      get().fetchUser(); // Fetch full user details after setting token
-    } catch (error) {
-      console.error('Failed to decode token:', error);
+  login: async (emailOrToken: string, password?: string) => {
+    let token;
+    // Simple check to see if it's an email or a token
+    if (password && emailOrToken.includes('@')) {
+      const apiUrl = import.meta.env.VITE_APP_URL || '';
+      const response = await fetch(`${apiUrl}/api/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: emailOrToken, password }),
+      });
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to login');
+      }
+      const data = await response.json();
+      token = data.token;
+    } else {
+      token = emailOrToken;
+    }
+
+    if (token) {
+      try {
+        const decoded = jwtDecode<DecodedToken>(token);
+        const user: User = {
+          id: decoded.userId,
+          email: decoded.email,
+          firstName: '', // Placeholder
+          lastName: '',  // Placeholder
+        };
+        set({ authToken: token, user });
+        persist('ld_auth_token', token);
+        persist('ld_user', user);
+        // Wait for user details to be fetched before resolving
+        await get().fetchUser();
+      } catch (error) {
+        console.error('Failed to decode token:', error);
+        throw new Error('Invalid authentication token.');
+      }
     }
   },
   logout: () => {

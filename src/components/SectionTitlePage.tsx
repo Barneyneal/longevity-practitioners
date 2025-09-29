@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useQuizStore from '../store';
 import { motion } from 'framer-motion';
 import AnimatedText from './AnimatedText';
+import InlineSpinner from './InlineSpinner';
 
 interface SectionTitlePageProps {
   quizId: string;
@@ -13,6 +14,7 @@ interface SectionTitlePageProps {
 
 const SectionTitlePage: React.FC<SectionTitlePageProps> = ({ quizId, text, subtext, citation, submitOnContinue }) => {
   const { nextQuestion, previousQuestion, submitQuiz } = useQuizStore();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const subtextDelay = 1;
   const subtextStagger = 0.0625;
@@ -80,10 +82,28 @@ const SectionTitlePage: React.FC<SectionTitlePageProps> = ({ quizId, text, subte
           className="flex-grow ml-4"
         >
           <button
-            onClick={async () => { if (submitOnContinue) { await submitQuiz(quizId); } nextQuestion(quizId); }}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300"
+            onClick={async () => {
+              if (submitOnContinue) {
+                setIsSubmitting(true);
+                await submitQuiz(quizId);
+                // No need to set isSubmitting back to false as we are navigating away
+              } else {
+                nextQuestion(quizId);
+              }
+            }}
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 flex justify-center items-center"
+            disabled={isSubmitting}
           >
-            Continue
+            <span className="relative">
+              <span className={isSubmitting ? 'text-transparent' : ''}>
+                {submitOnContinue ? 'Submit' : 'Continue'}
+              </span>
+              {isSubmitting && (
+                <span className="absolute inset-0 flex items-center justify-center">
+                  <InlineSpinner />
+                </span>
+              )}
+            </span>
           </button>
         </motion.div>
       </div>
