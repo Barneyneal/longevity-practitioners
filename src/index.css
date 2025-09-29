@@ -4,4 +4,8 @@
 
 body {
   @apply bg-white text-[18px];
+}
+
+html {
+  overflow-y: scroll;
 } 

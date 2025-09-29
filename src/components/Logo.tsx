@@ -1,11 +1,15 @@
 import React from 'react';
 
-const Logo = () => {
+interface LogoProps {
+  className?: string;
+}
+
+const Logo: React.FC<LogoProps> = ({ className }) => {
   return (
     <img
-      src="https://longevity.direct/wp-content/uploads/2024/04/cropped-LD-Logo-Colour-Final@2x-1.png"
-      alt="Longevity Direct Logo"
-      className="w-[250px] md:w-[300px]"
+      alt="Logo"
+      className={`h-20 w-auto ${className}`}
+      src="/brand/Longevity Direct.png"
     />
   );
 };

@@ -1,7 +1,7 @@
-import { type QuestionType } from './pages/CardiacHealthQuiz/questions';
+import { type QuestionType } from './pages/MasteringHealthspanFramework/course-content';
 import { create } from 'zustand';
-import { questions as longevityQuestions } from './pages/LongevityQuiz/questions';
-import { questions as cardiacQuestions } from './pages/CardiacHealthQuiz/questions';
+import { questions as longevityQuestions } from './pages/Onboarding/onboarding-questions';
+import { questions as masteringLongevityCourseContent } from './pages/MasteringHealthspanFramework/course-content';
 import { jwtDecode } from 'jwt-decode';
 
 // Single-flight and throttle helpers (module scoped)
@@ -58,7 +58,7 @@ interface QuizState {
 }
 
 const getQuestionsForQuiz = (quizId: string): QuestionType[] => {
-  if (quizId === 'cardiac_health') return cardiacQuestions as unknown as QuestionType[];
+  if (quizId === 'cardiac_health') return masteringLongevityCourseContent as unknown as QuestionType[];
   return longevityQuestions as unknown as QuestionType[];
 };
 
@@ -276,7 +276,13 @@ const useQuizStore = create<QuizState>()((set, get) => ({
         } else {
           // Handle registration failure
           const errorData = await registerRes.json();
-          alert(`Registration failed: ${errorData.message}`);
+          if (errorData.error === 'user_exists') {
+            if (window.confirm('A user with this email already exists. Would you like to log in instead?')) {
+              window.location.href = '/login';
+            }
+          } else {
+            alert(`Registration failed: ${errorData.message || 'An unknown error occurred.'}`);
+          }
           return;
         }
       }
@@ -357,7 +363,10 @@ const useQuizStore = create<QuizState>()((set, get) => ({
     // Mark completion locally regardless
     const completedAt = new Date().toISOString();
     get().setQuizCompleted(quizId, { completedAt });
-    get().updateProgress(100); // Set progress to 100 on completion
+    get().updateProgress(100);
+
+    // Redirect to dashboard after successful submission
+    window.location.href = '/dashboard';
   },
   resetQuiz: (quizId: string) =>
     set((state) => ({

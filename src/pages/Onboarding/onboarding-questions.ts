@@ -1,4 +1,4 @@
-import type { QuestionType as Question } from '../CardiacHealthQuiz/questions';
+import type { QuestionType as Question } from '../MasteringHealthspanFramework/course-content';
 
 export const questions: Question[] = [
   /* ─────────────────────────────── 1. CREATE YOUR PROFILE ─────────────────────────────── */
@@ -21,11 +21,11 @@ export const questions: Question[] = [
     "type": "multi-choice",
     "options": [
       "Physician (MD, DO)",
-      "Nurse Practitioner / Physician Assistant",
+      "NP / PA",
       "Registered Nurse",
       "Nutritionist / Dietitian",
       "Health / Wellness Coach",
-      "Personal Trainer / Fitness Professional",
+      "Fitness Trainer / Professional",
       "Chiropractor",
       "Researcher / Scientist",
       "Student",
@@ -130,8 +130,8 @@ export const questions: Question[] = [
   {
     "id": "goals-title",
     "type": "section-title",
-    "text": "What are your goals?",
-    "subtext": "Let us know what you hope to gain from this curriculum."
+    "text": "What are your goals and learning objectives?",
+    "subtext": "Your selection helps us personalize your curriculum. We'll recommend a foundational learning path and highlight specialized elective modules, ensuring you master the science most critical to your professional objectives."
   },
   {
     "id": "longevityKnowledge",
@@ -158,8 +158,8 @@ export const questions: Question[] = [
   {
     "id": "account-title",
     "type": "section-title",
-    "text": "Final Step: Create Your Account",
-    "subtext": "Save your profile and get immediate access to the full curriculum."
+    "text": "Final step to create your account",
+    "subtext": "Create your credentials to unlock full access to the complete curriculum and personalized learning path. Begin your journey to mastering healthspan science and revolutionizing your practice today."
   },
   {
     "id": "email",

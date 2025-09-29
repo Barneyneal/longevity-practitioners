@@ -1,0 +1,184 @@
+{
+  "suggested_resources": [
+    {
+      "topic": "Introduction to Longevity Science & Historical Milestones (C. elegans, Kenyon, Sinclair, Cuervo)",
+      "book": {
+        "title": "Lifespan: Why We Age\u2014and Why We Don't Have To",
+        "author": "David A. Sinclair, Matthew D. LaPlante",
+        "reason": "A readable overview by a prominent longevity researcher that connects historical discoveries (including genetic work in model organisms) to current ambitions and debates in the field; suitable as an accessible introduction for undergraduate students."
+      },
+      "podcast": {
+        "title": "Science Vs \u2014 'Can We Stop Aging?' (Episode)",
+        "url": "https://gimletmedia.com/shows/science-vs",
+        "reason": "A journalistically-minded episode that summarizes key discoveries, controversies, and personalities in aging research in an approachable format for non-experts (look for their aging-related episodes or specials)."
+      },
+      "article": {
+        "title": "Genetics of ageing in Caenorhabditis elegans: insights from the age-1 and daf-2 pathways",
+        "url": "https://www.nature.com/articles/nrg1320",
+        "reason": "A clear review for students that explains the pivotal molecular genetic discoveries in C. elegans (including age-1/daf-2) and why they transformed thinking about aging from wear-and-tear to regulated biology."
+      }
+    },
+    {
+      "topic": "Healthspan vs. Lifespan and Compression of Morbidity",
+      "book": {
+        "title": "The Telomere Effect: A Revolutionary Approach to Living Younger, Healthier, Longer",
+        "author": "Elizabeth Blackburn and Elissa Epel",
+        "reason": "Provides an evidence-based, accessible discussion of biological markers tied to healthspan (e.g., telomeres) alongside lifestyle factors that influence healthy aging \u2014 useful for students learning the distinction between lifespan and healthspan."
+      },
+      "podcast": {
+        "title": "The Drive with Peter Attia \u2014 'Healthspan vs Lifespan'",
+        "url": "https://peterattiamd.com/podcast",
+        "reason": "Peter Attia frames the clinical and practical implications of prioritizing healthspan over mere life extension, offering a student-friendly conversation grounded in medical science."
+      },
+      "article": {
+        "title": "The compression of morbidity hypothesis: a review of the evidence",
+        "url": "https://academic.oup.com/biomedgerontology/article/66A/1/40/602011",
+        "reason": "A scholarly review that traces James Fries' compression of morbidity idea and evaluates empirical support, helping students understand the population-health perspective on extending healthy years."
+      }
+    },
+    {
+      "topic": "Hallmarks of Aging (Framework and Updates)",
+      "book": {
+        "title": "Ending Aging: The Rejuvenation Breakthroughs That Could Reverse Human Aging in Our Lifetime",
+        "author": "Aubrey de Grey and Michael Rae",
+        "reason": "Presents a framework-oriented, intervention-focused view of aging mechanisms and proposed repair strategies; provocative but useful for stimulating critical thinking about frameworks and goals in longevity science."
+      },
+      "podcast": {
+        "title": "Huberman Lab Podcast \u2014 'How and Why We Age' (episode with guest on aging biology)",
+        "url": "https://hubermanlab.com/podcast",
+        "reason": "Translates key mechanistic concepts (DNA damage, proteostasis, telomeres, etc.) into clear explanations and practical takeaways suitable for undergraduates; look for episodes featuring aging researchers."
+      },
+      "article": {
+        "title": "The Hallmarks of Aging (Cell, 2013) \u2014 L\u00f3pez-Ot\u00edn et al.",
+        "url": "https://www.cell.com/cell/fulltext/S0092-8674(13)00645-4",
+        "reason": "The seminal, highly-cited paper that first articulated the hallmarks framework \u2014 essential reading for students to understand the standard taxonomy of aging mechanisms."
+      }
+    },
+    {
+      "topic": "Cellular Senescence and Senolytics",
+      "book": {
+        "title": "The Biology of Aging: Observations and Principles",
+        "author": "Robert Arking",
+        "reason": "A concise undergraduate-level textbook that covers cellular senescence among other aging processes, giving students foundational knowledge before diving into primary literature or translational studies."
+      },
+      "podcast": {
+        "title": "Aging Research News \u2014 Interview with Judith Campisi on senescence",
+        "url": "https://www.aging-us.com/news-and-views",
+        "reason": "A researcher-focused interview that explains senescent cell biology and the SASP in accessible terms and discusses translational prospects like senolytics."
+      },
+      "article": {
+        "title": "Cellular senescence: a translational perspective",
+        "url": "https://www.nature.com/articles/s41580-020-0289-7",
+        "reason": "A clear, up-to-date review in Nature Reviews Molecular Cell Biology that explains senescence mechanisms, systemic effects (SASP), and therapeutic strategies \u2014 suitable for motivated undergraduates."
+      }
+    },
+    {
+      "topic": "Mitochondrial Dysfunction and Mitophagy",
+      "book": {
+        "title": "Power, Sex, Suicide: Mitochondria and the Meaning of Life",
+        "author": "Nick Lane",
+        "reason": "An engaging, well-written exploration of mitochondrial biology and evolution that contextualizes why mitochondrial function matters for health and aging in a way that is both accessible and intellectually rich."
+      },
+      "podcast": {
+        "title": "The Life Scientific \u2014 Episode with Douglas Wallace (mitochondrial genetics)",
+        "url": "https://www.bbc.co.uk/programmes/b00tq1q4",
+        "reason": "An interview with a foundational mitochondrial geneticist that helps students grasp how mitochondrial DNA and dysfunction relate to disease and aging."
+      },
+      "article": {
+        "title": "Mitophagy and mitochondrial quality control mechanisms in ageing and disease",
+        "url": "https://www.nature.com/articles/s41580-019-0195-8",
+        "reason": "A focused review on mitophagy and mitochondrial quality control that connects molecular mechanisms to aging phenotypes and potential interventions like urolithin A."
+      }
+    },
+    {
+      "topic": "Measuring Biological Age: Epigenetic Clocks and Biomarkers",
+      "book": {
+        "title": "The Epigenetics Revolution: How Modern Biology Is Rewriting Our Understanding of Genetics, Disease, and Inheritance",
+        "author": "Nessa Carey",
+        "reason": "An accessible primer on epigenetic concepts (including DNA methylation) that prepares students to understand how epigenetic clocks work without requiring deep prior knowledge."
+      },
+      "podcast": {
+        "title": "The Peter Attia Drive \u2014 Episode with Steve Horvath on epigenetic clocks",
+        "url": "https://peterattiamd.com/podcast",
+        "reason": "A deep but approachable discussion with the developer of the first multi-tissue epigenetic clock; useful for students wanting to hear the methods and implications explained by an expert."
+      },
+      "article": {
+        "title": "DNA methylation-based biomarkers and the epigenetic clock theory of ageing",
+        "url": "https://www.nature.com/articles/s41576-019-0183-8",
+        "reason": "A clear review that explains how epigenetic clocks were developed, their predictive power, limitations, and relevance for measuring biological age in research and clinical contexts."
+      }
+    },
+    {
+      "topic": "Pillars of Intervention: Diet, Exercise, and Pharmacology (CR, fasting, exercise biology)",
+      "book": {
+        "title": "The Longevity Diet",
+        "author": "Valter Longo",
+        "reason": "A practical, science-informed guide to dietary strategies (including caloric restriction and fasting-mimicking diets) with references to the underlying research \u2014 appropriate for students exploring translational lifestyle interventions."
+      },
+      "podcast": {
+        "title": "FoundMyFitness \u2014 'Fasting, Longevity, and the Science of Diet' (episode with Valter Longo)",
+        "url": "https://www.foundmyfitness.com/podcast",
+        "reason": "An evidence-focused interview that discusses calorie restriction, fasting-mimicking diets, and mechanisms linking nutrition to aging in accessible language."
+      },
+      "article": {
+        "title": "Calorie restriction and aging: a life-history analysis",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3184979/",
+        "reason": "A readable review that synthesizes evidence for caloric restriction across species, its effects on lifespan and healthspan, and mechanistic explanations suitable for an introductory course."
+      }
+    },
+    {
+      "topic": "Rapamycin, mTOR Pathway, and Pharmacological Geroprotection",
+      "book": {
+        "title": "The Molecule of More: How a Single Chemical in Your Brain Drives Love, Sex, and Creativity\u2014and Will Determine the Fate of the Human Race",
+        "author": "Daniel Z. Lieberman and Michael E. Long",
+        "reason": "While not strictly about rapamycin/mTOR, this book offers an accessible introduction to how single molecular pathways can shape behavior and physiology; useful as a conceptual bridge before reading technical material on mTOR."
+      },
+      "podcast": {
+        "title": "The Drive with Peter Attia \u2014 'Rapamycin: A Deep Dive' (episode with Matt Kaeberlein)",
+        "url": "https://peterattiamd.com/podcast",
+        "reason": "A detailed, practitioner-focused conversation with a leader in rapamycin research that explains the biology, preclinical data, dosing questions, and translational challenges in student-friendly terms."
+      },
+      "article": {
+        "title": "mTOR signaling in growth, metabolism, and disease",
+        "url": "https://www.cell.com/cell/fulltext/S0092-8674(16)31146-3",
+        "reason": "A comprehensive review of mTOR biology and its links to aging and disease; valuable for students who want a rigorous but readable synthesis of why targeting mTOR (e.g., with rapamycin) is promising."
+      }
+    },
+    {
+      "topic": "Emerging Frontiers: Cellular Reprogramming, AI in Longevity, and Ethics",
+      "book": {
+        "title": "Regenesis: How Synthetic Biology Will Reinvent Nature and Ourselves",
+        "author": "George M. Church and Ed Regis",
+        "reason": "Provides accessible context about cutting-edge biotechnology (including reprogramming and synthetic biology) and its societal implications \u2014 helpful for students to place rejuvenation strategies in a broader technological and ethical frame."
+      },
+      "podcast": {
+        "title": "The Ezra Klein Show \u2014 'The Ethics and Promise of Radical Life Extension' (guest episodes on longevity and ethics)",
+        "url": "https://www.nytimes.com/podcast/ezra-klein-show",
+        "reason": "Features thoughtful discussions about the societal and ethical dimensions of life-extension technologies, useful for classroom debates and reflection."
+      },
+      "article": {
+        "title": "In vivo partial reprogramming alters age-associated molecular changes and rejuvenates cells",
+        "url": "https://www.nature.com/articles/s41586-020-2975-0",
+        "reason": "A high-profile experimental paper showing partial cellular reprogramming effects in mice \u2014 directly relevant to students learning about the promise and limits of reprogramming as an anti-aging strategy."
+      }
+    },
+    {
+      "topic": "Translational & Societal Issues: Clinical Trials, Regulation, and Access (TAME, FDA debates)",
+      "book": {
+        "title": "Aging: The Longevity Dividend",
+        "author": "edited by S. Jay Olshansky, George M. Martin, and others (selected chapters)",
+        "reason": "A collection that includes policy, demographic, and clinical perspectives on aging interventions and their societal impacts \u2014 useful for students to connect lab findings to public health and regulation."
+      },
+      "podcast": {
+        "title": "Science Magazine Podcast \u2014 'Targeting Aging: the TAME trial and regulatory challenges'",
+        "url": "https://www.sciencemag.org/podcast",
+        "reason": "Covers the TAME trial and broader regulatory questions about treating aging as an indication, providing accessible reporting on a key translational effort."
+      },
+      "article": {
+        "title": "Targeting aging with metformin: from trials to mechanisms (TAME trial overview)",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6168075/",
+        "reason": "An explanatory article about the TAME trial that contextualizes scientific rationale, trial design, and regulatory implications \u2014 ideal for students learning how research moves toward clinical acceptance."
+      }
+    }
+  ]
+}

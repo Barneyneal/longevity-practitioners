@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import useQuizStore from '../store';
+import { Toaster, toast } from 'react-hot-toast';
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -56,7 +57,7 @@ const LoginPage: React.FC = () => {
         useQuizStore.setState({ submissions: subsData });
       }
 
-      navigate('/');
+      navigate('/dashboard');
     } catch (err: any) {
       setError(err.message);
     } finally {
@@ -113,9 +114,11 @@ const LoginPage: React.FC = () => {
               <input type="checkbox" checked={remember} onChange={() => setRemember(!remember)} className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-0" />
               Remember me
             </label>
-            <button type="button" className="text-blue-600 hover:underline font-medium opacity-60 cursor-not-allowed" title="Coming soon">
-              Forgot password?
-            </button>
+            <div className="text-sm">
+              <Link to="/forgot-password" className="font-medium text-blue-600 hover:text-blue-500">
+                Forgot password?
+              </Link>
+            </div>
           </div>
 
           <button
@@ -142,6 +145,7 @@ const LoginPage: React.FC = () => {
           </Link>
         </div>
       </div>
+      <Toaster />
     </div>
   );
 };

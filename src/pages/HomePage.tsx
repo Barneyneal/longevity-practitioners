@@ -35,14 +35,14 @@ function formatTimeAgo(dateString: string | undefined): string {
 }
 
 const HomePage: React.FC = () => {
-  const { startQuiz, resetQuiz, submissions, fetchSubmissions, authToken, logout, isFetchingSubmissions } = useQuizStore();
+  const { startQuiz, resetQuiz, submissions, authToken, logout, isFetchingSubmissions } = useQuizStore();
   const navigate = useNavigate();
 
   useEffect(() => {
     if (authToken) {
-      fetchSubmissions();
+      // No longer fetching submissions on home page load
     }
-  }, [authToken, fetchSubmissions]);
+  }, [authToken]);
 
   const hasCompletedLongevity = submissions.some(s => s.quizId === 'longevity');
   const hasCompletedCardiac = submissions.some(s => s.quizId === 'cardiac_health');
@@ -73,151 +73,92 @@ const HomePage: React.FC = () => {
     </div>
   );
 
+  const buttonContainerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 1.5
+      },
+    },
+  };
+
+  const buttonVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5
+      }
+    },
+  };
+
   return (
     <div className="flex flex-col h-full p-6 md:px-8 md:pb-16">
       <div className="flex-grow">
         <div>
           <AnimatedText
             key="home-title"
-            text="Start your healthspan journey with personalized self-assessments"
+            text="Revolutionize your practice and master the science of healthspan"
             el="h1"
             className="text-[34px] md:text-5xl font-light mb-2"
             animationType="word"
+            delay={0.5}
+            duration={0.8}
             style={{ lineHeight: '1.1em', paddingBottom: '20px' }}
           />
           <AnimatedText
             key="home-subtitle"
-            text="Each quiz in this portal is powered by The Longevity AI, developed by Longr. These science-backed tools translate your answers into meaningful insights, helping you understand your biological age, cardiac risk, and more. All assessments are free, fully anonymized, and designed to guide preventive, physician-led care."
+            text="The definitive, evidence-based curriculum for professionals dedicated to extending healthy human life. Built for health coaches, nutritionists, and clinicians seeking to integrate cutting-edge longevity science into their practice."
             el="p"
             className="text-gray-600"
             animationType="word"
             delay={1}
             stagger={0.0625}
-            duration={0.375}
+            duration={0.5}
           />
         </div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 2 }}
-          className="mt-8 space-y-4"
-        >
-          {/* Longevity row */}
-          {isFetchingSubmissions && !submissions.length ? (
-            <RowSkeleton />
-          ) : (
-            <>
-            <div className="grid grid-cols-3 gap-3 items-stretch">
-              <div className="col-span-2 py-4 pl-5 pr-5 border rounded-full bg-white text-gray-800 border-gray-300 h-full">
-                <div className="flex flex-col md:flex-row items-start md:items-center md:justify-between">
-                  <span className="font-medium text-lg md:text-lg">Longevity Quiz</span>
-                  <span className="text-sm text-gray-500 flex items-center gap-2">
-                    {hasCompletedLongevity
-                      ? `${formatTimeAgo(submissions.find(s => s.quizId === 'longevity')?.submittedAt)}`
-                      : 'Ready to start'}
-                    {authToken && hasCompletedLongevity && (
-                      <button
-                        onClick={(e) => handleRetake(e, 'longevity')}
-                        className="hidden md:inline-flex p-0 rounded-full"
-                        title="Retake Quiz"
-                      >
-                        <img src="/retake.svg" alt="Retake" className="w-5 h-5" />
-                      </button>
-                    )}
-                  </span>
-                </div>
-              </div>
-              <div className="col-span-1 h-full flex items-center space-x-2">
-                {hasCompletedLongevity ? (
-                  <>
-                    <Link to="/dashboard" className="flex-grow h-full">
-                      <button className="w-full h-full border rounded-full text-center transition-colors bg-gray-200 text-gray-800 border-gray-200 flex items-center justify-center">
-                        View Results
-                      </button>
-                    </Link>
-                  </>
-                ) : (
-                  <Link to="/longevity-quiz" className="flex-grow h-full">
-                    <button className="w-full h-full border rounded-full text-center transition-colors bg-blue-600 text-white border-blue-600 hover:bg-blue-700 flex items-center justify-center text-lg md:text-base font-medium">Start</button>
-                  </Link>
-                )}
-              </div>
-            </div>
-            
-            </>
-          )}
-
-          {/* Cardiac row */}
-          {isFetchingSubmissions && !submissions.length ? (
-            <RowSkeleton />
-          ) : (
-            <>
-            <div className="grid grid-cols-3 gap-3 items-stretch">
-              <div className={`col-span-2 py-4 pl-5 pr-5 border rounded-full h-full ${hasCompletedLongevity ? 'bg-white text-gray-800 border-gray-300' : 'bg-gray-100 text-gray-400 border-gray-200'}`}>
-                <div className="flex flex-col md:flex-row items-start md:items-center md:justify-between">
-                  <span className="font-medium text-lg md:text-lg">Cardiac Health</span>
-                  <span className="text-sm text-gray-500 flex items-center gap-2">
-                    {hasCompletedCardiac
-                      ? `${formatTimeAgo(submissions.find(s => s.quizId === 'cardiac_health')?.submittedAt)}`
-                      : hasCompletedLongevity
-                      ? 'Ready to start'
-                      : 'Longevity first'}
-                    {authToken && hasCompletedCardiac && (
-                      <button
-                        onClick={(e) => handleRetake(e, 'cardiac_health')}
-                        className="hidden md:inline-flex p-0 rounded-full"
-                        title="Retake Quiz"
-                      >
-                        <img src="/retake.svg" alt="Retake" className="w-5 h-5" />
-                      </button>
-                    )}
-                  </span>
-                </div>
-              </div>
-              <div className="col-span-1 h-full flex items-center space-x-2">
-                {hasCompletedCardiac ? (
-                  <>
-                    <Link to="/dashboard" className="flex-grow h-full">
-                      <button className="w-full h-full border rounded-full text-center transition-colors bg-gray-200 text-gray-800 border-gray-200 flex items-center justify-center">
-                        View Results
-                      </button>
-                    </Link>
-                  </>
-                ) : (
-                  <Link to="/cardiac-health-quiz" className="flex-grow h-full">
-                    <button
-                      onClick={() => handleStartQuiz('cardiac_health')}
-                      disabled={!hasCompletedLongevity}
-                      className="w-full h-full border rounded-full text-center transition-colors bg-blue-600 text-white border-blue-600 hover:bg-blue-700 flex items-center justify-center text-lg md:text-base font-medium disabled:bg-gray-300 disabled:border-gray-300 disabled:cursor-not-allowed"
-                    >
-                      Start
-                    </button>
-                  </Link>
-                )}
-              </div>
-            </div>
-            
-            </>
-          )}
-        </motion.div>
       </div>
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 2.5 }}
+        variants={buttonContainerVariants}
+        initial="hidden"
+        animate="visible"
         className="mt-auto pt-6"
       >
         {authToken ? (
-          <button 
-            onClick={logout}
-            className="w-full border rounded-full text-center transition-colors bg-gray-200 text-gray-800 border-gray-200 py-3 px-8"
-          >
-            Logout
-          </button>
+          <div className="flex flex-col gap-4">
+            <motion.div variants={buttonVariants}>
+              <Link to="/dashboard" className="block w-full">
+                <button className="w-full border rounded-full text-center transition-colors bg-blue-600 text-white border-blue-600 hover:bg-blue-700 py-3 px-8 font-semibold">
+                  Dashboard
+                </button>
+              </Link>
+            </motion.div>
+            <motion.div variants={buttonVariants}>
+              <button
+                onClick={logout}
+                className="w-full border rounded-full text-center transition-colors bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200 py-3 px-8 font-semibold"
+              >
+                Logout
+              </button>
+            </motion.div>
+          </div>
         ) : (
-          <Link to="/login" className="block w-full">
-            <button className="w-full border rounded-full text-center transition-colors bg-blue-600 text-white border-blue-600 hover:bg-blue-700 py-3 px-8">Login</button>
-          </Link>
+          <div className="flex flex-col gap-4">
+            <motion.div variants={buttonVariants}>
+              <Link to="/onboarding" className="block w-full">
+                <button className="w-full border rounded-full text-center transition-colors bg-blue-600 text-white border-blue-600 hover:bg-blue-700 py-3 px-8 font-semibold">Start Now</button>
+              </Link>
+            </motion.div>
+            <motion.div variants={buttonVariants}>
+              <Link to="/login" className="block w-full">
+                <button className="w-full border rounded-full text-center transition-colors bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200 py-3 px-8 font-semibold">Login</button>
+              </Link>
+            </motion.div>
+          </div>
         )}
       </motion.div>
     </div>

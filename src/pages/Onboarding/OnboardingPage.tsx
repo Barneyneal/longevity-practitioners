@@ -1,15 +1,32 @@
-import useQuizStore from "../../store";
-import Question from "../../components/Question";
-import TitlePage from "../../components/TitlePage";
+import React from 'react';
+import useQuizStore from '../../store';
+import { questions } from './onboarding-questions';
+import Question from '../../components/Question';
+import TitlePage from '../../components/TitlePage';
 import ThankYouPage from "../../components/ThankYouPage";
 import SectionTitlePage from "../../components/SectionTitlePage";
-import { questions } from "./questions";
 import PrivacyPage from "../../components/PrivacyPage";
 import { useEffect } from "react";
+import { useState } from "react";
+import { Navigate } from 'react-router-dom';
 
-const LongevityQuizPage = () => {
+const OnboardingPage: React.FC = () => {
   const { quizzes, activeQuiz, startQuiz, nextQuestion, user } = useQuizStore();
   const quizId = "longevity";
+
+  const [submissionId, setSubmissionId] = useState<string | null>(null);
+
+  const titlePage = {
+    type: 'title',
+    text: "Register to access the practitioner portal",
+    subtext: "By creating your account, you gain immediate access to the complete Longevity & Healthspan Curriculum Framework—the definitive, evidence-based system for practitioners serious about client results.",
+  };
+
+  const thankYouPage = {
+    type: 'thank-you',
+    text: "Thank you for completing the quiz!",
+    subtext: "Your personalized longevity plan is ready. We'll send it to your email address.",
+  };
 
   // Compute a safe currentQuestion before any early returns
   const safeQuiz = activeQuiz ? quizzes[activeQuiz] : undefined;
@@ -43,7 +60,7 @@ const LongevityQuizPage = () => {
   }
 
   if (safeQuiz.currentQuestion === -2) {
-    return <TitlePage quizId={quizId} />;
+    return <TitlePage quizId={quizId} title={titlePage.text} subtext={titlePage.subtext} />;
   }
 
   if (safeQuiz.currentQuestion === -1) {
@@ -94,4 +111,4 @@ const LongevityQuizPage = () => {
   }
 };
 
-export default LongevityQuizPage; 
+export default OnboardingPage; 

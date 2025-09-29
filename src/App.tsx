@@ -1,59 +1,55 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import LongevityQuizPage from "./pages/LongevityQuiz/LongevityQuizPage";
-import CardiacHealthQuizPage from "./pages/CardiacHealthQuiz/CardiacHealthQuizPage";
-import Header from "./components/Header";
-import useQuizStore from "./store";
-import { questions as longevityQuestions } from "./pages/LongevityQuiz/questions";
-import { questions as cardiacQuestions } from "./pages/CardiacHealthQuiz/questions";
-import "./App.css";
-import HomePage from "./pages/HomePage";
-import LoginPage from "./pages/LoginPage";
-import RegisterPage from "./pages/RegisterPage";
-import ProtectedRoute from "./components/ProtectedRoute";
-import DashboardPage from "./pages/DashboardPage";
+import React from 'react';
+import { Routes, Route, Outlet } from 'react-router-dom';
+import Header from './components/Header';
+import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import DashboardPage from './pages/DashboardPage';
 import ResultsPage from './pages/ResultsPage/ResultsPage';
-import LoadingDots from './components/LoadingDots';
+import ProtectedRoute from './components/ProtectedRoute';
+import ForgotPasswordPage from './pages/ForgotPasswordPage';
+import ResetPasswordPage from './pages/ResetPasswordPage';
+import OnboardingPage from "./pages/Onboarding/OnboardingPage";
+import MasteringHealthspanFrameworkPage from "./pages/MasteringHealthspanFramework/MasteringHealthspanFrameworkPage";
+import LessonSlidePage from './pages/LessonSlidePage';
 
-const AppShell: React.FC = () => {
-  const { authToken, fetchSubmissions, fetchUser, isFetchingSubmissions, isFetchingUser } = useQuizStore();
-  const location = useLocation();
+import { Toaster } from 'react-hot-toast';
 
-  useEffect(() => {
-    if (authToken) {
-      // Fire once (store has single-flight + throttle)
-      fetchUser();
-      fetchSubmissions();
-    }
-  }, [authToken, fetchSubmissions, fetchUser]);
+const MainLayout: React.FC = () => (
+  <div className="max-w-[650px] w-full mx-auto h-[100dvh] flex flex-col text-gray-800">
+    <Header />
+    <main className="flex-grow flex flex-col">
+      <Outlet />
+    </main>
+  </div>
+);
 
-  const hideHeader = location.pathname === '/login';
-
+function App() {
   return (
-    <div className="max-w-[650px] w-full mx-auto h-[100dvh] flex flex-col text-gray-800">
-      {!hideHeader && <Header />}
-      <main className="flex-grow flex flex-col">
-        <Routes>
+    <>
+      <Toaster position="bottom-center" />
+      <Routes>
+        {/* Full screen lesson page route */}
+        <Route path="/course/:moduleSlug/:lessonSlug" element={<LessonSlidePage />} />
+
+        {/* Auth routes without main layout */}
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+        <Route path="/reset-password" element={<ResetPasswordPage />} />
+        
+        {/* Main application routes with shared layout */}
+        <Route element={<MainLayout />}>
           <Route path="/" element={<HomePage />} />
-          <Route path="/longevity-quiz" element={<LongevityQuizPage />} />
-          <Route path="/cardiac-health-quiz" element={<CardiacHealthQuizPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/onboarding" element={<OnboardingPage />} />
+          <Route path="/mastering-longevity" element={<MasteringHealthspanFrameworkPage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
           <Route element={<ProtectedRoute />}>
-            <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/results/:submissionId" element={<ResultsPage />} />
           </Route>
-        </Routes>
-      </main>
-    </div>
-  );
-};
-
-const App: React.FC = () => {
-  return (
-    <Router>
-      <AppShell />
-    </Router>
+        </Route>
+      </Routes>
+    </>
   );
 }
 

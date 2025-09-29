@@ -1,0 +1,721 @@
+
+    {
+        "curriculumTitle": "Longevity & Healthspan Curriculum Framework",
+        "totalModules": 10,
+        "totalDurationMinutes": 300,
+        "totalWordCount": 39000,
+        "modules": [
+            {
+                "moduleNumber": 1,
+                "title": "Longevity and Healthspan Fundamentals",
+                "moduleSlug": "longevity-fundamentals",
+                "totalDurationMinutes": 45,
+                "totalWordCount": 5850,
+                "lessons": [
+                    {
+                        "lessonTitle": "Introduction to Longevity Science",
+                        "lessonSlug": "introduction-to-longevity-science",
+                        "durationMinutes": 6,
+                        "wordCount": 780,
+                        "topicsCovered": [
+                            "Defining longevity vs. healthspan and prioritizing healthspan for adults 40–75",
+                            "Aging as a modifiable, treatable process; hallmarks (telomeres, senescence)",
+                            "Overview of biological aging theories and evidence frameworks (e.g., GRADE)",
+                            "Personal empowerment: actionable steps to influence aging trajectory"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Physical Activity -- The Cornerstone of Longevity",
+                        "lessonSlug": "physical-activity-cornerstone",
+                        "durationMinutes": 10,
+                        "wordCount": 1300,
+                        "topicsCovered": [
+                            "Exercise lowers all-cause mortality by ~20–35%",
+                            "Aerobic guidelines (150–300 min/wk moderate or 75–150 min vigorous); Zone 2 for mitochondrial health",
+                            "VO₂ max intervals/HIIT to improve fitness and longevity",
+                            "Resistance training 2–3×/week to prevent sarcopenia",
+                            "Balance/flexibility for fall prevention; consistency is non-negotiable"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Sleep Optimization for Healthspan",
+                        "lessonSlug": "sleep-optimization",
+                        "durationMinutes": 8,
+                        "wordCount": 1040,
+                        "topicsCovered": [
+                            "Sleep quality/regularity affects brain, hormones, immunity",
+                            "Regularity predicts mortality risk; align with circadian rhythms",
+                            "Most adults need 7–9 hours; individual variability",
+                            "Sleep hygiene: cool/dark room, light management, caffeine/alcohol timing",
+                            "Sleep supports immunity, mood, weight control"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Nutrition and Diet Patterns for Longevity",
+                        "lessonSlug": "nutrition-patterns",
+                        "durationMinutes": 9,
+                        "wordCount": 1170,
+                        "topicsCovered": [
+                            "Mediterranean/plant-rich patterns linked to ~15–20% lower mortality; Blue Zones",
+                            "Protein 1.2–1.6 g/kg with leucine-rich sources to preserve muscle",
+                            "Healthy fats and omega-3s; nuts/olive oil vs. processed fats",
+                            "Fiber 25–35 g/day; polyphenols; support glutathione/antioxidant systems",
+                            "Moderate caloric intake; introduce time-restricted eating"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Social Connections, Purpose, and Mental Well-Being",
+                        "lessonSlug": "social-connections-purpose",
+                        "durationMinutes": 6,
+                        "wordCount": 780,
+                        "topicsCovered": [
+                            "Strong social ties reduce mortality risk (Blue Zones emphasis)",
+                            "Purpose/Ikigai and mental health",
+                            "Stress accelerates aging; tools: meditation, breathwork, nature, journaling",
+                            "Integrate community, hobbies, mindfulness into plans"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Biological Aging and Cellular Health",
+                        "lessonSlug": "biological-aging-cellular-health",
+                        "durationMinutes": 6,
+                        "wordCount": 780,
+                        "topicsCovered": [
+                            "Hallmarks: DNA damage, telomere shortening, mitochondrial dysfunction, senescence, inflammaging",
+                            "Lifestyle leverages autophagy and DNA repair; antioxidant-rich diets",
+                            "Telomeres and modifiable factors (stress, exercise, telomerase interest)",
+                            "Intro to stem cells, regeneration, geroprotective strategies",
+                            "Key takeaway: multiple biological levers are influenceable"
+                        ]
+                    }
+                ]
+            },
+            {
+                "moduleNumber": 2,
+                "title": "Cognitive Function and Neuroprotection",
+                "moduleSlug": "cognitive-neuroprotection",
+                "totalDurationMinutes": 30,
+                "totalWordCount": 3900,
+                "lessons": [
+                    {
+                        "lessonTitle": "Brain Aging and Cognitive Decline",
+                        "lessonSlug": "brain-aging-cognitive-decline",
+                        "durationMinutes": 6,
+                        "wordCount": 780,
+                        "topicsCovered": [
+                            "Normal aging vs. MCI/dementia; processing speed vs. knowledge",
+                            "Risk factors: age, APOE4, lifestyle",
+                            "Cognitive reserve from education/novelty/challenge",
+                            "Prevention rooted in midlife risk management"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Exercise for Brain Health",
+                        "lessonSlug": "exercise-brain-health",
+                        "durationMinutes": 8,
+                        "wordCount": 1040,
+                        "topicsCovered": [
+                            "Aerobic exercise boosts blood flow and BDNF; neurogenesis/plasticity",
+                            "Resistance training benefits executive function/memory",
+                            "Complex movement (dance, tai chi) = dual benefits",
+                            "Evidence from meta-analyses; reduced Alzheimer’s/vascular dementia risk",
+                            "Coaching: consistency and variety (cardio+strength+balance)"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Nutrition and Neuroprotective Compounds",
+                        "lessonSlug": "nutrition-neuroprotective-compounds",
+                        "durationMinutes": 6,
+                        "wordCount": 780,
+                        "topicsCovered": [
+                            "Mediterranean/MIND diets reduce dementia risk",
+                            "Omega-3 DHA; antioxidants/polyphenols (berries, curcumin, green tea)",
+                            "Supplements: creatine, curcumin, fish oil (evidence context)",
+                            "Glucose control; insulin resistance and 'type 3 diabetes' concept"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Cognitive Training and Social Engagement",
+                        "lessonSlug": "cognitive-training-social-engagement",
+                        "durationMinutes": 5,
+                        "wordCount": 650,
+                        "topicsCovered": [
+                            "Challenging learning vs. narrow brain games",
+                            "Social engagement as cognitive stimulation; lower dementia rates",
+                            "Mindset, curiosity, mindfulness for attention/flexibility",
+                            "Lifelong learning, group activities, volunteering"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Monitoring Cognitive Health",
+                        "lessonSlug": "monitoring-cognitive-health",
+                        "durationMinutes": 5,
+                        "wordCount": 650,
+                        "topicsCovered": [
+                            "Screening: MoCA/MMSE; self-assessments",
+                            "Track annually; trend changes",
+                            "Early warning signs and referral thresholds",
+                            "Emerging tech: apps, imaging, blood biomarkers (awareness scope)"
+                        ]
+                    }
+                ]
+            },
+            {
+                "moduleNumber": 3,
+                "title": "Cardiovascular Health and Atherosclerosis Prevention",
+                "moduleSlug": "cardiovascular-prevention",
+                "totalDurationMinutes": 36,
+                "totalWordCount": 4680,
+                "lessons": [
+                    {
+                        "lessonTitle": "Cardiovascular Aging -- Risks and Prevention",
+                        "lessonSlug": "cardiovascular-aging-risks",
+                        "durationMinutes": 7,
+                        "wordCount": 910,
+                        "topicsCovered": [
+                            "Arterial stiffening, atherosclerosis, cardiac capacity changes",
+                            "Major risks: hypertension, ApoB/LDL, smoking, diabetes, inflammation, inactivity",
+                            "Early prevention and number management (BP, lipids, glucose)",
+                            "Vascular health links to brain/kidney outcomes"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Exercise and Heart Protection",
+                        "lessonSlug": "exercise-heart-protection",
+                        "durationMinutes": 9,
+                        "wordCount": 1170,
+                        "topicsCovered": [
+                            "Exercise improves BP, lipids, insulin sensitivity; strengthens heart",
+                            "Zone 2 (≈60–70% max HR) for metabolic flexibility/mitochondria",
+                            "HIIT (e.g., 4×4 min) to raise VO₂ max",
+                            "Resistance training aids BP/vascular function and body comp",
+                            "Higher fitness lowers MI/HF risk; benefits even starting midlife"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Blood Pressure Control and Longevity",
+                        "lessonSlug": "blood-pressure-control",
+                        "durationMinutes": 7,
+                        "wordCount": 910,
+                        "topicsCovered": [
+                            "Hypertension as silent vascular damage",
+                            "Targets generally <130/80 mmHg (individualize in frailty)",
+                            "Lifestyle: sodium <2.3g, more potassium, weight loss, aerobic exercise, stress control",
+                            "DASH diet; home BP monitoring and technique"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Lipid Management and Heart-Healthy Nutrition",
+                        "lessonSlug": "lipid-management-nutrition",
+                        "durationMinutes": 7,
+                        "wordCount": 910,
+                        "topicsCovered": [
+                            "ApoB/LDL drive atherogenesis; HDL/TG context",
+                            "Diet: unsaturated fats, soluble fiber, stanols/sterols",
+                            "High EPA omega-3s lower TG and events (~15–20%)",
+                            "When meds are needed (e.g., statins); Lp(a) genetic risk"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Cardiovascular Risk Assessment and Monitoring",
+                        "lessonSlug": "cardiovascular-risk-assessment",
+                        "durationMinutes": 6,
+                        "wordCount": 780,
+                        "topicsCovered": [
+                            "ASCVD risk calculator",
+                            "CAC scoring to refine intermediate risk",
+                            "Markers: hs-CRP, ApoB, NT-proBNP (where available)",
+                            "Annual labs and routine tracking; 'what gets measured gets managed'"
+                        ]
+                    }
+                ]
+            },
+            {
+                "moduleNumber": 4,
+                "title": "Diabetes Prevention and Glucose Control",
+                "moduleSlug": "diabetes-glucose-control",
+                "totalDurationMinutes": 30,
+                "totalWordCount": 3900,
+                "lessons": [
+                    {
+                        "lessonTitle": "Metabolic Aging and Insulin Resistance",
+                        "lessonSlug": "metabolic-aging-insulin-resistance",
+                        "durationMinutes": 6,
+                        "wordCount": 780,
+                        "topicsCovered": [
+                            "Age-related metabolic slowdown, insulin resistance, visceral fat",
+                            "Insulin resistance links to CVD and dementia",
+                            "High prevalence of unrecognized prediabetes >40",
+                            "Diabetes prevention as a core longevity lever"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Dietary Strategies for Glucose Control",
+                        "lessonSlug": "dietary-strategies-glucose-control",
+                        "durationMinutes": 7,
+                        "wordCount": 910,
+                        "topicsCovered": [
+                            "Low glycemic-load whole-food patterns; lower-carb for some",
+                            "5–7% weight loss reduces diabetes progression by ~58% (DPP)",
+                            "Fiber 25–35 g/day and gut microbiome benefits",
+                            "Protein/fat pairing to blunt postprandial spikes; hydration; limit sugary drinks/alcohol"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Exercise and Blood Sugar Management",
+                        "lessonSlug": "exercise-blood-sugar",
+                        "durationMinutes": 6,
+                        "wordCount": 780,
+                        "topicsCovered": [
+                            "Activity acutely and chronically improves insulin sensitivity",
+                            "Cardio acutely lowers fasting glucose",
+                            "Resistance training expands glucose storage via muscle",
+                            "Post-meal 10–15 min walks; break up sedentary time"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Intermittent Fasting and Other Interventions",
+                        "lessonSlug": "intermittent-fasting-interventions",
+                        "durationMinutes": 6,
+                        "wordCount": 780,
+                        "topicsCovered": [
+                            "IF approaches (16:8, 5:2); insulin sensitivity, weight, autophagy",
+                            "Individualization and cautions (meds, eating disorders)",
+                            "Nutraceuticals: berberine, chromium, cinnamon (evidence nuance)",
+                            "Metformin use in prediabetes and longevity context"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Monitoring and Early Detection",
+                        "lessonSlug": "monitoring-early-detection",
+                        "durationMinutes": 5,
+                        "wordCount": 650,
+                        "topicsCovered": [
+                            "Targets: FPG 70–99 mg/dL; HbA1c <5.7%; fasting insulin low",
+                            "Annual labs >40 or earlier with risk",
+                            "CGMs for short-term learning even in non-diabetics",
+                            "Referral thresholds: repeat FPG ≥126 or HbA1c ≥6.5%"
+                        ]
+                    }
+                ]
+            },
+            {
+                "moduleNumber": 5,
+                "title": "Weight Management and Body Composition",
+                "moduleSlug": "weight-management-body-composition",
+                "totalDurationMinutes": 30,
+                "totalWordCount": 3900,
+                "lessons": [
+                    {
+                        "lessonTitle": "Muscle vs. Fat -- Body Composition and Longevity",
+                        "lessonSlug": "muscle-vs-fat-body-composition",
+                        "durationMinutes": 7,
+                        "wordCount": 910,
+                        "topicsCovered": [
+                            "Lean mass vs. visceral fat as key longevity drivers",
+                            "Sarcopenia: ~3–8%/decade loss after 30 if inactive",
+                            "Visceral fat and inflammaging",
+                            "Metabolic fitness over thinness; body comp tracking (DEXA, BIA, waist)"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Caloric Restriction and Diet Planning",
+                        "lessonSlug": "caloric-restriction-diet-planning",
+                        "durationMinutes": 6,
+                        "wordCount": 780,
+                        "topicsCovered": [
+                            "CR extends lifespan in species; human risk-factor improvements",
+                            "Practical deficit ~15–20% individualized",
+                            "Nutrient density and possible micronutrient support",
+                            "Protein priority 1.4–1.6 g/kg; 25–30 g/meal with leucine",
+                            "Planning, portion, mindful eating, logging tools"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Resistance Training and Exercise for Body Composition",
+                        "lessonSlug": "resistance-training-exercise",
+                        "durationMinutes": 7,
+                        "wordCount": 910,
+                        "topicsCovered": [
+                            "Full-body strength 2–3×/wk; progressive overload; major muscle groups",
+                            "Recomposition potential (fat loss + muscle gain)",
+                            "Role of cardio (HIIT + Zone 2) and NEAT",
+                            "Metabolic adaptation during weight loss; exercise mitigates"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Intermittent Fasting and Dietary Patterns",
+                        "lessonSlug": "intermittent-fasting-dietary-patterns",
+                        "durationMinutes": 5,
+                        "wordCount": 650,
+                        "topicsCovered": [
+                            "IF for spontaneous calorie control and insulin sensitivity",
+                            "Effective patterns: low-carb, keto, plant-based, Mediterranean",
+                            "Preference fit and psychological aspects",
+                            "Circadian-aligned eating (earlier window) and cautions"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Tools and Medical Options for Weight Loss",
+                        "lessonSlug": "tools-medical-options-weight-loss",
+                        "durationMinutes": 5,
+                        "wordCount": 650,
+                        "topicsCovered": [
+                            "Tracking apps, smart scales, wearables, coaching/accountability",
+                            "CBT tips: SMART goals, trigger identification, mindful eating, social support",
+                            "Medications: GLP-1 RAs (e.g., semaglutide) and supervision; preserve muscle",
+                            "Other meds/bariatric surgery awareness; maintenance as core challenge"
+                        ]
+                    }
+                ]
+            },
+            {
+                "moduleNumber": 6,
+                "title": "Hormonal Health and Optimization",
+                "moduleSlug": "hormonal-health-optimization",
+                "totalDurationMinutes": 24,
+                "totalWordCount": 3120,
+                "lessons": [
+                    {
+                        "lessonTitle": "Hormonal Changes with Age -- Overview",
+                        "lessonSlug": "hormonal-changes-age",
+                        "durationMinutes": 6,
+                        "wordCount": 780,
+                        "topicsCovered": [
+                            "Shifts in sex hormones, GH/IGF-1, DHEA, melatonin, thyroid",
+                            "Individual variability in symptoms and risk",
+                            "Optimize lifestyle first (sleep, stress/cortisol, weight/visceral fat)",
+                            "Active research; benefits vs. risks frame"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Men’s Health -- Testosterone and Aging",
+                        "lessonSlug": "mens-health-testosterone",
+                        "durationMinutes": 6,
+                        "wordCount": 780,
+                        "topicsCovered": [
+                            "Testosterone roles: muscle, bone, mood, vitality; ~1–2%/yr decline",
+                            "Support T naturally: strength/HIIT, fat loss, sleep, stress management",
+                            "Symptoms of low T",
+                            "TRT basics, forms, goals, monitoring (PSA, hematocrit), risks and supervision"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Women’s Health -- Menopause and HRT",
+                        "lessonSlug": "womens-health-menopause",
+                        "durationMinutes": 6,
+                        "wordCount": 780,
+                        "topicsCovered": [
+                            "Perimenopause/menopause symptoms; bone/CVD changes",
+                            "Lifestyle supports: strength, weight-bearing, calcium/vitamin D, phytoestrogens, sleep/stress",
+                            "HRT benefits/risks; timing within 10 years of menopause",
+                            "Alternatives (e.g., SSRIs, black cohosh) with variable evidence; individualized care"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Preserving Bone Health (and Hormones) in Aging",
+                        "lessonSlug": "preserving-bone-health",
+                        "durationMinutes": 6,
+                        "wordCount": 780,
+                        "topicsCovered": [
+                            "Osteoporosis prevention and longevity impact",
+                            "Calcium ~1200 mg/day; vitamin D per labs (~30–50 ng/mL); vitamin K2",
+                            "Exercise: weight-bearing + strength; balance to prevent falls (Wolff’s law)",
+                            "DEXA screening timing; HRT/bisphosphonates/TRT context",
+                            "Avoid smoking/excess alcohol; sun exposure prudence"
+                        ]
+                    }
+                ]
+            },
+            {
+                "moduleNumber": 7,
+                "title": "Pharmacological and Emerging Longevity Adjuncts",
+                "moduleSlug": "pharmacological-adjuncts",
+                "totalDurationMinutes": 21,
+                "totalWordCount": 2730,
+                "lessons": [
+                    {
+                        "lessonTitle": "Overview of Longevity Pharmacotherapy & Emerging Therapies",
+                        "lessonSlug": "overview-pharmacotherapy-therapies",
+                        "durationMinutes": 6,
+                        "wordCount": 780,
+                        "topicsCovered": [
+                            "Geroprotective concepts: repurposed drugs, NAD+ precursors, experimental agents",
+                            "Horizon: gene therapies, stem cells, telomerase activation, AI-enabled discovery",
+                            "Skeptical optimism: human evidence vs. promising early data",
+                            "Focus on safe, effective actions now while tracking advances"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Rapamycin and mTOR Inhibition",
+                        "lessonSlug": "rapamycin-mtor-inhibition",
+                        "durationMinutes": 6,
+                        "wordCount": 780,
+                        "topicsCovered": [
+                            "Rapamycin origins and lifespan extension in mice",
+                            "mTOR inhibition, autophagy, CR-mimetic signaling",
+                            "Not approved for anti-aging; low-dose intermittent exploration",
+                            "Potential benefits (immune effects) vs. risks (ulcers, TGs, immune suppression); physician monitoring"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Metformin for Metabolic Health and Longevity",
+                        "lessonSlug": "metformin-metabolic-health",
+                        "durationMinutes": 5,
+                        "wordCount": 650,
+                        "topicsCovered": [
+                            "First-line diabetes drug; improves insulin sensitivity (hepatic output, muscle uptake)",
+                            "AMPK activation; observational longevity signals; TAME trial",
+                            "Pros: safety, CV/cancer signals, weight neutrality/slight loss",
+                            "Cons: GI effects, B12 deficiency, possible interaction with exercise adaptations; selective preventive use"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "GLP-1 Agonists and Other Emerging Drugs",
+                        "lessonSlug": "glp1-agonists-emerging-drugs",
+                        "durationMinutes": 4,
+                        "wordCount": 520,
+                        "topicsCovered": [
+                            "GLP-1s (semaglutide, liraglutide) and weight loss (~15%)",
+                            "Longevity via obesity risk reduction; CV event reductions in high-risk patients",
+                            "Side effects; preserve muscle via protein and resistance training",
+                            "Dual agonists (tirzepatide), senolytics (fisetin+dasatinib), NAD+ boosters; peptides/melatonin caveats"
+                        ]
+                    }
+                ]
+            },
+            {
+                "moduleNumber": 8,
+                "title": "Supplement Evidence Review",
+                "moduleSlug": "supplement-evidence-review",
+                "totalDurationMinutes": 24,
+                "totalWordCount": 3120,
+                "lessons": [
+                    {
+                        "lessonTitle": "Omega-3 Fatty Acids (Fish Oil)",
+                        "lessonSlug": "omega3-fatty-acids",
+                        "durationMinutes": 5,
+                        "wordCount": 650,
+                        "topicsCovered": [
+                            "EPA/DHA benefits: anti-inflammatory, triglyceride lowering, cardiac death risk, cognitive support",
+                            "Food first: 2–3 oily fish servings/wk; ~1 g/day EPA+DHA if not",
+                            "Omega-3 Index goal >8%",
+                            "Safety: >3 g/day thinning; third-party testing for purity/oxidation",
+                            "Foundational but not a magic bullet"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Vitamin D (and K2)",
+                        "lessonSlug": "vitamin-d-k2",
+                        "durationMinutes": 4,
+                        "wordCount": 520,
+                        "topicsCovered": [
+                            "Roles in bone, muscle, immune regulation; common insufficiency",
+                            "Target 40–60 ng/mL; ~2000 IU D3/day typical (individualize)",
+                            "Mixed RCT outcomes; deficiency harms are clear",
+                            "Pair with K2 (MK-7) to direct calcium",
+                            "Avoid toxicity; monitor blood levels"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Magnesium",
+                        "lessonSlug": "magnesium",
+                        "durationMinutes": 4,
+                        "wordCount": 520,
+                        "topicsCovered": [
+                            "Cofactor in 300+ reactions; sleep, insulin, BP, bone/vitamin D synergy",
+                            "Forms: glycinate/malate/citrate; 200–400 mg elemental/day",
+                            "Caution: diarrhea (citrate), renal disease consult",
+                            "Food sources: greens, nuts, seeds, whole grains, dark chocolate"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Creatine Monohydrate",
+                        "lessonSlug": "creatine-monohydrate",
+                        "durationMinutes": 4,
+                        "wordCount": 520,
+                        "topicsCovered": [
+                            "ATP regeneration; strength/power and performance",
+                            "Older-adult benefits: muscle preservation, fall risk reduction",
+                            "Cognitive support evidence; 3–5 g/day safe long-term",
+                            "No loading needed; hydrate adequately"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Protein and Amino Acids",
+                        "lessonSlug": "protein-amino-acids",
+                        "durationMinutes": 4,
+                        "wordCount": 520,
+                        "topicsCovered": [
+                            "Older adults: 1.2–1.6 g/kg/day; complete proteins",
+                            "Whey (leucine-rich); plant proteins (soy/pea/rice) with higher portions as needed",
+                            "EAAs for low-cal stimulation; glycine for sleep/cognition",
+                            "Leucine threshold ~2.5–3.0 g (~25–30 g high-quality protein/meal)",
+                            "Muscle preservation ties to longevity and resilience"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Other Promising Supplements and Bioactive Compounds",
+                        "lessonSlug": "other-promising-supplements",
+                        "durationMinutes": 7,
+                        "wordCount": 910,
+                        "topicsCovered": [
+                            "NAD+ precursors (NMN/NR): mitochondrial/DNA repair support; promising animal data; costly; human lifespan data preliminary",
+                            "Berberine: AMPK activation; glucose/lipid support; 'nature’s metformin'",
+                            "CoQ10: mitochondrial electron transport; declines with age/statins; CV support",
+                            "Urolithin A: mitophagy/mitochondrial function; muscle endurance support",
+                            "Curcumin: potent anti-inflammatory/antioxidant; bioavailability limits",
+                            "Astaxanthin: antioxidant; skin/eye support",
+                            "Spermidine: autophagy induction",
+                            "Senolytics: fisetin/quercetin (experimental) to clear senescent cells",
+                            "Piperine: bioavailability enhancer (e.g., for curcumin)",
+                            "Emphasis: adjunctive to foundational lifestyle; weigh evidence and cost"
+                        ]
+                    }
+                ]
+            },
+            {
+                "moduleNumber": 9,
+                "title": "Biomarkers and Laboratory Testing",
+                "moduleSlug": "biomarkers-lab-testing",
+                "totalDurationMinutes": 30,
+                "totalWordCount": 3900,
+                "lessons": [
+                    {
+                        "lessonTitle": "Core Longevity Lab Panel (Annual)",
+                        "lessonSlug": "core-longevity-lab-panel",
+                        "durationMinutes": 9,
+                        "wordCount": 1170,
+                        "topicsCovered": [
+                            "Lipids: total, LDL, HDL, TG; advanced ApoB and Lp(a)",
+                            "Inflammation: hs-CRP (goal <1.0 mg/L)",
+                            "Metabolic: fasting glucose, HbA1c, fasting insulin, HOMA-IR",
+                            "Liver: ALT/AST, albumin, bilirubin; Kidney: creatinine, eGFR, BUN, electrolytes",
+                            "CBC: RBC (Hb, Hct, MCV), WBC, platelets",
+                            "Optimal vs. normal ranges; trend tracking; clinician interpretation"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Hormonal and Advanced Biomarkers",
+                        "lessonSlug": "hormonal-advanced-biomarkers",
+                        "durationMinutes": 8,
+                        "wordCount": 1040,
+                        "topicsCovered": [
+                            "Thyroid (TSH; reflex to Free T4/T3); PSA for men; sex hormones as indicated",
+                            "Cortisol (AM or diurnal curve), DHEA-S, IGF-1 context",
+                            "Inflammaging markers (IL-6, TNF-α), GlycanAge; oxidative stress (GGT), oxLDL",
+                            "Genetics: APOE; consumer biological age risk tools caveats",
+                            "Epigenetic clocks and telomere length: concept/value limits; lifestyle remains primary",
+                            "Use advanced tests only if they change management or motivate action"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Functional Fitness and Body Composition Markers",
+                        "lessonSlug": "functional-fitness-body-composition",
+                        "durationMinutes": 7,
+                        "wordCount": 910,
+                        "topicsCovered": [
+                            "Cardiorespiratory fitness (estimated VO₂ max; 6-min walk, step tests)",
+                            "Strength (grip strength, chair stands, floor rise)",
+                            "Mobility/balance (single-leg stand, gait speed thresholds)",
+                            "Body comp (waist, BMI limits, body fat %, DEXA); bone density (DEXA T-scores)",
+                            "Track over time; 'longevity fitness assessment' framing"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Interpreting Results and Setting Targets",
+                        "lessonSlug": "interpreting-results-setting-targets",
+                        "durationMinutes": 6,
+                        "wordCount": 780,
+                        "topicsCovered": [
+                            "From data to plan (e.g., LDL 160 mg/dL -> diet, weight loss, recheck, consider meds)",
+                            "Examples of optimal vs. normal (vitamin D ~50 vs. 30; fasting insulin <6 vs. 'normal' higher)",
+                            "Celebrate improving trends; intensify when trends worsen",
+                            "Coach scope vs. medical referral for alarming findings"
+                        ]
+                    }
+                ]
+            },
+            {
+                "moduleNumber": 10,
+                "title": "Technology Integration and Personalized Planning",
+                "moduleSlug": "technology-personalized-planning",
+                "totalDurationMinutes": 30,
+                "totalWordCount": 3900,
+                "lessons": [
+                    {
+                        "lessonTitle": "Wearable Tech for Health Tracking",
+                        "lessonSlug": "wearable-tech-health-tracking",
+                        "durationMinutes": 6,
+                        "wordCount": 780,
+                        "topicsCovered": [
+                            "Devices: Fitbit/Garmin/Apple Watch (steps, HR, ECG), Oura/WHOOP (HRV/sleep), smart scales, home BP, CGMs",
+                            "Reliability: steps/HR good; HRV/sleep stages useful as trends",
+                            "Behavior change via gamification and feedback loops",
+                            "Short-term CGM experiments; avoid data overload; choose meaningful metrics"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Data Interpretation and AI Integration",
+                        "lessonSlug": "data-interpretation-ai-integration",
+                        "durationMinutes": 6,
+                        "wordCount": 780,
+                        "topicsCovered": [
+                            "Personal dashboards integrating wearables, labs, assessments",
+                            "AI for pattern-finding and personalized recommendations",
+                            "AI in research acceleration (drug discovery/genetics)",
+                            "Use data as feedback, not anxiety; thresholds/alerts; case example of data→action"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Top Tier-1 Longevity Habits (Universal)",
+                        "lessonSlug": "top-tier1-longevity-habits",
+                        "durationMinutes": 6,
+                        "wordCount": 780,
+                        "topicsCovered": [
+                            "Daily movement (8–10k steps), minimize sitting",
+                            "Strength ≥2×/wk; cardio most days with some vigorous work",
+                            "Sleep regularity/quality; whole-food, plant-rich diet with adequate protein/omega-3s",
+                            "No smoking; moderate alcohol; stress practice; social connection; sunlight (no burns); hydration"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Tier-2 Targeted Strategies (Personalized)",
+                        "lessonSlug": "tier2-targeted-strategies",
+                        "durationMinutes": 5,
+                        "wordCount": 650,
+                        "topicsCovered": [
+                            "IF/TRE where appropriate; targeted supplements per need",
+                            "Zone 2 development; judicious HIIT",
+                            "Periodic tech monitoring (CGM, BP, HRV) for specific goals",
+                            "Medical referrals: thyroid, HRT, metformin, GLP-1s; tailor to readiness and risk"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Implementing Change -- Phased Plan",
+                        "lessonSlug": "implementing-change-phased-plan",
+                        "durationMinutes": 4,
+                        "wordCount": 520,
+                        "topicsCovered": [
+                            "Phase 1 (Months 1–3): foundation (exercise, sleep, diet basics, baselines)",
+                            "Phase 2 (Months 4–6): optimization (progress load/intensity, IF/macros, core supplements, stress practice, recheck)",
+                            "Phase 3 (Months 7–12): personalization (CGM trials, address plateaus, environment/support)",
+                            "SMART goals, adaptability, annual reassessment cycles"
+                        ]
+                    },
+                    {
+                        "lessonTitle": "Safety, Individualization, and Red Flags",
+                        "lessonSlug": "safety-individualization-red-flags",
+                        "durationMinutes": 3,
+                        "wordCount": 390,
+                        "topicsCovered": [
+                            "Match interventions to history/meds; watch interactions and contraindications",
+                            "Scope of practice for non-physicians and collaboration with clinicians",
+                            "Red flags: chest pain/SOB, overtraining/eating disorder signs, cognitive changes, rapid weight loss, extreme labs",
+                            "Positive but responsible close: evolving field; blend Blue Zones wisdom with modern science"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }

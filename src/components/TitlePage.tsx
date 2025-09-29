@@ -7,19 +7,28 @@ import { useNavigate } from 'react-router-dom';
 interface TitlePageProps {
   quizId: string;
   title?: string;
+  subtext?: string;
+  onStart?: () => void; // Add onStart prop
 }
 
-const TitlePage: React.FC<TitlePageProps> = ({ quizId, title }) => {
+const TitlePage: React.FC<TitlePageProps> = ({ quizId, title, subtext, onStart }) => {
   const { nextQuestion } = useQuizStore();
   const navigate = useNavigate();
-  const defaultTitle = "The most advanced self-assessment tool for estimating your biological age";
+
+  const handleStart = () => {
+    if (onStart) {
+      onStart();
+    } else {
+      nextQuestion(quizId);
+    }
+  };
 
   return (
-    <div className="flex flex-col h-full p-6 md:px-8 pt-8 md:pb-16">
+    <div className="flex flex-col h-full p-6 md:px-8 md:pb-16 text-center">
       <div className="flex-grow">
         <AnimatedText
           key="title-text"
-          text={title || defaultTitle}
+          text={title || ''}
           el="h1"
           className="text-[34px] md:text-5xl font-light mb-8"
           animationType="word"
@@ -27,7 +36,7 @@ const TitlePage: React.FC<TitlePageProps> = ({ quizId, title }) => {
         />
         <AnimatedText
           key="subtitle-text"
-          text="This free quiz takes just 10–15 minutes to complete. The Longevity AI uses your responses to generate a science-backed biological age estimate — the more thoroughly you answer, the more precise and actionable your results will be.<br /><br />Built by Longr and shaped by insights from thousands of research papers, it’s one of the most robust self-reporting tools available."
+          text={subtext || ''}
           el="p"
           className="text-gray-600"
           animationType="word"
@@ -60,17 +69,10 @@ const TitlePage: React.FC<TitlePageProps> = ({ quizId, title }) => {
           className="flex-grow ml-4"
         >
           <button
-            onClick={() => {
-              if (quizId === 'cardiac_health') {
-                nextQuestion(quizId);
-                nextQuestion(quizId);
-              } else {
-                nextQuestion(quizId);
-              }
-            }}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300"
+            onClick={handleStart}
+            className="w-full border rounded-full text-center transition-colors bg-blue-600 text-white border-blue-600 hover:bg-blue-700 py-3 px-8 font-semibold"
           >
-            Continue
+            Start
           </button>
         </motion.div>
       </div>

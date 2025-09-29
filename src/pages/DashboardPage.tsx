@@ -3,8 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { formatDistanceToNow } from 'date-fns';
 import AnimatedText from '../components/AnimatedText';
-import LoadingDots from '../components/LoadingDots';
-import ResultsPollButton from '../components/ResultsPollButton';
 
 const formatQuizLabel = (quizId: string) => {
   return quizId === 'longevity' ? 'Longevity Quiz' : 'Cardiac Health';
@@ -17,8 +15,8 @@ const getGreeting = () => {
   return 'Good evening';
 };
 
-const DashboardPage = () => {
-  const { user, submissions, isFetchingSubmissions, resetQuiz, startQuiz } = useQuizStore();
+const DashboardPage: React.FC = () => {
+  const { submissions, user, isFetchingSubmissions, isFetchingUser, resetQuiz, startQuiz } = useQuizStore();
   const navigate = useNavigate();
 
   const handleRetake = (e: React.MouseEvent, quizId: string) => {
@@ -26,14 +24,27 @@ const DashboardPage = () => {
     e.stopPropagation();
     resetQuiz(quizId);
     startQuiz(quizId);
-    navigate(quizId === 'longevity' ? '/longevity-quiz' : '/cardiac-health-quiz');
+    // Navigate based on the quizId. Note: 'mastering-longevity' is handled by the "Start Course" button now.
+    if (quizId === 'longevity') {
+      navigate('/longevity-quiz');
+    }
   };
 
   const greeting = getGreeting();
 
+  if (!user) {
+    // If there's no user, you might want to redirect to login or show a specific message.
+    // For now, we'll just show a generic loading or empty state.
+    return (
+      <div className="flex justify-center items-center h-full">
+          <p>Loading user data...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="w-full mx-auto p-6">
-      <div className="text-left mb-8">
+      <div className="text-left mb-12">
         {isFetchingSubmissions && !submissions.length ? (
           <div className="flex justify-center"><LoadingDots /></div>
         ) : (
@@ -41,14 +52,14 @@ const DashboardPage = () => {
             <>
               <AnimatedText
                 el="h1"
-                text={`${greeting} ${user.firstName}, are you ready to view your results?`}
+                text={`${greeting} ${user.firstName}, welcome to your practitioner portal.`}
                 animationType="word"
                 className="text-[34px] md:text-4xl font-light mb-2"
-                style={{ lineHeight: '1.2em', paddingBottom: '10px' }}
+                style={{ lineHeight: '1.2em', paddingBottom: '20px' }}
               />
               <AnimatedText
                 key="dashboard-subtitle"
-                text="Your results are a powerful starting point, but it’s what you do next that truly changes your healthspan. Explore our physician‑guided longevity programs to turn insights into action. Initial score processing can take up to 5 minutes on first submission; your results will appear here automatically. Powered by The Longevity AI."
+                text="You're ready to begin. This portal is your central hub for accessing all modules, tracking your progress, and utilizing the evidence-based resources designed to elevate your practice."
                 el="p"
                 className="text-gray-600"
                 animationType="word"
@@ -74,6 +85,32 @@ const DashboardPage = () => {
         }}
         className="space-y-4"
       >
+        {/* Course Entry */}
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { 
+              opacity: 1, 
+              y: 0,
+              transition: { duration: 0.5 }
+            },
+          }}
+          className="grid grid-cols-3 gap-3 items-stretch"
+        >
+          <div className="col-span-2 py-4 pl-5 pr-4 border rounded-full bg-white text-gray-800 border-gray-300 h-full">
+            <div className="flex flex-col md:flex-row items-start md:items-center md:justify-between">
+              <span className="font-medium text-lg md:text-lg">Mastering Longevity</span>
+            </div>
+          </div>
+          <div className="col-span-1 h-full flex items-center">
+            <Link to="/mastering-longevity" className="block w-full h-full">
+                <button className="w-full h-full border rounded-full text-center transition-colors bg-blue-600 text-white border-blue-600 hover:bg-blue-700 font-semibold">
+                    Start Course
+                </button>
+            </Link>
+          </div>
+        </motion.div>
+
         {submissions.map((submission) => (
           <motion.div
             key={submission._id}

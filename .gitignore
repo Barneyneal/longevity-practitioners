@@ -1,3 +1,8 @@
+# Environment variables
 .env
+
+# Vercel state
 .vercel
+
+# Dependencies
 node_modules

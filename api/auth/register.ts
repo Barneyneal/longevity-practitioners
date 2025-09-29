@@ -39,7 +39,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const existingUser = await users.findOne({ email });
     if (existingUser) {
-      return res.status(409).send('User with this email already exists');
+      return res.status(409).json({ error: 'user_exists', message: 'User with this email already exists' });
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
