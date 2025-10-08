@@ -1,14 +1,12 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import ReactMarkdown from 'react-markdown';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import LessonHeader from '../components/LessonHeader';
 import AudioPlayer from '../components/AudioPlayer';
+import SlideContent from '../components/SlideContent';
 
 const manifestImports = import.meta.glob<{ default: any }>('/src/course-data/**/*.json');
-const slidesImports = import.meta.glob<string>('/src/course-data/**/*.md', { query: '?raw', import: 'default' });
-
 
 const citationVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -26,74 +24,73 @@ const citationVariants = {
     },
 };
 
-const markdownComponents = {
-    h2: (props: any) => <h2 className="text-4xl font-bold mb-8 text-left" {...props} />,
-    li: ({ node, ordered, ...props }: any) => {
-        const isNewSection = node?.children?.[0]?.children?.[0]?.tagName === 'strong';
-        return <li className={isNewSection ? 'mt-4' : ''} {...props} />;
-    },
-    strong: ({...props}) => <strong className="font-bold" {...props} />,
-};
-
 interface Manifest {
     lessonTitle: string;
-    slides: { slideNumber: number; citationIds: string[]; audio: string; }[];
+    slides: { 
+        slideNumber: number; 
+        citationIds: string[]; 
+        audio: string;
+        content: any; // Add content to the slide type
+    }[];
 }
 
 const LessonSlidePage: React.FC = () => {
-    const { moduleSlug, lessonSlug } = useParams<{ moduleSlug: string; lessonSlug: string }>();
+    const { moduleSlug, lessonSlug, slideNumber } = useParams<{ moduleSlug: string; lessonSlug: string; slideNumber: string }>();
     const navigate = useNavigate();
 
     const [manifest, setManifest] = useState<Manifest | null>(null);
-    const [slidesContent, setSlidesContent] = useState<string[]>([]);
-    const [currentSlide, setCurrentSlide] = useState(0);
     const [cumulativeCitations, setCumulativeCitations] = useState<any[]>([]);
     const [allCitations, setAllCitations] = useState<any[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
 
+    const currentSlideIndex = useMemo(() => {
+        const num = parseInt(slideNumber || '1', 10);
+        return Math.max(0, num - 1);
+    }, [slideNumber]);
+
+    // Effect for loading manifest and all citations (once per lesson)
     useEffect(() => {
         const loadCourseData = async () => {
             if (moduleSlug && lessonSlug) {
                 try {
+                    setIsLoading(true);
                     const manifestPath = `/src/course-data/${moduleSlug}/${lessonSlug}/index.json`;
-                    const slidesPath = `/src/course-data/${moduleSlug}/${lessonSlug}/slides.md`;
                     const citationsPath = `/src/course-data/${moduleSlug}/${lessonSlug}/citations.json`;
 
-                    console.log('Attempting to load manifest from:', manifestPath);
-                    if (!manifestImports[manifestPath]) {
-                        throw new Error(`Manifest file not found at ${manifestPath}`);
-                    }
+                    if (!manifestImports[manifestPath]) throw new Error(`Manifest file not found at ${manifestPath}`);
                     const manifestModule = await manifestImports[manifestPath]();
                     setManifest(manifestModule.default as Manifest);
                     
-                    console.log('Attempting to load slides from:', slidesPath);
-                    if (!slidesImports[slidesPath]) {
-                        throw new Error(`Slides file not found at ${slidesPath}`);
-                    }
-                    const rawSlides = await slidesImports[slidesPath]();
-                    setSlidesContent(rawSlides.split(/\n(?=## )/));
-
-                    console.log('Attempting to load citations from:', citationsPath);
-                    if (!manifestImports[citationsPath]) {
-                        throw new Error(`Citations file not found at ${citationsPath}`);
-                    }
+                    if (!manifestImports[citationsPath]) throw new Error(`Citations file not found at ${citationsPath}`);
                     const citationsModule = await manifestImports[citationsPath]();
                     setAllCitations(citationsModule.default);
+                    setIsLoading(false);
 
                 } catch (error) {
-                    console.error("Failed to load course data:", error);
-                    navigate('/dashboard'); // Or a 404 page
+                    console.error("Failed to load course manifest or citations:", error);
+                    navigate('/dashboard');
                 }
             }
         };
 
         loadCourseData();
     }, [moduleSlug, lessonSlug, navigate]);
-    
+
+    // Effect for loading the current slide's HTML - REMOVED
+
+    // Effect to handle invalid slide numbers from URL
     useEffect(() => {
-        const loadCitations = async () => {
+        if (manifest && (currentSlideIndex >= manifest.slides.length || isNaN(currentSlideIndex))) {
+            navigate(`/course/${moduleSlug}/${lessonSlug}/1`, { replace: true });
+        }
+    }, [manifest, currentSlideIndex, moduleSlug, lessonSlug, navigate]);
+
+    // Effect for updating cumulative citations based on current slide
+    useEffect(() => {
+        const loadCitations = () => {
             if (manifest) {
                 const citationIdsToShow = new Set<string>();
-                for (let i = 0; i <= currentSlide; i++) {
+                for (let i = 0; i <= currentSlideIndex; i++) {
                     const slideManifest = manifest.slides.find(s => s.slideNumber === i + 1);
                     if (slideManifest) {
                         slideManifest.citationIds.forEach(id => citationIdsToShow.add(id));
@@ -103,20 +100,26 @@ const LessonSlidePage: React.FC = () => {
             }
         };
         loadCitations();
-    }, [manifest, currentSlide, allCitations]);
+    }, [manifest, currentSlideIndex, allCitations]);
  
-    const slides = useMemo(() => slidesContent, [slidesContent]);
     const lessonTitle = useMemo(() => manifest?.lessonTitle || '', [manifest]);
+    const totalSlides = useMemo(() => manifest?.slides.length || 0, [manifest]);
 
     const goToNextSlide = () => {
-        setCurrentSlide(prev => Math.min(prev + 1, slides.length - 1));
+        const nextSlideNumber = currentSlideIndex + 2;
+        if (nextSlideNumber <= totalSlides) {
+            navigate(`/course/${moduleSlug}/${lessonSlug}/${nextSlideNumber}`);
+        }
     };
 
     const goToPreviousSlide = () => {
-        setCurrentSlide(prev => Math.max(prev - 1, 0));
+        const prevSlideNumber = currentSlideIndex;
+        if (prevSlideNumber > 0) {
+            navigate(`/course/${moduleSlug}/${lessonSlug}/${prevSlideNumber}`);
+        }
     };
 
-    if (!manifest || slidesContent.length === 0 || allCitations.length === 0) {
+    if (isLoading || !manifest) {
         return <div className="flex items-center justify-center h-screen">Loading...</div>;
     }
 
@@ -128,23 +131,20 @@ const LessonSlidePage: React.FC = () => {
             />
             
             <div className="flex gap-4 pt-4 px-4 flex-1 min-h-0">
-                {/* Main Content Panel (Lightbox) */}
-                <main className="flex-1 flex flex-col overflow-hidden relative bg-white rounded-2xl shadow-sm">
+                <main className="flex-1 flex flex-col overflow-hidden relative bg-white rounded-2xl shadow-sm p-12">
                     <AnimatePresence mode="wait">
-                        <motion.div
-                            key={currentSlide}
+                        <SlideContent
+                            key={currentSlideIndex}
+                            content={manifest.slides[currentSlideIndex].content}
                             initial={{ opacity: 0, x: 50 }}
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: -50 }}
                             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                            className="prose max-w-none w-full h-full flex flex-col items-start justify-center p-12"
-                        >
-                            <ReactMarkdown components={markdownComponents}>{slides[currentSlide]}</ReactMarkdown>
-                        </motion.div>
+                            className="w-full h-full"
+                        />
                     </AnimatePresence>
                 </main>
 
-                {/* Citations Panel */}
                 <aside className="w-[400px] bg-white rounded-2xl shadow-sm flex flex-col overflow-hidden">
                     <div className="px-6 py-4 border-b border-gray-200 flex-shrink-0">
                         <h2 className="text-xl font-semibold">Citations</h2>
@@ -181,16 +181,15 @@ const LessonSlidePage: React.FC = () => {
                 </aside>
             </div>
 
-            {/* Bottom Navigation */}
             <div className="bg-gray-100 flex justify-center px-8 flex-shrink-0 py-4">
                 <AudioPlayer 
-                    src={manifest.slides[currentSlide]?.audio || ''} 
+                    src={manifest.slides[currentSlideIndex]?.audio || ''} 
                     onNext={goToNextSlide}
                     onPrevious={goToPreviousSlide}
-                    isFirst={currentSlide === 0}
-                    isLast={currentSlide === slides.length - 1}
-                    currentSlide={currentSlide + 1}
-                    totalSlides={slides.length}
+                    isFirst={currentSlideIndex === 0}
+                    isLast={currentSlideIndex === totalSlides - 1}
+                    currentSlide={currentSlideIndex + 1}
+                    totalSlides={totalSlides}
                 />
             </div>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Outlet } from 'react-router-dom';
+import { Routes, Route, Outlet, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
@@ -16,6 +16,8 @@ import LessonQuizPage from './pages/LessonQuizPage';
 
 import { Toaster } from 'react-hot-toast';
 import useQuizStore from './store';
+import ActivityTracker from './components/ActivityTracker';
+import ProgressPrompt from './components/ProgressPrompt';
 
 const MainLayout: React.FC = () => (
   <div className="max-w-[650px] w-full mx-auto h-[100dvh] flex flex-col text-gray-800">
@@ -29,6 +31,8 @@ const MainLayout: React.FC = () => (
 function App() {
   return (
     <>
+      <ActivityTracker />
+      <ProgressPrompt />
       <Toaster position="bottom-center" />
       <Routes>
         {/* Main application routes with shared layout */}
@@ -42,7 +46,8 @@ function App() {
         </Route>
 
         {/* Full screen lesson page route */}
-        <Route path="/course/:moduleSlug/:lessonSlug" element={<LessonSlidePage />} />
+        <Route path="/course/:moduleSlug/:lessonSlug" element={<Navigate to="1" replace />} />
+        <Route path="/course/:moduleSlug/:lessonSlug/:slideNumber" element={<LessonSlidePage />} />
 
         {/* Auth routes without main layout */}
         <Route path="/login" element={<LoginPage />} />

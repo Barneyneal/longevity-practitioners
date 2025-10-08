@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import useQuizStore from '../store';
 
 interface Lesson {
     lessonTitle: string;
@@ -16,6 +17,7 @@ interface LessonAccordionProps {
 
 const LessonAccordion: React.FC<LessonAccordionProps> = ({ lesson, moduleSlug }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const { progressData } = useQuizStore();
 
     return (
         <div className="border-t border-gray-200">
@@ -58,16 +60,37 @@ const LessonAccordion: React.FC<LessonAccordionProps> = ({ lesson, moduleSlug })
                             ))}
                         </ul>
                         <div className="flex items-center gap-2.5">
-                            <Link to={`/course/${moduleSlug}/${lesson.lessonSlug}/quiz`} className="w-1/2">
-                                <button className="w-full bg-gray-200 text-gray-800 font-semibold py-2 px-6 rounded-full hover:bg-gray-300 transition-colors">
-                                    Take Quiz
-                                </button>
+                            <Link
+                                to={`/course/${moduleSlug}/${lesson.lessonSlug}/quiz`}
+                                className="w-full sm:w-auto flex-grow text-center rounded-full bg-gray-100 px-4 py-3 text-sm font-semibold text-gray-800 shadow-sm hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-300"
+                            >
+                                Take Quiz
                             </Link>
-                            <Link to={`/course/${moduleSlug}/${lesson.lessonSlug}`} className="w-1/2">
-                                <button className="w-full bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition-colors">
-                                    Start Now
-                                </button>
-                            </Link>
+                            {(() => {
+                                const lessonProgress =
+                                    progressData &&
+                                    progressData.moduleSlug === moduleSlug &&
+                                    progressData.lessonSlug === lesson.lessonSlug
+                                    ? progressData
+                                    : null;
+                                
+                                // Failsafe: if the saved location is a quiz page, ignore it.
+                                const isQuizLocation = lessonProgress?.lastKnownLocation?.includes('/quiz');
+
+                                const startUrl = (lessonProgress && !isQuizLocation && lessonProgress.lastKnownLocation)
+                                    ? lessonProgress.lastKnownLocation 
+                                    : `/course/${moduleSlug}/${lesson.lessonSlug}/1`;
+                                const startText = lessonProgress && !isQuizLocation ? 'Continue' : 'Start Now';
+
+                                return (
+                                    <Link
+                                        to={startUrl}
+                                        className="w-full sm:w-auto flex-grow text-center rounded-full bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                                    >
+                                        {startText}
+                                    </Link>
+                                );
+                            })()}
                         </div>
                     </motion.div>
                 )}

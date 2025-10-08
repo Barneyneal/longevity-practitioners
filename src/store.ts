@@ -2,6 +2,7 @@ import { type QuestionType } from './pages/MasteringHealthspanFramework/course-c
 import { create } from 'zustand';
 import { questions as longevityQuestions } from './pages/Onboarding/onboarding-questions';
 import { questions as masteringLongevityCourseContent } from './pages/MasteringHealthspanFramework/course-content';
+import { courseManifest, getTotalSlideCount } from './course-manifest';
 import { jwtDecode } from 'jwt-decode';
 import Cookies from 'js-cookie';
 
@@ -17,6 +18,14 @@ interface User {
   email: string | null;
   firstName?: string;
   lastName?: string;
+}
+
+interface UserProgress {
+  lastKnownLocation: string | null;
+  moduleSlug?: string | null;
+  lessonSlug?: string | null;
+  slideNumber?: number | null;
+  globalProgressPercentage?: number;
 }
 
 interface DecodedToken {
@@ -37,6 +46,8 @@ interface QuizState {
   };
   progress: number; // Add progress to the state
   user: User | null;
+  progressData: UserProgress;
+  promptShown: boolean;
   completedQuizzes: Record<string, { completedAt: string; score?: number }>;
   authToken: string | null;
   submissions: any[]; // Add submissions array to the store
@@ -55,6 +66,10 @@ interface QuizState {
   setQuizCompleted: (quizId: string, meta: { completedAt: string; score?: number }) => void;
   fetchSubmissions: () => Promise<void>; // Add fetchSubmissions action
   fetchUser: () => Promise<void>;
+  fetchUserProgress: () => Promise<void>;
+  saveUserProgress: () => Promise<void>;
+  updateUserProgress: (data: Partial<UserProgress>) => void;
+  setPromptShown: (shown: boolean) => void;
   updateProgress: (progress: number) => void;
   updateProgressBasedOnAnswers: (quizId: string, answers: Record<string, any>) => void; // Add updateProgressBasedOnAnswers action
 }
@@ -103,6 +118,8 @@ const useQuizStore = create<QuizState>()((set, get) => ({
   quizzes: {},
   progress: 0,
   user: getPersisted('ld_user', { id: null, email: null, firstName: '', lastName: '' }),
+  progressData: { lastKnownLocation: null, globalProgressPercentage: 0 },
+  promptShown: false,
   completedQuizzes: getPersisted('ld_completed', {} as Record<string, { completedAt: string; score?: number }>),
   authToken: Cookies.get('authToken') || null,
   submissions: [],
@@ -321,7 +338,9 @@ const useQuizStore = create<QuizState>()((set, get) => ({
         if (registerRes.ok) {
           const { userId, token } = await registerRes.json();
           effectiveUserId = userId;
-          get().login(token);
+          await get().login(token);
+          // After successful registration and login, fetch progress
+          await get().fetchUserProgress();
         } else {
           // Handle registration failure
           const errorData = await registerRes.json();
@@ -468,6 +487,7 @@ const useQuizStore = create<QuizState>()((set, get) => ({
         persist('ld_user', user);
         // Wait for user details to be fetched before resolving
         await get().fetchUser();
+        await get().fetchUserProgress();
       } catch (error) {
         console.error('Failed to decode token:', error);
         throw new Error('Invalid authentication token.');
@@ -475,6 +495,7 @@ const useQuizStore = create<QuizState>()((set, get) => ({
     }
   },
   logout: () => {
+    get().saveUserProgress(); // Save progress on logout
     set({
       authToken: null,
       user: { id: null, email: null, firstName: '', lastName: '' },
@@ -482,6 +503,7 @@ const useQuizStore = create<QuizState>()((set, get) => ({
       isFetchingSubmissions: false,
       isFetchingUser: false,
       progress: 0, // Also reset progress on logout
+      progressData: { lastKnownLocation: null, globalProgressPercentage: 0 },
     });
     persist('ld_auth_token', null);
     persist('ld_user', null);
@@ -549,6 +571,73 @@ const useQuizStore = create<QuizState>()((set, get) => ({
     })();
     return userFetchInFlight;
   },
+  fetchUserProgress: async () => {
+    const { authToken } = get();
+    if (!authToken) return;
+    try {
+      const apiBase = import.meta.env.PROD ? (import.meta.env.VITE_API_BASE || '') : '';
+      const response = await fetch(`${apiBase}/api/progress`, {
+        headers: {
+          'Authorization': `Bearer ${authToken}`,
+        },
+      });
+      if (response.ok) {
+        const data = await response.json();
+        set({ progressData: data });
+      }
+    } catch (error) {
+      console.error('Failed to fetch user progress:', error);
+    }
+  },
+  saveUserProgress: async () => {
+    const { authToken, progressData } = get();
+    if (!authToken || !progressData.lastKnownLocation) return;
+    try {
+      const apiBase = import.meta.env.PROD ? (import.meta.env.VITE_API_BASE || '') : '';
+      await fetch(`${apiBase}/api/progress/update`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${authToken}`,
+        },
+        body: JSON.stringify(progressData),
+      });
+    } catch (error) {
+      console.error('Failed to save user progress:', error);
+    }
+  },
+  updateUserProgress: (data: Partial<UserProgress>) => {
+    // Calculate global progress
+    const { moduleSlug, lessonSlug, slideNumber } = { ...get().progressData, ...data };
+    let globalProgressPercentage = 0;
+
+    if (moduleSlug && lessonSlug && slideNumber) {
+        const totalSlidesInCourse = getTotalSlideCount();
+        let slidesCompletedInPreviousLessons = 0;
+
+        for (const lesson of courseManifest) {
+            if (lesson.moduleSlug === moduleSlug && lesson.lessonSlug === lessonSlug) {
+                break; // Stop counting when we reach the current lesson
+            }
+            slidesCompletedInPreviousLessons += lesson.slideCount;
+        }
+        
+        const totalSlidesCompleted = slidesCompletedInPreviousLessons + slideNumber;
+        
+        if (totalSlidesInCourse > 0) {
+            globalProgressPercentage = Math.round((totalSlidesCompleted / totalSlidesInCourse) * 100);
+        }
+    }
+
+    set((state) => ({
+      progressData: { 
+        ...state.progressData, 
+        ...data,
+        globalProgressPercentage,
+    },
+    }));
+  },
+  setPromptShown: (shown: boolean) => set({ promptShown: shown }),
   updateProgress: (progress: number) => set({ progress }),
   // Helper function to calculate progress based on visible questions
   updateProgressBasedOnAnswers: (quizId: string, answers: Record<string, any>) => {

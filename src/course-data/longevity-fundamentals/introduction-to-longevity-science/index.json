@@ -4,6 +4,35 @@
     {
       "slideNumber": 1,
       "audio": "/audio/longevity-fundamentals/introduction-to-longevity-science/slide-1.mp3",
+      "content": {
+        "title": "Beyond the Limits: Introduction to Longevity Science",
+        "points": [
+          {
+            "text": "<strong>Core Question:</strong> What if aging isn't inevitable, but a controllable biological process?",
+            "subPoints": [
+              "Aging may be more like a disease we can understand, intervene in, and potentially reverse",
+              "Goal: Extend &quot;healthy human lifespan&quot; - adding life to years, not just years to life"
+            ]
+            
+          },
+          {
+            "text": "<strong>Key Discovery:</strong>",
+            "subPoints": [
+              "A single gene mutation (age-1) in C. elegans worms doubled their lifespan.",
+              "This proved aging is a regulated biological process, not just &quot;wear and tear.&quot;"
+            ]
+          },
+          {
+            "text": "Built on work by researchers like Cynthia Kenyon, David Sinclair, and Ana Maria Cuervo."
+          }
+        ],
+        "images": [
+          {
+            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Split_Timeline_Traditional_Aging_vs_Extended_Healthspan.jpg",
+            "alt": "A split timeline showing traditional aging curve versus potential extended healthspan curve, with molecular DNA helixes and cellular imagery in the background"
+          }
+        ]
+      },
       "citationIds": [
         "kenyon-radiolab-interview",
         "c-elegans-drug-discovery-model",
@@ -14,6 +43,31 @@
     {
       "slideNumber": 2,
       "audio": "/audio/longevity-fundamentals/introduction-to-longevity-science/slide-2.mp3",
+      "content": {
+        "title": "Healthspan vs. Lifespan: Living Better, Longer",
+        "points": [
+          {
+            "text": "<strong>Lifespan:</strong> Total duration of life from birth to death"
+          },
+          {
+            "text": "<strong>Healthspan:</strong> Period of life spent in good health, free from chronic diseases"
+          },
+          {
+            "text": "<strong>Compression of Morbidity:</strong> Delaying disease onset to compress illness into final years",
+            "subPoints": [
+              "WHO data shows significant gap between total life expectancy and healthy life expectancy",
+              "Focus should be extending healthy life, not just adding years of poor health",
+              "Healthy lifestyle may not extend maximum lifespan but significantly delays chronic disease"
+            ]
+          }
+        ],
+        "images": [
+          {
+            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Health_vs_Age_Traditional_vs_Compressed_Morbidity.jpg",
+            "alt": "A graph showing two curves - one representing traditional aging with long period of declining health, and another showing compressed morbidity with extended healthspan and brief illness period"
+          }
+        ]
+      },
       "citationIds": [
         "who-life-expectancy-data",
         "fries-good-life-study",
@@ -24,6 +78,33 @@
     {
       "slideNumber": 3,
       "audio": "/audio/longevity-fundamentals/introduction-to-longevity-science/slide-3.mp3",
+      "content": {
+        "title": "The Hallmarks of Aging Framework",
+        "points": [
+          {
+            "text": "<strong>Original 2013 framework:</strong> Nine fundamental biological processes driving aging"
+          },
+          {
+            "text": "<strong>Updated 2023 version:</strong> Expanded to twelve interconnected hallmarks",
+            "subPoints": [
+              "Provides common language and research roadmap for longevity science"
+            ]
+          },
+          {
+            "text": "<strong>Key insight:</strong> Hallmarks create cascading effects - one malfunction triggers others",
+            "subPoints": [
+              "Examples include genomic instability, telomere attrition, epigenetic alterations",
+              "Framework enables targeting root causes rather than just symptoms of aging"
+            ]
+          }
+        ],
+        "images": [
+          {
+            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Network_of_the_Twelve_Hallmarks_of_Aging.jpg",
+            "alt": "A circular network diagram showing twelve interconnected nodes representing the hallmarks of aging, with arrows indicating their relationships and cascade effects"
+          }
+        ]
+      },
       "citationIds": [
         "blasco-hallmarks-of-aging",
         "kroemer-hallmarks-of-aging",
@@ -34,6 +115,33 @@
     {
       "slideNumber": 4,
       "audio": "/audio/longevity-fundamentals/introduction-to-longevity-science/slide-4.mp3",
+      "content": {
+        "title": "Cellular Senescence: The &quot;Zombie Cell&quot; Problem",
+        "points": [
+          {
+            "text": "<strong>Senescent cells:</strong> Damaged cells that stop dividing but don't die",
+            "subPoints": [
+              "These &quot;zombie cells&quot; secrete harmful inflammatory factors (SASP)",
+              "SASP damages surrounding healthy cells and tissues"
+            ]
+          },
+          {
+            "text": "<strong>Breakthrough research:</strong> Removing senescent cells in mice prevented age-related diseases"
+          },
+          {
+            "text": "<strong>Senolytics:</strong> New class of drugs designed to eliminate senescent cells",
+            "subPoints": [
+              "Early human clinical trials already underway for senolytic treatments"
+            ]
+          }
+        ],
+        "images": [
+          {
+            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Healthy_Cells_vs_Senescent_Cells_(SASP).jpg",
+            "alt": "A microscopic view showing normal healthy cells alongside larger, darker senescent cells releasing inflammatory molecules, with a clear visual contrast between the two cell types"
+          }
+        ]
+      },
       "citationIds": [
         "kirkland-cellular-senescence"
       ]
@@ -41,11 +149,69 @@
     {
       "slideNumber": 5,
       "audio": "/audio/longevity-fundamentals/introduction-to-longevity-science/slide-5.mp3",
+      "content": {
+        "title": "Mitochondrial Dysfunction: When Powerhouses Fail",
+        "points": [
+          {
+            "text": "Mitochondria are cellular &quot;powerhouses&quot; that produce ATP energy"
+          },
+          {
+            "text": "<strong>Aging effect:</strong> Mitochondria become less efficient, affecting all cellular functions",
+            "subPoints": [
+              "Mitochondrial DNA is vulnerable to damage and mutations accumulate over time"
+            ]
+          },
+          {
+            "text": "<strong>Mitophagy:</strong> Quality control process that recycles damaged mitochondria becomes impaired"
+          },
+          {
+            "text": "<strong>Promising interventions:</strong> Compounds like urolithin A improve mitochondrial function",
+            "subPoints": [
+              "Clinical trials show improved muscle strength and exercise performance"
+            ]
+          }
+        ],
+        "images": [
+          {
+            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Healthy_vs_Damaged_Mitochondria.jpg",
+            "alt": "A detailed cellular diagram showing healthy mitochondria versus aged, damaged mitochondria with visible structural deterioration and reduced energy output indicators"
+          }
+        ]
+      },
       "citationIds": []
     },
     {
       "slideNumber": 6,
       "audio": "/audio/longevity-fundamentals/introduction-to-longevity-science/slide-6.mp3",
+      "content": {
+        "title": "Biological vs. Chronological Age",
+        "points": [
+          {
+            "text": "<strong>Chronological age:</strong> Years since birth - simple but not always meaningful for health"
+          },
+          {
+            "text": "<strong>Biological age:</strong> Measure of body's functional and cellular health status"
+          },
+          {
+            "text": "<strong>Epigenetic clocks:</strong> Measure DNA methylation patterns to predict biological age",
+            "subPoints": [
+              "Can accurately predict age within a few years across most tissues"
+            ]
+          },
+          {
+            "text": "<strong>Key insight:</strong> Differences between biological and chronological age predict health outcomes"
+          },
+          {
+            "text": "<strong>DunedinPACE:</strong> Measures pace of aging rather than just current biological age"
+          }
+        ],
+        "images": [
+          {
+            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Chronological_vs_Biological_Age_Portrait_Comparison.jpg",
+            "alt": "Two people of the same chronological age side by side - one appearing much younger and healthier, the other showing signs of accelerated aging, with DNA methylation patterns shown below each"
+          }
+        ]
+      },
       "citationIds": [
         "hannum-epigenetic-clocks"
       ]
@@ -53,16 +219,101 @@
     {
       "slideNumber": 7,
       "audio": "/audio/longevity-fundamentals/introduction-to-longevity-science/slide-7.mp3",
+      "content": {
+        "title": "Three Pillars of Longevity Intervention",
+        "points": [
+          {
+            "text": "<strong>Pillar 1 - Dietary Strategies:</strong> Caloric restriction, intermittent fasting, longevity diets"
+          },
+          {
+            "text": "<strong>Pillar 2 - Exercise:</strong> HIIT for mitochondrial health, resistance training for muscle/bone"
+          },
+          {
+            "text": "<strong>Pillar 3 - Pharmacological:</strong> Drugs targeting aging pathways directly (rapamycin, metformin)",
+            "subPoints": [
+              "Caloric restriction shows consistent lifespan extension across species",
+              "Exercise affects molecular mechanisms: insulin sensitivity, inflammation, stress response"
+            ]
+          },
+          {
+            "text": "<strong>Synergistic effects:</strong> Combining all three pillars may provide greater benefits than individual approaches"
+          }
+        ],
+        "images": [
+          {
+            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Three_Pillars_of_Healthy_Longevity.jpg",
+            "alt": "Three interconnected pillars supporting a structure labeled &quot;Healthy Longevity&quot; - one showing healthy foods, one showing exercise equipment, and one showing pharmaceutical molecules"
+          }
+        ]
+      },
       "citationIds": []
     },
     {
       "slideNumber": 8,
       "audio": "/audio/longevity-fundamentals/introduction-to-longevity-science/slide-8.mp3",
+      "content": {
+        "title": "Rapamycin and the mTOR Pathway",
+        "points": [
+          {
+            "text": "<strong>mTOR:</strong> Central nutrient-sensing pathway regulating cellular growth and metabolism",
+            "subPoints": [
+              "When nutrients are abundant, mTOR promotes growth; when scarce, shifts to maintenance mode"
+            ]
+          },
+          {
+            "text": "<strong>Problem:</strong> Chronic mTOR overactivation in aging accelerates age-related decline"
+          },
+          {
+            "text": "<strong>Rapamycin:</strong> FDA-approved drug that inhibits mTOR and extends lifespan in multiple species",
+            "subPoints": [
+              "National Institute on Aging studies show robust lifespan extension in mice"
+            ]
+          },
+          {
+            "text": "<strong>Current research:</strong> Dog Aging Project testing rapamycin in companion dogs"
+          }
+        ],
+        "images": [
+          {
+            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/mTOR_Pathway_and_Rapamycin_Inhibition.jpg",
+            "alt": "A cellular pathway diagram showing mTOR at the center with arrows indicating nutrient inputs and growth/maintenance outputs, plus a molecular structure of rapamycin"
+          }
+        ]
+      },
       "citationIds": []
     },
     {
       "slideNumber": 9,
       "audio": "/audio/longevity-fundamentals/introduction-to-longevity-science/slide-9.mp3",
+      "content": {
+        "title": "The Future: Reprogramming, AI, and Ethics",
+        "points": [
+          {
+            "text": "<strong>Cellular reprogramming:</strong> Using Yamanaka factors to reverse cellular aging in place"
+          },
+          {
+            "text": "<strong>AI integration:</strong> Drug discovery, biomarker identification, personalized intervention prediction"
+          },
+          {
+            "text": "<strong>Ethical challenges:</strong> Access inequality, overpopulation, resource allocation concerns"
+          },
+          {
+            "text": "<strong>Regulatory milestone:</strong> Efforts to recognize aging itself as a treatable condition"
+          },
+          {
+            "text": "<strong>TAME trial:</strong> Testing metformin to prove aging can be a therapeutic target"
+          },
+          {
+            "text": "Society must develop ethical frameworks to keep pace with scientific advances"
+          }
+        ],
+        "images": [
+          {
+            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Futuristic_Lab_AI-Assisted_Cellular_Reprogramming.jpg",
+            "alt": "A futuristic laboratory scene with AI interfaces, cellular reprogramming equipment, and a diverse group of researchers, with ethical consideration symbols overlaid"
+          }
+        ]
+      },
       "citationIds": []
     }
   ]
