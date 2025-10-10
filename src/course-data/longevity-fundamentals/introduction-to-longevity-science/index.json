@@ -5,316 +5,589 @@
       "slideNumber": 1,
       "audio": "/audio/longevity-fundamentals/introduction-to-longevity-science/slide-1.mp3",
       "content": {
-        "title": "Beyond the Limits: Introduction to Longevity Science",
+        "title": "Introduction to Longevity Science: Adding Life to Years",
         "points": [
           {
-            "text": "<strong>Core Question:</strong> What if aging isn't inevitable, but a controllable biological process?",
-            "subPoints": [
-              "Aging may be more like a disease we can understand, intervene in, and potentially reverse",
-              "Goal: Extend &quot;healthy human lifespan&quot; - adding life to years, not just years to life"
-            ]
-            
+            "text": "<strong>Central thesis:</strong> Aging is the single greatest risk factor for chronic disease and is a process we can influence"
           },
           {
-            "text": "<strong>Key Discovery:</strong>",
+            "text": "<strong>Key shift:</strong> From treating disease after it strikes to proactively promoting health and extending healthspan",
             "subPoints": [
-              "A single gene mutation (age-1) in C. elegans worms doubled their lifespan.",
-              "This proved aging is a regulated biological process, not just &quot;wear and tear.&quot;"
+              "Healthspan = period of life spent in good health"
             ]
           },
           {
-            "text": "Built on work by researchers like Cynthia Kenyon, David Sinclair, and Ana Maria Cuervo."
+            "text": "<strong>Geroscience hypothesis:</strong> Target fundamental aging biology to delay multiple age-related diseases simultaneously"
+          },
+          {
+            "text": "<strong>Course objectives:</strong> Understand aging biology, critically evaluate longevity claims, identify actionable strategies"
           }
         ],
         "images": [
           {
-            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Split_Timeline_Traditional_Aging_vs_Extended_Healthspan.jpg",
-            "alt": "A split timeline showing traditional aging curve versus potential extended healthspan curve, with molecular DNA helixes and cellular imagery in the background"
+            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Healthy_Aging_Infographic_Activities_vs._Disease_Focus.jpg",
+            "alt": "A vibrant infographic showing a person aging gracefully with multiple healthy activities (exercise, nutrition, sleep) surrounding them, contrasted with traditional disease treatment symbols being crossed out"
           }
         ]
       },
       "citationIds": [
-        "kenyon-radiolab-interview",
-        "c-elegans-drug-discovery-model",
-        "sinclair-lifespan-podcast",
-        "cuervo-geroscience-precision-geromedicine"
+        "1.1",
+        "1.2",
+        "1.3"
       ]
     },
     {
       "slideNumber": 2,
       "audio": "/audio/longevity-fundamentals/introduction-to-longevity-science/slide-2.mp3",
       "content": {
-        "title": "Healthspan vs. Lifespan: Living Better, Longer",
+        "title": "Healthspan vs. Lifespan: Redefining 'Successful Aging'",
         "points": [
           {
-            "text": "<strong>Lifespan:</strong> Total duration of life from birth to death"
+            "text": "<strong>Lifespan:</strong> Total number of years an individual lives"
           },
           {
-            "text": "<strong>Healthspan:</strong> Period of life spent in good health, free from chronic diseases"
+            "text": "<strong>Healthspan:</strong> Period of life spent in good health, free from chronic diseases and disabilities"
           },
           {
-            "text": "<strong>Compression of Morbidity:</strong> Delaying disease onset to compress illness into final years",
+            "text": "<strong>Compression of morbidity:</strong> James Fries' concept of shortening the period of sickness at the end of life",
             "subPoints": [
-              "WHO data shows significant gap between total life expectancy and healthy life expectancy",
-              "Focus should be extending healthy life, not just adding years of poor health",
-              "Healthy lifestyle may not extend maximum lifespan but significantly delays chronic disease"
+              "Goal: Live well for as long as possible, then have a relatively quick decline"
             ]
+          },
+          {
+            "text": "<strong>Critical insight:</strong> Interventions are most effective when started earlier rather than later"
           }
         ],
         "images": [
           {
-            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Health_vs_Age_Traditional_vs_Compressed_Morbidity.jpg",
-            "alt": "A graph showing two curves - one representing traditional aging with long period of declining health, and another showing compressed morbidity with extended healthspan and brief illness period"
+            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Lifespan_vs_Healthspan_Timelines.jpg",
+            "alt": "Two timeline graphs comparing lifespan vs healthspan - one showing a long life with extended period of illness, another showing compressed morbidity with brief decline at the end"
           }
         ]
       },
       "citationIds": [
-        "who-life-expectancy-data",
-        "fries-good-life-study",
-        "fries-compression-of-morbidity",
-        "olshansky-healthspan-extension"
+        "2.1",
+        "2.2",
+        "2.3"
       ]
     },
     {
       "slideNumber": 3,
       "audio": "/audio/longevity-fundamentals/introduction-to-longevity-science/slide-3.mp3",
       "content": {
-        "title": "The Hallmarks of Aging Framework",
+        "title": "A Paradigm Shift: Is Aging a Treatable Condition?",
         "points": [
           {
-            "text": "<strong>Original 2013 framework:</strong> Nine fundamental biological processes driving aging"
+            "text": "<strong>Traditional view:</strong> Aging is natural, inevitable, and untreatable decline"
           },
           {
-            "text": "<strong>Updated 2023 version:</strong> Expanded to twelve interconnected hallmarks",
+            "text": "<strong>Emerging view:</strong> Aging is a malleable process driven by specific biological mechanisms we can target",
             "subPoints": [
-              "Provides common language and research roadmap for longevity science"
+              "Championed by researchers like Nir Barzilai and David Sinclair"
             ]
           },
           {
-            "text": "<strong>Key insight:</strong> Hallmarks create cascading effects - one malfunction triggers others",
-            "subPoints": [
-              "Examples include genomic instability, telomere attrition, epigenetic alterations",
-              "Framework enables targeting root causes rather than just symptoms of aging"
-            ]
+            "text": "<strong>Regulatory challenge:</strong> FDA doesn't recognize aging as a disease, creating drug development obstacles"
+          },
+          {
+            "text": "<strong>TAME trial:</strong> Targeting Aging with Metformin study could provide proof-of-concept for aging as treatable condition"
           }
         ],
         "images": [
           {
-            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Network_of_the_Twelve_Hallmarks_of_Aging.jpg",
-            "alt": "A circular network diagram showing twelve interconnected nodes representing the hallmarks of aging, with arrows indicating their relationships and cascade effects"
+            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/From_Multi-Disease_Treatment_to_Root-Targeting_Intervention.jpg",
+            "alt": "A conceptual split-screen image showing the old paradigm (multiple separate disease treatments) transforming into the new paradigm (single intervention targeting root aging causes)"
           }
         ]
       },
       "citationIds": [
-        "blasco-hallmarks-of-aging",
-        "kroemer-hallmarks-of-aging",
-        "lopez-otin-hallmarks-2013",
-        "lopez-otin-hallmarks-2023"
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4"
       ]
     },
     {
       "slideNumber": 4,
       "audio": "/audio/longevity-fundamentals/introduction-to-longevity-science/slide-4.mp3",
       "content": {
-        "title": "Cellular Senescence: The &quot;Zombie Cell&quot; Problem",
+        "title": "The Hallmarks of Aging: Biological Drivers of the Aging Process",
         "points": [
           {
-            "text": "<strong>Senescent cells:</strong> Damaged cells that stop dividing but don't die",
+            "text": "<strong>Framework:</strong> Twelve recognized hallmarks organize complex aging biology into coherent research structure"
+          },
+          {
+            "text": "<strong>Telomere attrition:</strong> Protective chromosome caps shorten with each cell division",
             "subPoints": [
-              "These &quot;zombie cells&quot; secrete harmful inflammatory factors (SASP)",
-              "SASP damages surrounding healthy cells and tissues"
+              "Functions as molecular clock tracking cellular aging",
+              "Discovery earned Elizabeth Blackburn a Nobel Prize"
             ]
           },
           {
-            "text": "<strong>Breakthrough research:</strong> Removing senescent cells in mice prevented age-related diseases"
+            "text": "<strong>Cellular senescence:</strong> 'Zombie cells' stop dividing but secrete harmful inflammatory molecules",
+            "subPoints": [
+              "Senolytics drugs can selectively eliminate these cells"
+            ]
           },
           {
-            "text": "<strong>Senolytics:</strong> New class of drugs designed to eliminate senescent cells",
-            "subPoints": [
-              "Early human clinical trials already underway for senolytic treatments"
-            ]
+            "text": "<strong>Key insight:</strong> Hallmarks are interconnected, creating cascades of aging processes with multiple intervention points"
           }
         ],
         "images": [
           {
-            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Healthy_Cells_vs_Senescent_Cells_(SASP).jpg",
-            "alt": "A microscopic view showing normal healthy cells alongside larger, darker senescent cells releasing inflammatory molecules, with a clear visual contrast between the two cell types"
+            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Telomere_Shortening_and_Senescent_Cell_Inflammation.jpg",
+            "alt": "A detailed cellular biology diagram showing telomeres shortening over time and senescent zombie cells releasing inflammatory signals, with intervention points highlighted"
           }
         ]
       },
       "citationIds": [
-        "kirkland-cellular-senescence"
+        "4.1",
+        "4.2",
+        "4.3",
+        "4.4",
+        "4.5"
       ]
     },
     {
       "slideNumber": 5,
       "audio": "/audio/longevity-fundamentals/introduction-to-longevity-science/slide-5.mp3",
       "content": {
-        "title": "Mitochondrial Dysfunction: When Powerhouses Fail",
+        "title": "Theories of Aging: Why Does Biological Decline Happen?",
         "points": [
           {
-            "text": "Mitochondria are cellular &quot;powerhouses&quot; that produce ATP energy"
+            "text": "<strong>Programmed theories:</strong> Aging follows a biological timetable encoded in our genetics"
           },
           {
-            "text": "<strong>Aging effect:</strong> Mitochondria become less efficient, affecting all cellular functions",
+            "text": "<strong>Damage-based theories:</strong> Aging results from accumulation of internal and external damage over time",
             "subPoints": [
-              "Mitochondrial DNA is vulnerable to damage and mutations accumulate over time"
+              "Free Radical Theory: unstable molecules damage cellular components"
             ]
           },
           {
-            "text": "<strong>Mitophagy:</strong> Quality control process that recycles damaged mitochondria becomes impaired"
+            "text": "<strong>Hayflick Limit:</strong> Normal cells can only replicate 50-70 times before becoming senescent"
           },
           {
-            "text": "<strong>Promising interventions:</strong> Compounds like urolithin A improve mitochondrial function",
-            "subPoints": [
-              "Clinical trials show improved muscle strength and exercise performance"
-            ]
+            "text": "<strong>Modern synthesis:</strong> Aging involves both genetic programming and environmental factors, creating hope for intervention"
           }
         ],
         "images": [
           {
-            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Healthy_vs_Damaged_Mitochondria.jpg",
-            "alt": "A detailed cellular diagram showing healthy mitochondria versus aged, damaged mitochondria with visible structural deterioration and reduced energy output indicators"
+            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Genetic_Programming_vs_Damage_Accumulation_Models_of_Aging.jpg",
+            "alt": "A conceptual diagram showing DNA strands with genetic programming elements alongside cellular damage accumulation, illustrating the dual nature of aging theories"
           }
         ]
       },
-      "citationIds": []
+      "citationIds": [
+        "5.1",
+        "5.2",
+        "5.3"
+      ]
     },
     {
       "slideNumber": 6,
       "audio": "/audio/longevity-fundamentals/introduction-to-longevity-science/slide-6.mp3",
       "content": {
-        "title": "Biological vs. Chronological Age",
+        "title": "Evaluating the Evidence: Separating Hype from Hope",
         "points": [
           {
-            "text": "<strong>Chronological age:</strong> Years since birth - simple but not always meaningful for health"
+            "text": "<strong>Evidence hierarchy:</strong> From anecdotes at bottom to randomized controlled trials and meta-analyses at top"
           },
           {
-            "text": "<strong>Biological age:</strong> Measure of body's functional and cellular health status"
-          },
-          {
-            "text": "<strong>Epigenetic clocks:</strong> Measure DNA methylation patterns to predict biological age",
+            "text": "<strong>Longevity research challenge:</strong> Human lifespans are long, requiring decades-long studies",
             "subPoints": [
-              "Can accurately predict age within a few years across most tissues"
+              "Researchers often use surrogate endpoints like biomarkers"
             ]
           },
           {
-            "text": "<strong>Key insight:</strong> Differences between biological and chronological age predict health outcomes"
+            "text": "<strong>GRADE framework:</strong> Rates quality of evidence and strength of recommendations"
           },
           {
-            "text": "<strong>DunedinPACE:</strong> Measures pace of aging rather than just current biological age"
+            "text": "<strong>Critical question:</strong> Does this study show association or causation?",
+            "subPoints": [
+              "Correlation doesn't prove one thing causes another"
+            ]
           }
         ],
         "images": [
           {
-            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Chronological_vs_Biological_Age_Portrait_Comparison.jpg",
-            "alt": "Two people of the same chronological age side by side - one appearing much younger and healthier, the other showing signs of accelerated aging, with DNA methylation patterns shown below each"
+            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Hierarchy_of_Evidence_in_Longevity_Research.jpg",
+            "alt": "A pyramid diagram showing the hierarchy of evidence with RCTs at the top, surrounded by warning signs about hype and questionable claims in longevity research"
           }
         ]
       },
       "citationIds": [
-        "hannum-epigenetic-clocks"
+        "6.1",
+        "6.2",
+        "6.3"
       ]
     },
     {
       "slideNumber": 7,
       "audio": "/audio/longevity-fundamentals/introduction-to-longevity-science/slide-7.mp3",
       "content": {
-        "title": "Three Pillars of Longevity Intervention",
+        "title": "Personal Empowerment: The Four Pillars of Healthspan",
         "points": [
           {
-            "text": "<strong>Pillar 1 - Dietary Strategies:</strong> Caloric restriction, intermittent fasting, longevity diets"
+            "text": "<strong>Key insight:</strong> Lifestyle choices significantly influence aging trajectory - you can start today"
           },
           {
-            "text": "<strong>Pillar 2 - Exercise:</strong> HIIT for mitochondrial health, resistance training for muscle/bone"
+            "text": "<strong>Pillar 1 - Exercise:</strong> Most potent longevity 'drug' we have with consistently strong evidence"
           },
           {
-            "text": "<strong>Pillar 3 - Pharmacological:</strong> Drugs targeting aging pathways directly (rapamycin, metformin)",
-            "subPoints": [
-              "Caloric restriction shows consistent lifespan extension across species",
-              "Exercise affects molecular mechanisms: insulin sensitivity, inflammation, stress response"
-            ]
+            "text": "<strong>Pillar 2 - Nutritional biochemistry:</strong> How and when you eat affects cellular machinery"
           },
           {
-            "text": "<strong>Synergistic effects:</strong> Combining all three pillars may provide greater benefits than individual approaches"
+            "text": "<strong>Pillar 3 - Sleep:</strong> Brain cleans itself, hormones reset, body repairs damage"
+          },
+          {
+            "text": "<strong>Pillar 4 - Emotional health:</strong> Chronic stress accelerates biological aging in measurable ways"
+          },
+          {
+            "text": "<strong>Blue Zones evidence:</strong> Five regions with exceptional longevity share these lifestyle characteristics"
           }
         ],
         "images": [
           {
-            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Three_Pillars_of_Healthy_Longevity.jpg",
-            "alt": "Three interconnected pillars supporting a structure labeled &quot;Healthy Longevity&quot; - one showing healthy foods, one showing exercise equipment, and one showing pharmaceutical molecules"
+            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Four_Pillars_of_Longevity_with_Blue_Zones.jpg",
+            "alt": "Four interconnected pillars supporting a healthy, vibrant person, with Blue Zones locations marked on a world map in the background"
           }
         ]
       },
-      "citationIds": []
+      "citationIds": [
+        "7.1",
+        "7.2",
+        "7.3"
+      ]
     },
     {
       "slideNumber": 8,
       "audio": "/audio/longevity-fundamentals/introduction-to-longevity-science/slide-8.mp3",
       "content": {
-        "title": "Rapamycin and the mTOR Pathway",
+        "title": "Pillars in Practice: Exercise and Nutrition",
         "points": [
           {
-            "text": "<strong>mTOR:</strong> Central nutrient-sensing pathway regulating cellular growth and metabolism",
+            "text": "<strong>Exercise components:</strong> Zone 2 training for mitochondrial health, strength training for sarcopenia, stability/mobility work"
+          },
+          {
+            "text": "<strong>Cardiorespiratory fitness:</strong> VO2 max is one of strongest predictors of longevity",
             "subPoints": [
-              "When nutrients are abundant, mTOR promotes growth; when scarce, shifts to maintenance mode"
+              "Zone 2 training: moderate intensity where you can still hold conversation"
             ]
           },
           {
-            "text": "<strong>Problem:</strong> Chronic mTOR overactivation in aging accelerates age-related decline"
+            "text": "<strong>Nutrition evolution:</strong> Beyond calorie counting to dietary patterns affecting cellular aging"
           },
           {
-            "text": "<strong>Rapamycin:</strong> FDA-approved drug that inhibits mTOR and extends lifespan in multiple species",
-            "subPoints": [
-              "National Institute on Aging studies show robust lifespan extension in mice"
-            ]
+            "text": "<strong>Key principles:</strong> Adequate protein intake (especially after 40), meal timing aligned with circadian rhythms"
           },
           {
-            "text": "<strong>Current research:</strong> Dog Aging Project testing rapamycin in companion dogs"
+            "text": "<strong>Fasting research:</strong> Periodic controlled fasting promotes autophagy and cellular rejuvenation"
           }
         ],
         "images": [
           {
-            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/mTOR_Pathway_and_Rapamycin_Inhibition.jpg",
-            "alt": "A cellular pathway diagram showing mTOR at the center with arrows indicating nutrient inputs and growth/maintenance outputs, plus a molecular structure of rapamycin"
+            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Movement_and_Circadian_Nutrition.jpg",
+            "alt": "Split image showing people doing various exercises (cardio, strength, mobility) on one side and a circadian rhythm clock with healthy foods arranged around meal times on the other"
           }
         ]
       },
-      "citationIds": []
+      "citationIds": [
+        "8.1",
+        "8.2",
+        "8.3",
+        "8.4",
+        "8.5"
+      ]
     },
     {
       "slideNumber": 9,
       "audio": "/audio/longevity-fundamentals/introduction-to-longevity-science/slide-9.mp3",
       "content": {
-        "title": "The Future: Reprogramming, AI, and Ethics",
+        "title": "Pillars in Practice: Sleep and Emotional Health",
         "points": [
           {
-            "text": "<strong>Cellular reprogramming:</strong> Using Yamanaka factors to reverse cellular aging in place"
+            "text": "<strong>Sleep functions:</strong> Glymphatic system cleanses brain, hormones reset, immune system consolidates"
           },
           {
-            "text": "<strong>AI integration:</strong> Drug discovery, biomarker identification, personalized intervention prediction"
+            "text": "<strong>Growth hormone:</strong> Primarily released during deep sleep for tissue repair"
           },
           {
-            "text": "<strong>Ethical challenges:</strong> Access inequality, overpopulation, resource allocation concerns"
+            "text": "<strong>Stress and telomeres:</strong> Chronic psychological stress directly accelerates cellular aging",
+            "subPoints": [
+              "Elissa Epel's research shows stressed mothers had decade of additional aging"
+            ]
           },
           {
-            "text": "<strong>Regulatory milestone:</strong> Efforts to recognize aging itself as a treatable condition"
+            "text": "<strong>Hormetic vs toxic stress:</strong> Controlled challenges (exercise) slow aging, chronic stress accelerates it"
           },
           {
-            "text": "<strong>TAME trial:</strong> Testing metformin to prove aging can be a therapeutic target"
-          },
-          {
-            "text": "Society must develop ethical frameworks to keep pace with scientific advances"
+            "text": "<strong>Stress interventions:</strong> Mindfulness, social connection, and purpose can slow or reverse aging effects"
           }
         ],
         "images": [
           {
-            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Futuristic_Lab_AI-Assisted_Cellular_Reprogramming.jpg",
-            "alt": "A futuristic laboratory scene with AI interfaces, cellular reprogramming equipment, and a diverse group of researchers, with ethical consideration symbols overlaid"
+            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Sleep_Brain_Cleaning_and_Stress_Management.jpg",
+            "alt": "A peaceful nighttime scene showing brain cleaning processes during sleep, contrasted with stress management activities like meditation and social connection"
+          }
+        ]
+      },
+      "citationIds": [
+        "9.1",
+        "9.2",
+        "9.3"
+      ]
+    },
+    {
+      "slideNumber": 10,
+      "audio": "/audio/longevity-fundamentals/introduction-to-longevity-science/slide-10.mp3",
+      "content": {
+        "title": "The Future of Longevity: Diagnostics and Therapeutics",
+        "points": [
+          {
+            "text": "<strong>Epigenetic clocks:</strong> Measure biological age through DNA methylation patterns",
+            "subPoints": [
+              "GrimAge clock predicts lifespan better than chronological age"
+            ]
+          },
+          {
+            "text": "<strong>Wearable technology:</strong> Continuous monitoring of biomarkers like glucose and heart rate variability"
+          },
+          {
+            "text": "<strong>Promising drugs:</strong> Rapamycin extends lifespan in animals, senolytics clear zombie cells"
+          },
+          {
+            "text": "<strong>Biotechnology advances:</strong> Partial epigenetic reprogramming, stem cell therapies, tissue engineering"
+          },
+          {
+            "text": "<strong>TRIIM trial:</strong> Showed 2.5 years of epigenetic age reversal using common drugs"
+          },
+          {
+            "text": "<strong>Ethical considerations:</strong> Equity, access, and fundamental questions about human nature"
+          }
+        ],
+        "images": [
+          {
+            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Futuristic_Longevity_Lab_with_Ethical_Considerations.jpg",
+            "alt": "A futuristic medical laboratory with epigenetic clocks, wearable devices, and cellular reprogramming equipment, alongside ethical symbols representing societal considerations"
+          }
+        ]
+      },
+      "citationIds": [
+        "10.1",
+        "10.2",
+        "10.3"
+      ]
+    },
+    {
+      "slideNumber": 11,
+      "audio": "/audio/longevity-fundamentals/introduction-to-longevity-science/slide-11.mp3",
+      "content": {
+        "title": "Conclusion: Your First Steps on a Lifelong Journey",
+        "points": [
+          {
+            "text": "<strong>Primary goal:</strong> Healthspan over lifespan - adding life to years, not just years to life"
+          },
+          {
+            "text": "<strong>Key insight:</strong> Aging is modifiable - you have significant agency over your health trajectory"
+          },
+          {
+            "text": "<strong>Start now:</strong> Strongest evidence interventions are available today through the Four Pillars"
+          },
+          {
+            "text": "<strong>Critical thinking:</strong> Maintain healthy skepticism and evaluate evidence quality in rapidly evolving field"
+          },
+          {
+            "text": "<strong>Lifelong journey:</strong> Small, consistent changes compounded over time create enormous impacts"
+          },
+          {
+            "text": "<strong>Action step:</strong> Identify one small, sustainable change to implement this week"
+          }
+        ],
+        "images": [
+          {
+            "src": "/images/longevity-fundamentals/introduction-to-longevity-science/Path_to_Successful_Aging.jpg",
+            "alt": "A winding path stretching into the distance with small stepping stones labeled with healthy choices, leading toward a bright, vibrant horizon representing successful aging"
           }
         ]
       },
       "citationIds": []
     }
-  ]
+  ],
+  "citations": {
+    "1.1": {
+      "title": "American Federation for Aging Research: Homepage",
+      "url": "https://www.afar.org/",
+      "snippet": "Explore the different initiatives of the science AFAR supports and how it benefits aging populations."
+    },
+    "1.2": {
+      "title": "Development of clinical trials to extend healthy lifespan - PMC",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6428447/",
+      "snippet": "1). This is the premise underlying the geroscience hypothesis: by targeting aging we can prevent or delay multiple chronic diseases and death simultaneously."
+    },
+    "1.3": {
+      "title": "How can strength training build healthier bodies as we age ...",
+      "url": "https://www.nia.nih.gov/news/how-can-strength-training-build-healthier-bodies-we-age",
+      "snippet": "Jun 30, 2022 ... NIA scientist Eric Shiroma, Sc.D., has studied the science of exercise for years and is an advocate of activities that add an extra challenge in\u00a0..."
+    },
+    "2.1": {
+      "title": "Positive Aging: Redefining What Aging Successfully Means",
+      "url": "https://positivepsychology.com/positive-aging/",
+      "snippet": "Mar 24, 2025 ... The relationship between attitudes to aging and physical and mental health in older adults. ... Bulletin of the World Health Organization, 96(4),\u00a0..."
+    },
+    "2.2": {
+      "title": "Medical Enhancement and Posthumanity",
+      "url": "https://link.springer.com/content/pdf/10.1007/978-1-4020-8852-0.pdf",
+      "snippet": "Ruth Chadwick, Director, ESRC Centre for Economic & Social Aspects of Genomics,. Cardiff, UK. Henk ten Have, Director, UNESCO Division of Ethics of Science\u00a0..."
+    },
+    "2.3": {
+      "title": "Compressed Morbidity: Extending Healthy Years through Anti-Aging ...",
+      "url": "https://spencerinstitute.com/compressed-morbidity-extending-healthy-years-through-anti-aging-practices/",
+      "snippet": "Jun 23, 2023 ... Is Compressed Morbidity Redefining Aging and Health Expectations? In ... According to Fries, as life expectancy has increased, the goal\u00a0..."
+    },
+    "3.1": {
+      "title": "LENZ Therapeutics Announces US FDA Approval of VIZZ\u2122 for the ...",
+      "url": "https://ir.lenz-tx.com/news-events/press-releases/detail/39/lenz-therapeutics-announces-us-fda-approval-of-vizz-for-the-treatment-of-presbyopia",
+      "snippet": "Jul 31, 2025 ... VIZZ is the first and only aceclidine-based eye drop approved to improve near vision in adults with presbyopia, a condition impacting\u2026..."
+    },
+    "3.2": {
+      "title": "Dr David Sinclair - Expert in Aging, Epigenetics & Longevity ...",
+      "url": "https://mecenemarket.com/blogs/journal/dr-david-sinclair",
+      "snippet": "David Sinclair advocates for a paradigm shift in how society views aging \u2014 from a natural and inevitable process to a treatable condition. He promotes the\u00a0..."
+    },
+    "3.3": {
+      "title": "TAME - Targeting Aging with Metformin - American Federation for ...",
+      "url": "https://www.afar.org/tame-trial",
+      "snippet": "... condition. If aging is made an indication, the TAME Trial will mark a paradigm shift: from treating each age-related medical condition separately, to\u00a0..."
+    },
+    "3.4": {
+      "title": "Challenges in developing Geroscience trials | Nature Communications",
+      "url": "https://www.nature.com/articles/s41467-023-39786-7",
+      "snippet": "Aug 19, 2023 ... Geroscience is becoming a major hope for preventing age-related diseases and loss of function by targeting biological mechanisms of aging."
+    },
+    "4.1": {
+      "title": "Aging Hallmarks and Progression and Age-Related Diseases: A ...",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10767750/",
+      "snippet": "Cellular senescence: As mentioned earlier, cellular senescence is a status of permanent growth arrest that can contribute to the aging process. Stem cell\u00a0..."
+    },
+    "4.2": {
+      "title": "Biomedicines in Longevity and Aging the Quest to Resist Biological ...",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10962562/",
+      "snippet": "The heterogeneity of the aging process and the biological drivers involved ... Telomere attrition was first discovered by Nobel Laureates Elizabeth Blackburn,\u00a0..."
+    },
+    "4.3": {
+      "title": "Hallmarks of aging - FoundMyFitness Topic",
+      "url": "https://www.foundmyfitness.com/topics/hallmarks-of-aging",
+      "snippet": "Jun 6, 2025 ... Accelerated biological aging drives many of the chronic diseases common to industrialized nations, such as: Cardiovascular disease; Type 2\u00a0..."
+    },
+    "4.4": {
+      "title": "Hallmarks of aging: An expanding universe - ScienceDirect",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0092867422013770",
+      "snippet": "Jan 19, 2023 ... Indeed, disparity between biological and chronological age can reflect the efficacy of age-accelerating or -decelerating manipulations that\u00a0..."
+    },
+    "4.5": {
+      "title": "Translating the Biology of Aging into New Therapeutics for ...",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2274580724001523",
+      "snippet": "Senolytic drugs that clear senescent cells improve healthy aging, halt AD disease progression in animal models and are undergoing clinical testing. This review\u00a0..."
+    },
+    "5.1": {
+      "title": "Modern Biological Theories of Aging - PMC",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2995895/",
+      "snippet": "The immune system is programmed to decline over time, which leads to an ... Denham Harman (10, 11), proposes that superoxide and other free radicals\u00a0..."
+    },
+    "5.2": {
+      "title": "Modern Biological Theories of Aging - PMC",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2995895/",
+      "snippet": "... senescence being defined as the time when age-associated deficits are manifested. ... Hayflick theorized that the human cells ability to divide is limited\u00a0..."
+    },
+    "5.3": {
+      "title": "Modern Biological Theories of Aging - PMC",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2995895/",
+      "snippet": "Despite recent advances in molecular biology and genetics, the mysteries that control human lifespan are yet to be unraveled. Many theories, which fall into\u00a0..."
+    },
+    "6.1": {
+      "title": "Dietary Management of Heart Failure: DASH Diet and Precision ...",
+      "url": "https://www.mdpi.com/2072-6643/13/12/4424",
+      "snippet": "Heart failure (HF) is a major health care burden increasing in prevalence over time. Effective, evidence-based interventions for HF prevention and\u00a0..."
+    },
+    "6.2": {
+      "title": "Systematic review and meta-analysis of ivermectin for treatment of ...",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9308124/",
+      "snippet": "This review aims to summarize and critically appraise the evidence of randomized controlled trials (RCTs) of ivermectin, assessing clinical outcomes in COVID-\u00a0..."
+    },
+    "6.3": {
+      "title": "Artificial intelligence in orthopaedics: false hope or not? A narrative ...",
+      "url": "https://eor.bioscientifica.com/view/journals/eor/5/10/2058-5241.5.190092.xml",
+      "snippet": "Oct 26, 2020 ... ... evaluated for accuracy and efficacy in patients' care and doctors' workflows. The recent hype around AI triggered hope for development of\u00a0..."
+    },
+    "7.1": {
+      "title": "Lessons from the Blue Zones\u00ae - Business Engagement in Building ...",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK298903/",
+      "snippet": "The same nine lifestyle characteristics were identified across all five blue zone environments, which Buettner termed the \u201cPower 9 \u00ae \u201d principles."
+    },
+    "7.2": {
+      "title": "Blue Zones: Lessons From the World's Longest Lived - PMC",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6125071/",
+      "snippet": "What began as a National Geographic expedition, lead by Dan Buettner, to uncover the secrets of longevity, evolved into the discovery of the 5 places around\u00a0..."
+    },
+    "7.3": {
+      "title": "How you move defines how you live - Peter Attia",
+      "url": "https://peterattiamd.com/move-defines-live/",
+      "snippet": "Jan 22, 2017 ... My clinical interest is longevity, which is a function of lifespan and healthspan; In math parlance, longevity = f (lifespan, healthspan)."
+    },
+    "8.1": {
+      "title": "Lack of exercise is a major cause of chronic diseases - PMC",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4241367/",
+      "snippet": "A major predictor of functional capacity is maximal aerobic capacity (VO2max), which while directly testing cardiovascular fitness and integrity also represents\u00a0..."
+    },
+    "8.2": {
+      "title": "Nutrition and physical activity: An Obesity Medicine Association ...",
+      "url": "https://www.sciencedirect.com/science/article/pii/S266736812100005X",
+      "snippet": "This Obesity Medicine Association (OMA) Clinical Practice Statement (CPS) on Nutrition ... This approach is comprised of the four pillars of nutrition, physical\u00a0..."
+    },
+    "8.3": {
+      "title": "Healthy diet and weight, not smoking and regular exercise are ...",
+      "url": "https://valterlongo.com/healthy-diet-and-weight-not-smoking-and-regular-exercise-are-associated-with-a-12-14-years-longer-lifespan-and-an-over-65-reduction-in-the-risk-of-mortality-from-cancer-and-cardiovascular-disease/",
+      "snippet": "Still, the approach at the core of epidemiology is only one of five \u201cPillars\u201d proposed by Professor Longo. ... 017. Longo,Valter. The Longevity Diet, Penguin,\u00a0..."
+    },
+    "8.4": {
+      "title": "The Longevity Diet: Science-Backed Eating for a Longer, Healthier ...",
+      "url": "https://www.bodyspec.com/blog/post/the_longevity_diet_sciencebacked_eating_for_a_longer_healthier_life",
+      "snippet": "Jun 30, 2025 ... ... periodic fasting cycles to promote cellular regeneration and potentially extend both lifespan and healthspan. ... mimicking diet (FMD) cycles\u00a0..."
+    },
+    "8.5": {
+      "title": "As we are preparing to begin our lifestyle medicine program at ...",
+      "url": "https://www.facebook.com/drgarth/posts/as-we-are-preparing-to-begin-our-lifestyle-medicine-program-at-mission-i-have-be/2263761706978058/",
+      "snippet": "Mar 5, 2019 ... Since Sept 2018, I've read and adopted sleep hygiene tips from several books including Dr Satchin Panda The Circadian Code; working to get\u00a0..."
+    },
+    "9.1": {
+      "title": "Behavioral Therapies to Address Stress Eating in Patients with Obesity",
+      "url": "https://obesitymedicine.org/blog/behavioral-therapies-to-address-stress-eating-in-patients-with-obesity/",
+      "snippet": "May 9, 2023 ... ... mental health, nutrition, physical activity, sleep, and stress management. ... Elissa Epel: Control Stress for Healthy Eating, Metabolism & Aging."
+    },
+    "9.2": {
+      "title": "The geroscience agenda: Toxic stress, hormetic stress, and the rate ...",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1568163720303020",
+      "snippet": "Toxic stress accelerates biological aging processes whereas hormetic stress can slow aging, particularly due to the salutary actions during recovery from\u00a0..."
+    },
+    "9.3": {
+      "title": "#47 \u2013 Matthew Walker, Ph.D., on sleep \u2013 Part I of III: Dangers of poor ...",
+      "url": "https://peterattiamd.com/matthewwalker1/",
+      "snippet": "Apr 1, 2019 ... #47 \u2013 Matthew Walker, Ph.D., on sleep \u2013 Part I of III: Dangers of poor sleep, Alzheimer's risk, mental health, memory consolidation, and more."
+    },
+    "10.1": {
+      "title": "Reversal of epigenetic aging and immunosenescent trends in humans",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6826138/",
+      "snippet": "... reverse aspects of human aging, the TRIIM (Thymus Regeneration, Immunorestoration, and Insulin Mitigation) trial, in 2015\u20132017. The purpose of the TRIIM\u00a0..."
+    },
+    "10.2": {
+      "title": "How do biological age tests work and are they accurate or helpful ...",
+      "url": "https://www.npr.org/sections/health-shots/2024/02/05/1228753141/biological-age-test-dna",
+      "snippet": "Feb 5, 2024 ... The one I took is called GrimAge and it's used by many longevity researchers to study aging. ... Steve Horvath, the scientist who pioneered\u00a0..."
+    },
+    "10.3": {
+      "title": "The End of Aging\u2014And Extinction | George Church, Ph.D. on ...",
+      "url": "https://wyss.harvard.edu/media-post/the-end-of-aging-and-extinction-george-church-ph-d-on-longevity-dire-wolves-and-woolly-mammoths/",
+      "snippet": "on Longevity, Dire Wolves, and Woolly Mammoths ... D., joins host Dylan Bohbot to explore the frontiers of gene therapy, de-extinction, and the future of human\u00a0..."
+    }
+  }
 }

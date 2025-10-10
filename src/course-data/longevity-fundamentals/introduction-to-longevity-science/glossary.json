@@ -1,194 +1,219 @@
 {
   "glossary": [
     {
-      "term": "Longevity science",
-      "definition": "The field of research that studies the biological, environmental, and social factors that influence how long and how well humans live, with the goal of extending healthy life (healthspan) and understanding aging processes.",
-      "introduced_in": "Beyond the Limits: An Introduction to Longevity Science"
+      "term": "Aging",
+      "definition": "The progressive decline in physiological function and increased vulnerability to disease and death that occurs over time.",
+      "introduced_in": "Introduction to Longevity Science: Adding Life to Years"
     },
     {
-      "term": "Healthy human lifespan (Healthspan)",
-      "definition": "The period of life spent in good health, free from chronic diseases and disabling conditions \u2014 emphasizing quality of life rather than just length of life.",
-      "introduced_in": "Beyond the Limits: An Introduction to Longevity Science"
+      "term": "Healthspan",
+      "definition": "The period of life spent in good health, free from chronic disease and disability.",
+      "introduced_in": "Introduction to Longevity Science: Adding Life to Years"
     },
     {
       "term": "Lifespan",
-      "definition": "The total duration of an individual's life, from birth to death.",
-      "introduced_in": "Healthspan vs. Lifespan: The Goal of Living Better, Longer"
+      "definition": "The total number of years an individual lives (chronological length of life).",
+      "introduced_in": "Healthspan vs. Lifespan: Redefining 'Successful Aging'"
     },
     {
-      "term": "Compression of morbidity hypothesis",
-      "definition": "The idea that the period of illness and disability at the end of life can be shortened (compressed) if the onset of chronic disease is delayed, so people live healthier for longer and experience a shorter time of disability before death.",
-      "introduced_in": "Healthspan vs. Lifespan: The Goal of Living Better, Longer"
+      "term": "Compression of morbidity",
+      "definition": "The idea of shortening the period of illness and disability at the end of life so people live healthy lives for longer and experience a relatively brief decline.",
+      "introduced_in": "Healthspan vs. Lifespan: Redefining 'Successful Aging'"
     },
     {
-      "term": "Hallmarks of aging",
-      "definition": "A framework identifying core, interconnected biological processes that drive aging; originally nine hallmarks (2013) and later expanded to twelve, providing a roadmap for studying and targeting aging mechanisms.",
-      "introduced_in": "The 'Hallmarks of Aging': A Framework for Understanding Why We Age"
+      "term": "Geroscience hypothesis",
+      "definition": "The proposal that by targeting the fundamental biological processes of aging, we can delay or prevent multiple age-related diseases at once.",
+      "introduced_in": "Introduction to Longevity Science: Adding Life to Years"
     },
     {
-      "term": "Genomic instability",
-      "definition": "Accumulation of damage or mutations in DNA over time, which impairs cell function and contributes to aging and disease.",
-      "introduced_in": "The 'Hallmarks of Aging': A Framework for Understanding Why We Age"
+      "term": "Programmed theories of aging",
+      "definition": "Theories proposing that aging follows biological schedules or genetic programs that drive decline over time.",
+      "introduced_in": "Theories of Aging: Why Does Biological Decline Happen?"
+    },
+    {
+      "term": "Damage-based theories of aging",
+      "definition": "Theories suggesting aging results from accumulated molecular and cellular damage caused by internal and external factors.",
+      "introduced_in": "Theories of Aging: Why Does Biological Decline Happen?"
+    },
+    {
+      "term": "Free Radical Theory",
+      "definition": "A damage-based theory proposing that unstable molecules (free radicals) damage cells and contribute to aging; popularized by Denham Harman.",
+      "introduced_in": "Theories of Aging: Why Does Biological Decline Happen?"
+    },
+    {
+      "term": "Hayflick Limit",
+      "definition": "The observation that normal human cells have a finite number of divisions (typically ~50\u201370) before entering senescence.",
+      "introduced_in": "Theories of Aging: Why Does Biological Decline Happen?"
+    },
+    {
+      "term": "Hallmarks of Aging",
+      "definition": "A framework organizing the main cellular and molecular processes that contribute to aging, used to guide research and interventions.",
+      "introduced_in": "The Hallmarks of Aging: Biological Drivers of the Aging Process"
     },
     {
       "term": "Telomere attrition",
-      "definition": "The progressive shortening of protective chromosome end caps (telomeres) during cell division, which can lead to cellular dysfunction and senescence.",
-      "introduced_in": "The 'Hallmarks of Aging': A Framework for Understanding Why We Age"
-    },
-    {
-      "term": "Epigenetic alterations",
-      "definition": "Changes in gene regulation (like DNA methylation) that do not alter the DNA sequence but change how genes are expressed; these changes can accumulate with age and affect cell behavior.",
-      "introduced_in": "The 'Hallmarks of Aging': A Framework for Understanding Why We Age"
-    },
-    {
-      "term": "Loss of proteostasis",
-      "definition": "A decline in the cell\u2019s ability to produce, fold, and clear proteins correctly, leading to accumulation of damaged or misfolded proteins that impair cell function.",
-      "introduced_in": "The 'Hallmarks of Aging': A Framework for Understanding Why We Age"
+      "definition": "The progressive shortening of protective chromosome end caps (telomeres) with cell division, which can lead to cellular dysfunction when excessively short.",
+      "introduced_in": "The Hallmarks of Aging: Biological Drivers of the Aging Process"
     },
     {
       "term": "Cellular senescence",
-      "definition": "A state in which cells permanently stop dividing in response to damage or stress but remain metabolically active and often harmful to tissues.",
-      "introduced_in": "Hallmark in Focus: Cellular Senescence"
-    },
-    {
-      "term": "Senescence-associated secretory phenotype (SASP)",
-      "definition": "A collection of inflammatory cytokines, growth factors, and enzymes secreted by senescent cells that can damage neighboring cells and promote tissue dysfunction.",
-      "introduced_in": "Hallmark in Focus: Cellular Senescence"
+      "definition": "A state in which cells stop dividing and secrete inflammatory and tissue-damaging factors; these persistent 'senescent' cells accumulate with age.",
+      "introduced_in": "The Hallmarks of Aging: Biological Drivers of the Aging Process"
     },
     {
       "term": "Senolytics",
-      "definition": "A class of drugs designed to selectively eliminate senescent (zombie) cells to reduce their harmful effects and improve tissue function.",
-      "introduced_in": "Hallmark in Focus: Cellular Senescence"
+      "definition": "Drugs or compounds designed to selectively remove senescent (damaged, non-dividing) cells to improve tissue function.",
+      "introduced_in": "The Hallmarks of Aging: Biological Drivers of the Aging Process"
     },
     {
-      "term": "Mitochondrial dysfunction",
-      "definition": "A decline in the function of mitochondria (the cell's energy producers), including reduced ATP production and accumulation of mitochondrial damage, which contributes to aging.",
-      "introduced_in": "Hallmark in Focus: Mitochondrial Dysfunction"
+      "term": "Autophagy",
+      "definition": "A cellular 'clean-up' process where cells degrade and recycle damaged components to maintain homeostasis and promote health.",
+      "introduced_in": "Pillars in Practice: Exercise and Nutrition"
     },
     {
-      "term": "Mitochondrial DNA (mtDNA)",
-      "definition": "The small, separate genome located inside mitochondria that is especially vulnerable to damage and mutations, affecting mitochondrial function.",
-      "introduced_in": "Hallmark in Focus: Mitochondrial Dysfunction"
+      "term": "Hormesis",
+      "definition": "The concept that exposure to mild or intermittent stressors (e.g., exercise, fasting, cold) can stimulate beneficial adaptive responses.",
+      "introduced_in": "Pillars in Practice: Sleep and Emotional Health"
     },
     {
-      "term": "Reactive oxygen species (ROS)",
-      "definition": "Highly reactive molecules produced as byproducts of metabolism (often in mitochondria) that can damage DNA, proteins, and lipids when not properly controlled.",
-      "introduced_in": "Hallmark in Focus: Mitochondrial Dysfunction"
-    },
-    {
-      "term": "Mitophagy",
-      "definition": "A selective form of autophagy that removes damaged or dysfunctional mitochondria, helping maintain cellular health and energy production.",
-      "introduced_in": "Hallmark in Focus: Mitochondrial Dysfunction"
-    },
-    {
-      "term": "Biological age",
-      "definition": "An estimate of an individual's physiological or cellular condition relative to their chronological age; reflects how well the body is functioning and can differ from the number of years lived.",
-      "introduced_in": "Measuring Age: Biological vs. Chronological Clocks"
-    },
-    {
-      "term": "Chronological age",
-      "definition": "The actual time that has passed since a person was born, usually measured in years.",
-      "introduced_in": "Measuring Age: Biological vs. Chronological Clocks"
-    },
-    {
-      "term": "Epigenetic clocks",
-      "definition": "Biomarkers that estimate biological age by measuring DNA methylation patterns at specific sites in the genome; can predict age and health-related outcomes.",
-      "introduced_in": "Measuring Age: Biological vs. Chronological Clocks"
-    },
-    {
-      "term": "Telomere length (as a biomarker)",
-      "definition": "A measurement sometimes used to estimate cellular aging based on the length of telomeres, though its relationship to overall aging is complex.",
-      "introduced_in": "Measuring Age: Biological vs. Chronological Clocks"
-    },
-    {
-      "term": "Proteomic and transcriptomic clocks",
-      "definition": "Biomarkers that estimate biological age from patterns of proteins (proteomics) or gene expression (transcriptomics) in tissues or blood.",
-      "introduced_in": "Measuring Age: Biological vs. Chronological Clocks"
-    },
-    {
-      "term": "DunedinPACE",
-      "definition": "A biomarker derived from the Dunedin Study that measures the pace of aging \u2014 how quickly an individual is aging relative to peers \u2014 rather than a single-point biological age.",
-      "introduced_in": "Measuring Age: Biological vs. Chronological Clocks"
-    },
-    {
-      "term": "Caloric restriction",
-      "definition": "A dietary intervention that reduces calorie intake without malnutrition and has been shown across species to improve healthspan and, in some cases, lifespan.",
-      "introduced_in": "Pillars of Intervention: Diet, Exercise, and Pharmacology"
-    },
-    {
-      "term": "Fasting-mimicking diet",
-      "definition": "A dietary approach designed to produce some of the beneficial effects of fasting (such as metabolic changes) while still providing some nutrients, often used in longevity research.",
-      "introduced_in": "Pillars of Intervention: Diet, Exercise, and Pharmacology"
-    },
-    {
-      "term": "Resistance training",
-      "definition": "Exercise that uses resistance (weights or body weight) to build muscle strength and mass, important for maintaining function with age.",
-      "introduced_in": "Pillars of Intervention: Diet, Exercise, and Pharmacology"
-    },
-    {
-      "term": "High-intensity interval training (HIIT)",
-      "definition": "A form of exercise involving short bursts of intense activity alternated with recovery periods, shown to benefit cardiovascular and mitochondrial health.",
-      "introduced_in": "Pillars of Intervention: Diet, Exercise, and Pharmacology"
-    },
-    {
-      "term": "Pharmacological interventions",
-      "definition": "Drugs or molecules developed to target specific biological pathways of aging with the aim of improving healthspan or delaying multiple age-related diseases.",
-      "introduced_in": "Pillars of Intervention: Diet, Exercise, and Pharmacology"
-    },
-    {
-      "term": "mTOR (mechanistic Target of Rapamycin)",
-      "definition": "A central cellular nutrient-sensing pathway that regulates growth, protein synthesis, and metabolism; overactivation in adulthood is linked to aging and age-related disease.",
-      "introduced_in": "Intervention Spotlight: Rapamycin and the mTOR Pathway"
+      "term": "mTOR",
+      "definition": "A key cellular signaling pathway (mechanistic Target Of Rapamycin) that regulates growth, metabolism, and aging; modulating mTOR can affect longevity.",
+      "introduced_in": "The Future of Longevity: Diagnostics and Therapeutics"
     },
     {
       "term": "Rapamycin",
-      "definition": "An FDA-approved drug originally used as an immunosuppressant that inhibits mTOR and has been shown to extend lifespan and improve health in model organisms; being studied for anti-aging uses.",
-      "introduced_in": "Intervention Spotlight: Rapamycin and the mTOR Pathway"
+      "definition": "A drug originally used as an immunosuppressant that inhibits mTOR and has been shown to extend lifespan in multiple animal species.",
+      "introduced_in": "The Future of Longevity: Diagnostics and Therapeutics"
     },
     {
-      "term": "Interventions Testing Program (ITP)",
-      "definition": "A multi-institutional National Institute on Aging program that rigorously tests candidate lifespan-extending compounds in mice under standardized conditions.",
-      "introduced_in": "Intervention Spotlight: Rapamycin and the mTOR Pathway"
-    },
-    {
-      "term": "Dog Aging Project",
-      "definition": "A research project studying aging in companion dogs \u2014 including testing interventions like rapamycin \u2014 to gain translational insights relevant to humans.",
-      "introduced_in": "Intervention Spotlight: Rapamycin and the mTOR Pathway"
-    },
-    {
-      "term": "Cellular reprogramming",
-      "definition": "The process of converting differentiated adult cells back to a more youthful, pluripotent state using specific factors (Yamanaka factors), with potential to rejuvenate tissues.",
-      "introduced_in": "The Future of Longevity: Reprogramming, AI, and Ethics"
-    },
-    {
-      "term": "Yamanaka factors",
-      "definition": "A set of four transcription factors discovered by Shinya Yamanaka that can reprogram adult cells to induced pluripotent stem cells (iPSCs).",
-      "introduced_in": "The Future of Longevity: Reprogramming, AI, and Ethics"
-    },
-    {
-      "term": "Induced pluripotent stem cells (iPSCs)",
-      "definition": "Adult cells that have been reprogrammed into an embryonic-like, pluripotent state, capable of differentiating into many cell types.",
-      "introduced_in": "The Future of Longevity: Reprogramming, AI, and Ethics"
-    },
-    {
-      "term": "Partial reprogramming",
-      "definition": "A technique that applies reprogramming factors for limited periods to rejuvenate cells or tissues without fully reverting them to pluripotency, aiming to avoid loss of cell identity or cancer risk.",
-      "introduced_in": "The Future of Longevity: Reprogramming, AI, and Ethics"
-    },
-    {
-      "term": "Artificial intelligence (AI) in longevity",
-      "definition": "Use of machine learning and computational methods to analyze large biological datasets, discover potential anti-aging compounds, identify biomarkers, and personalize interventions.",
-      "introduced_in": "The Future of Longevity: Reprogramming, AI, and Ethics"
+      "term": "Metformin",
+      "definition": "A widely used diabetes medication being tested (e.g., in the TAME trial) for potential effects on aging and delaying age-related diseases.",
+      "introduced_in": "A Paradigm Shift: Is Aging a Treatable Condition?"
     },
     {
       "term": "TAME trial (Targeting Aging with Metformin)",
-      "definition": "A clinical effort designed to test whether metformin can delay the onset of multiple age-related diseases and help establish aging as a treatable condition for regulatory purposes.",
-      "introduced_in": "The Future of Longevity: Reprogramming, AI, and Ethics"
+      "definition": "A clinical study designed to test whether metformin can slow the aging process and delay the onset of multiple age-related diseases.",
+      "introduced_in": "A Paradigm Shift: Is Aging a Treatable Condition?"
     },
     {
-      "term": "Ethical and societal considerations",
-      "definition": "Questions and concerns about the distribution, access, fairness, and broader social impacts of longevity interventions (e.g., inequality, resource use, and defining aging as a disease).",
-      "introduced_in": "The Future of Longevity: Reprogramming, AI, and Ethics"
+      "term": "Epigenetic clocks",
+      "definition": "Biomarker-based assessments (often using DNA methylation patterns) that estimate biological age and can predict healthspan and lifespan better than chronological age alone.",
+      "introduced_in": "The Future of Longevity: Diagnostics and Therapeutics"
+    },
+    {
+      "term": "DNA methylation",
+      "definition": "A chemical modification of DNA that can regulate gene expression and changes predictably with age; used in epigenetic clocks.",
+      "introduced_in": "The Future of Longevity: Diagnostics and Therapeutics"
+    },
+    {
+      "term": "GrimAge",
+      "definition": "An advanced epigenetic clock model that uses DNA methylation patterns to predict lifespan and disease risk more accurately than chronological age.",
+      "introduced_in": "The Future of Longevity: Diagnostics and Therapeutics"
+    },
+    {
+      "term": "TRIIM trial",
+      "definition": "A small study (Thymus Regeneration, Immunorestoration, and Insulin Mitigation) reporting a reversal in epigenetic age after a drug cocktail; proof-of-concept but with limitations.",
+      "introduced_in": "The Future of Longevity: Diagnostics and Therapeutics"
+    },
+    {
+      "term": "Senescent 'zombie' cells",
+      "definition": "Informal term for senescent cells that stop dividing but remain metabolically active and secrete harmful inflammatory factors.",
+      "introduced_in": "The Hallmarks of Aging: Biological Drivers of the Aging Process"
+    },
+    {
+      "term": "Sarcopenia",
+      "definition": "Age-related loss of muscle mass and strength that contributes to frailty and reduced independence.",
+      "introduced_in": "Pillars in Practice: Exercise and Nutrition"
+    },
+    {
+      "term": "VO2 max",
+      "definition": "A measurement of maximal oxygen uptake during intense exercise; a key indicator of cardiorespiratory fitness and predictor of longevity.",
+      "introduced_in": "Pillars in Practice: Exercise and Nutrition"
+    },
+    {
+      "term": "Zone 2 training",
+      "definition": "Moderate-intensity aerobic exercise performed at an effort level that improves mitochondrial function and can be sustained while still carrying on a conversation.",
+      "introduced_in": "Pillars in Practice: Exercise and Nutrition"
+    },
+    {
+      "term": "Fasting-mimicking diet",
+      "definition": "A dietary protocol that recreates some biological effects of fasting (like inducing autophagy) while allowing limited nutrient intake; researched by Valter Longo.",
+      "introduced_in": "Pillars in Practice: Exercise and Nutrition"
+    },
+    {
+      "term": "Circadian rhythms",
+      "definition": "The body's roughly 24-hour biological cycles that regulate sleep, metabolism, hormone release, and other physiological processes.",
+      "introduced_in": "Pillars in Practice: Exercise and Nutrition"
+    },
+    {
+      "term": "Glymphatic system",
+      "definition": "A brain clearance system active during sleep that helps remove metabolic waste products, including proteins linked to neurodegeneration.",
+      "introduced_in": "Pillars in Practice: Sleep and Emotional Health"
+    },
+    {
+      "term": "Telomeres",
+      "definition": "Repeating DNA-protein structures at the ends of chromosomes that protect genetic material and progressively shorten with cell division.",
+      "introduced_in": "The Hallmarks of Aging: Biological Drivers of the Aging Process"
+    },
+    {
+      "term": "Epigenetic reprogramming",
+      "definition": "A process that alters the epigenetic state of cells (e.g., DNA methylation) to a younger configuration, potentially reversing aspects of cellular aging.",
+      "introduced_in": "The Future of Longevity: Diagnostics and Therapeutics"
+    },
+    {
+      "term": "Continuous glucose monitor (CGM)",
+      "definition": "A wearable device that measures glucose levels in real time to help track metabolic responses to food and activity.",
+      "introduced_in": "The Future of Longevity: Diagnostics and Therapeutics"
+    },
+    {
+      "term": "Randomized controlled trial (RCT)",
+      "definition": "An experimental study design in which participants are randomly assigned to intervention or control groups, considered the gold standard for testing causality.",
+      "introduced_in": "Evaluating the Evidence: Separating Hype from Hope"
+    },
+    {
+      "term": "Hierarchy of evidence",
+      "definition": "A ranking system for types of scientific evidence (from anecdotes up to randomized trials and meta-analyses) used to judge how reliable study findings are.",
+      "introduced_in": "Evaluating the Evidence: Separating Hype from Hope"
+    },
+    {
+      "term": "GRADE",
+      "definition": "A framework (Grading of Recommendations, Assessment, Development, and Evaluations) for rating quality of evidence and strength of recommendations in healthcare.",
+      "introduced_in": "Evaluating the Evidence: Separating Hype from Hope"
+    },
+    {
+      "term": "Observational study",
+      "definition": "A study where researchers observe outcomes without intervening; useful for identifying associations but limited in proving causation.",
+      "introduced_in": "Evaluating the Evidence: Separating Hype from Hope"
+    },
+    {
+      "term": "Surrogate endpoint",
+      "definition": "A biomarker or intermediate outcome used in studies as a substitute for a direct measure like lifespan, when the latter is impractical to measure.",
+      "introduced_in": "Evaluating the Evidence: Separating Hype from Hope"
+    },
+    {
+      "term": "Blue Zones",
+      "definition": "Regions identified by researchers where people live longer, healthier lives; studies of these populations highlight lifestyle patterns linked to longevity.",
+      "introduced_in": "Personal Empowerment: The Four Pillars of Healthspan"
+    },
+    {
+      "term": "Four Pillars of Healthspan",
+      "definition": "A practical framework emphasizing exercise, nutritional biochemistry (diet and meal timing), sleep, and emotional health as foundational longevity interventions.",
+      "introduced_in": "Personal Empowerment: The Four Pillars of Healthspan"
+    },
+    {
+      "term": "Emotional health (in longevity context)",
+      "definition": "Mental and social well-being\u2014including stress management, social connection, and sense of purpose\u2014that affects biological aging and disease risk.",
+      "introduced_in": "Pillars in Practice: Sleep and Emotional Health"
+    },
+    {
+      "term": "Telomere shortening (accelerated)",
+      "definition": "Faster-than-expected loss of telomere length linked to chronic stress, poor lifestyle, or disease and associated with increased biological age.",
+      "introduced_in": "Pillars in Practice: Sleep and Emotional Health"
+    },
+    {
+      "term": "Thymus regeneration",
+      "definition": "Efforts to restore thymus function (important for immune system aging), as studied in interventions like the TRIIM trial.",
+      "introduced_in": "The Future of Longevity: Diagnostics and Therapeutics"
     }
   ]
 }

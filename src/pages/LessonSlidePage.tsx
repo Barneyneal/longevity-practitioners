@@ -24,6 +24,13 @@ const citationVariants = {
     },
 };
 
+interface Citation {
+    id: string;
+    link: string;
+    title: string;
+    snippet: string;
+}
+
 interface Manifest {
     lessonTitle: string;
     slides: { 
@@ -32,6 +39,13 @@ interface Manifest {
         audio: string;
         content: any; // Add content to the slide type
     }[];
+    citations: {
+        [key: string]: {
+            title: string;
+            url: string;
+            snippet: string;
+        };
+    };
 }
 
 const LessonSlidePage: React.FC = () => {
@@ -39,8 +53,7 @@ const LessonSlidePage: React.FC = () => {
     const navigate = useNavigate();
 
     const [manifest, setManifest] = useState<Manifest | null>(null);
-    const [cumulativeCitations, setCumulativeCitations] = useState<any[]>([]);
-    const [allCitations, setAllCitations] = useState<any[]>([]);
+    const [cumulativeCitations, setCumulativeCitations] = useState<Citation[]>([]);
     const [isLoading, setIsLoading] = useState(true);
 
     const currentSlideIndex = useMemo(() => {
@@ -55,15 +68,10 @@ const LessonSlidePage: React.FC = () => {
                 try {
                     setIsLoading(true);
                     const manifestPath = `/src/course-data/${moduleSlug}/${lessonSlug}/index.json`;
-                    const citationsPath = `/src/course-data/${moduleSlug}/${lessonSlug}/citations.json`;
 
                     if (!manifestImports[manifestPath]) throw new Error(`Manifest file not found at ${manifestPath}`);
                     const manifestModule = await manifestImports[manifestPath]();
                     setManifest(manifestModule.default as Manifest);
-                    
-                    if (!manifestImports[citationsPath]) throw new Error(`Citations file not found at ${citationsPath}`);
-                    const citationsModule = await manifestImports[citationsPath]();
-                    setAllCitations(citationsModule.default);
                     setIsLoading(false);
 
                 } catch (error) {
@@ -88,7 +96,7 @@ const LessonSlidePage: React.FC = () => {
     // Effect for updating cumulative citations based on current slide
     useEffect(() => {
         const loadCitations = () => {
-            if (manifest) {
+            if (manifest?.citations) {
                 const citationIdsToShow = new Set<string>();
                 for (let i = 0; i <= currentSlideIndex; i++) {
                     const slideManifest = manifest.slides.find(s => s.slideNumber === i + 1);
@@ -96,11 +104,21 @@ const LessonSlidePage: React.FC = () => {
                         slideManifest.citationIds.forEach(id => citationIdsToShow.add(id));
                     }
                 }
-                setCumulativeCitations(allCitations.filter(citation => citationIdsToShow.has(citation.id)));
+                
+                const newCumulativeCitations = Array.from(citationIdsToShow).map(id => {
+                    const citationData = manifest.citations[id];
+                    return {
+                        id: id,
+                        link: citationData.url,
+                        title: citationData.title,
+                        snippet: citationData.snippet,
+                    };
+                });
+                setCumulativeCitations(newCumulativeCitations);
             }
         };
         loadCitations();
-    }, [manifest, currentSlideIndex, allCitations]);
+    }, [manifest, currentSlideIndex]);
  
     const lessonTitle = useMemo(() => manifest?.lessonTitle || '', [manifest]);
     const totalSlides = useMemo(() => manifest?.slides.length || 0, [manifest]);
