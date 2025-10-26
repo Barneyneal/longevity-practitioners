@@ -39,8 +39,12 @@ export default defineConfig(({ mode }) => {
         rewrite: (path: string) => path.replace(/^\/proxy\/cardiac/, cardiacUrl.pathname),
       };
     }
-    // Proxy local API routes when running Vercel dev on port 3000
-    server.proxy['/api'] = { target: 'http://localhost:3000', changeOrigin: true };
+    // In development, forward API requests to the Firebase Functions emulator
+    server.proxy['/api'] = {
+      target: 'http://localhost:5001',
+      changeOrigin: true,
+      rewrite: (path) => path.replace(/^\/api/, '/longevity-practitioners/us-central1/api'),
+    };
   }
 
   return {

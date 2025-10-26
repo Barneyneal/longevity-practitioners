@@ -8,7 +8,7 @@ import DashboardPage from './pages/DashboardPage';
 import ResultsPage from './pages/ResultsPage/ResultsPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
-import ResetPasswordPage from './pages/ResetPasswordPage';
+// import ResetPasswordPage from './pages/ResetPasswordPage';
 import OnboardingPage from "./pages/Onboarding/OnboardingPage";
 import MasteringHealthspanFrameworkPage from "./pages/MasteringHealthspanFramework/MasteringHealthspanFrameworkPage";
 import LessonSlidePage from './pages/LessonSlidePage';
@@ -38,22 +38,22 @@ function App() {
         {/* Main application routes with shared layout */}
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomePage />} />
-          <Route path="dashboard" element={<DashboardPage />} />
+          <Route path="dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
           <Route path="onboarding" element={<OnboardingPage />} />
           <Route path="results/:submissionId" element={<ResultsPage />} />
-          <Route path="mastering-longevity" element={<MasteringHealthspanFrameworkPage />} />
-          <Route path="course/:moduleSlug/:lessonSlug/quiz" element={<LessonQuizPage />} />
+          <Route path="mastering-longevity" element={<ProtectedRoute><MasteringHealthspanFrameworkPage /></ProtectedRoute>} />
+          <Route path="course/:moduleSlug/:lessonSlug/quiz" element={<ProtectedRoute><LessonQuizPage /></ProtectedRoute>} />
         </Route>
 
         {/* Full screen lesson page route */}
-        <Route path="/course/:moduleSlug/:lessonSlug" element={<Navigate to="1" replace />} />
-        <Route path="/course/:moduleSlug/:lessonSlug/:slideNumber" element={<LessonSlidePage />} />
+        <Route path="/course/:moduleSlug/:lessonSlug" element={<ProtectedRoute><LessonSlidePage /></ProtectedRoute>} />
+        <Route path="/course/:moduleSlug/:lessonSlug/:slideNumber" element={<ProtectedRoute><LessonSlidePage /></ProtectedRoute>} />
 
         {/* Auth routes without main layout */}
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-        <Route path="/reset-password" element={<ResetPasswordPage />} />
+        {/* <Route path="/reset-password" element={<ResetPasswordPage />} /> */}
       </Routes>
     </>
   );

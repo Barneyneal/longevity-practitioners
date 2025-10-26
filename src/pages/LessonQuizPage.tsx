@@ -30,7 +30,7 @@ const LessonQuizPage: React.FC = () => {
                     // @ts-ignore
                     const loadedQuestions = questionsModule.questions as QuestionType[];
                     setQuestions(loadedQuestions);
-                    startQuiz(quizId, loadedQuestions);
+                    startQuiz(quizId, loadedQuestions, 0);
 
                 } catch (error) {
                     console.error("Failed to load quiz data:", error);

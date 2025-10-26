@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Toaster, toast } from 'react-hot-toast';
+import { sendPasswordResetEmail } from 'firebase/auth';
+import { auth } from '../firebase';
 
 const ForgotPasswordPage: React.FC = () => {
     const [email, setEmail] = useState('');
@@ -15,21 +17,16 @@ const ForgotPasswordPage: React.FC = () => {
         setMessage('');
 
         try {
-            const apiUrl = import.meta.env.VITE_APP_URL || '';
-            const response = await fetch(`${apiUrl}/api/auth/forgot-password`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email }),
-            });
-            const data = await response.json();
-            if (!response.ok) {
-                throw new Error(data.message || 'Something went wrong');
-            }
-            setMessage(data.message);
-            toast.success(data.message);
+            await sendPasswordResetEmail(auth, email);
+            const successMessage = 'If an account with that email exists, a password reset link has been sent.';
+            setMessage(successMessage);
+            toast.success(successMessage);
         } catch (err: any) {
-            setError(err.message);
-            toast.error(err.message);
+            // Firebase automatically handles the case where the email doesn't exist
+            // to prevent user enumeration attacks. We can show a generic message.
+            const errorMessage = 'An error occurred. Please try again.';
+            setError(errorMessage);
+            toast.error(errorMessage);
         } finally {
             setLoading(false);
         }

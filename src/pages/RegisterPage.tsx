@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { auth } from '../firebase'; // Import the auth instance
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'; // Import Firebase auth functions
 
 const RegisterPage: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -14,22 +16,25 @@ const RegisterPage: React.FC = () => {
     setError('');
 
     try {
-      const response = await fetch('/api/auth/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password, firstName, lastName }),
-      });
+      // Create user with email and password
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Failed to register');
-      }
+      // Add first and last name to the user's profile
+      await updateProfile(user, {
+        displayName: `${firstName} ${lastName}`.trim(),
+      });
+      
+      console.log('User registered successfully and profile updated:', user);
 
       navigate('/login');
     } catch (err: any) {
-      setError(err.message);
+      // Handle Firebase errors (e.g., email-already-in-use)
+      if (err.code === 'auth/email-already-in-use') {
+        setError('This email address is already in use.');
+      } else {
+        setError(err.message);
+      }
     }
   };
 

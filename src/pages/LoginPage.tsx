@@ -18,13 +18,22 @@ const LoginPage: React.FC = () => {
         setError('');
         try {
             await login(email, password);
-            toast.success('Login successful!');
+            // The onAuthStateChanged listener in the store will handle navigation
+            // after the user state is fully updated.
+            // We can remove the manual navigation from here.
             setTimeout(() => {
                 navigate('/dashboard');
             }, 1500);
-        } catch (err) {
-            setError('Invalid email or password.');
-            toast.error('Invalid email or password.');
+        } catch (err: any) {
+            // Provide more specific error messages for common Firebase auth errors
+            let errorMessage = 'Invalid email or password.';
+            if (err.code === 'auth/user-not-found' || err.code === 'auth/wrong-password') {
+                errorMessage = 'Invalid email or password.';
+            } else if (err.code === 'auth/too-many-requests') {
+                errorMessage = 'Too many login attempts. Please try again later.';
+            }
+            setError(errorMessage);
+            toast.error(errorMessage);
             setIsLoading(false);
         }
     };

@@ -3,6 +3,7 @@ import useQuizStore from '../store';
 import { motion } from 'framer-motion';
 import AnimatedText from './AnimatedText';
 import InlineSpinner from './InlineSpinner';
+import { useNavigate } from 'react-router-dom';
 
 interface SectionTitlePageProps {
   quizId: string;
@@ -13,8 +14,8 @@ interface SectionTitlePageProps {
 }
 
 const SectionTitlePage: React.FC<SectionTitlePageProps> = ({ quizId, text, subtext, citation, submitOnContinue }) => {
-  const { nextQuestion, previousQuestion, submitQuiz } = useQuizStore();
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { nextQuestion, submitQuiz } = useQuizStore();
+  const navigate = useNavigate();
 
   const subtextDelay = 1;
   const subtextStagger = 0.0625;
@@ -27,85 +28,48 @@ const SectionTitlePage: React.FC<SectionTitlePageProps> = ({ quizId, text, subte
     ? subtextDelay + (subtextWordCount * subtextStagger) + subtextDuration - 0.3
     : subtextDelay;
 
+  const handleContinue = () => {
+    if (submitOnContinue) {
+      submitQuiz(quizId).catch(err => {
+        console.error("Background quiz submission failed:", err);
+      });
+      navigate('/mastering-longevity');
+    } else {
+      nextQuestion(quizId);
+    }
+  };
+
   return (
-    <div className="flex flex-col h-full p-6 md:px-8 pt-8 md:pb-16">
-      <div className="flex-grow">
+    <div className="flex-grow flex flex-col h-full p-6 md:px-8 md:pb-16 text-center justify-center">
+      <div className="flex-grow flex flex-col justify-center">
         <AnimatedText
           text={text}
           el="h1"
-          className="text-[34px] md:text-5xl font-light mb-4 md:mb-8"
+          className="text-[34px] md:text-4xl font-light mb-4"
           animationType="word"
-          style={{ lineHeight: '1.1em', paddingBottom: '20px' }}
+          style={{ lineHeight: '1.2em' }}
         />
-        <AnimatedText
-          text={subtext || ''}
-          el="p"
-          className="text-gray-600"
-          animationType="word"
-          delay={1}
-          stagger={0.0625}
-          duration={0.375}
-        />
-        {citation && (
-            <AnimatedText
-                text={citation}
-                el="p"
-                className="text-gray-500 text-sm italic mt-4"
-                animationType="word"
-                delay={citationDelay}
-                stagger={0.0625}
-                duration={0.375}
-            />
+        {subtext && (
+          <AnimatedText
+            text={subtext}
+            el="p"
+            className="text-gray-600 mt-4"
+            animationType="word"
+            delay={1}
+            stagger={0.0625}
+            duration={0.375}
+          />
         )}
+        {citation && <p className="text-sm text-gray-400 mt-4">{citation}</p>}
       </div>
-      <div className="flex justify-between items-center mt-auto pt-6">
-        <button onClick={() => previousQuestion(quizId)} className="flex items-center justify-center h-12 w-12 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors duration-300">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 text-gray-600"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-        </button>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1 }}
-          className="flex-grow ml-4"
+      <div className="mt-auto pt-6 w-full">
+        <button
+          type="button"
+          onClick={handleContinue}
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full transition-colors duration-300"
         >
-          <button
-            onClick={async () => {
-              if (submitOnContinue) {
-                setIsSubmitting(true);
-                await submitQuiz(quizId);
-                // No need to set isSubmitting back to false as we are navigating away
-              } else {
-                nextQuestion(quizId);
-              }
-            }}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 flex justify-center items-center"
-            disabled={isSubmitting}
-          >
-            <span className="relative">
-              <span className={isSubmitting ? 'text-transparent' : ''}>
-                {submitOnContinue ? 'Submit' : 'Continue'}
-              </span>
-              {isSubmitting && (
-                <span className="absolute inset-0 flex items-center justify-center">
-                  <InlineSpinner />
-                </span>
-              )}
-            </span>
-          </button>
-        </motion.div>
+          {submitOnContinue ? 'Submit' : 'Continue'}
+        </button>
       </div>
     </div>
   );

@@ -53,7 +53,7 @@ const LessonSlidePage: React.FC = () => {
     const navigate = useNavigate();
 
     const [manifest, setManifest] = useState<Manifest | null>(null);
-    const [cumulativeCitations, setCumulativeCitations] = useState<Citation[]>([]);
+    const [currentCitations, setCurrentCitations] = useState<Citation[]>([]);
     const [isLoading, setIsLoading] = useState(true);
 
     const currentSlideIndex = useMemo(() => {
@@ -93,28 +93,30 @@ const LessonSlidePage: React.FC = () => {
         }
     }, [manifest, currentSlideIndex, moduleSlug, lessonSlug, navigate]);
 
-    // Effect for updating cumulative citations based on current slide
+    // Effect for updating citations based on the current slide
     useEffect(() => {
         const loadCitations = () => {
             if (manifest?.citations) {
                 const citationIdsToShow = new Set<string>();
-                for (let i = 0; i <= currentSlideIndex; i++) {
-                    const slideManifest = manifest.slides.find(s => s.slideNumber === i + 1);
-                    if (slideManifest) {
-                        slideManifest.citationIds.forEach(id => citationIdsToShow.add(id));
-                    }
+                const slideManifest = manifest.slides.find(s => s.slideNumber === currentSlideIndex + 1);
+                if (slideManifest) {
+                    slideManifest.citationIds.forEach(id => citationIdsToShow.add(id));
                 }
                 
-                const newCumulativeCitations = Array.from(citationIdsToShow).map(id => {
+                const newCitations = Array.from(citationIdsToShow).map(id => {
                     const citationData = manifest.citations[id];
+                    if (!citationData) {
+                        console.warn(`Citation data for ID "${id}" not found.`);
+                        return null;
+                    }
                     return {
                         id: id,
                         link: citationData.url,
                         title: citationData.title,
                         snippet: citationData.snippet,
                     };
-                });
-                setCumulativeCitations(newCumulativeCitations);
+                }).filter(Boolean) as Citation[];
+                setCurrentCitations(newCitations);
             }
         };
         loadCitations();
@@ -170,7 +172,7 @@ const LessonSlidePage: React.FC = () => {
                     <div className="overflow-y-auto flex-1 p-6">
                         <ul>
                             <AnimatePresence>
-                                {cumulativeCitations.slice().reverse().map((citation, index) => (
+                                {currentCitations.slice().reverse().map((citation, index) => (
                                     <motion.li 
                                         key={citation.id}
                                         layout

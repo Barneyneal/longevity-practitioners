@@ -1,12 +1,7 @@
 import type { QuestionType as Question } from '../MasteringHealthspanFramework/course-content';
 
 export const questions: Question[] = [
-  /* ─────────────────────────────── 1. CREATE YOUR PROFILE ─────────────────────────────── */
-  {
-    "id": "fullName",
-    "text": "What is your full name?",
-    "type": "name"
-  },
+  
 
   /* ────────────────────── 2. PROFESSIONAL BACKGROUND ─────────────────────── */
   {
@@ -162,14 +157,21 @@ export const questions: Question[] = [
     "subtext": "Create your credentials to unlock full access to the complete curriculum and personalized learning path. Begin your journey to mastering healthspan science and revolutionizing your practice today."
   },
   {
+    "id": "name",
+    "text": "What is your full name?",
+    "type": "name",
+    "subtext": "This will be used for your certificate of completion."
+  },
+  {
     "id": "email",
-    "text": "What email can we use for your account?",
-    "type": "email"
+    "text": "What's your primary email address?",
+    "type": "email",
+    "subtext": "This will be used to create your account and for all future communications."
   },
   {
     "id": "password",
-    "text": "Create a secure password.",
+    "text": "Create a secure password",
     "type": "password",
-    "subtext": "Must be at least 8 characters long."
+    "subtext": "Your password must be at least 8 characters long."
   }
 ]; 

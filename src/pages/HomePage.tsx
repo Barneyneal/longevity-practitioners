@@ -51,6 +51,16 @@ const HomePage: React.FC = () => {
     startQuiz(quizId);
   };
 
+  const handleLogout = async () => {
+    try {
+      await logout();
+      navigate('/login'); // Redirect to login page after successful logout
+    } catch (error) {
+      console.error("Logout failed", error);
+      // Optionally, show a toast or message to the user
+    }
+  };
+
   const handleRetake = (e: React.MouseEvent, quizId: 'longevity' | 'cardiac_health') => {
     e.preventDefault();
     e.stopPropagation();
@@ -139,7 +149,7 @@ const HomePage: React.FC = () => {
             </motion.div>
             <motion.div variants={buttonVariants}>
               <button
-                onClick={logout}
+                onClick={handleLogout}
                 className="w-full border rounded-full text-center transition-colors bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200 py-3 px-8 font-semibold"
               >
                 Logout

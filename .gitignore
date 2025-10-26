@@ -1,5 +1,12 @@
 # Environment variables
 .env
+.env.*
+
+# Firebase
+.firebase
+firebase-debug.log
+/functions/.env
+/functions/.runtimeconfig.json
 
 # Vercel state
 .vercel

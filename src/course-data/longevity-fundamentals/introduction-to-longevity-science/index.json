@@ -255,8 +255,7 @@
       },
       "citationIds": [
         "7.1",
-        "7.2",
-        "7.3"
+        "7.2"
       ]
     },
     {
@@ -519,11 +518,6 @@
       "url": "https://eor.bioscientifica.com/view/journals/eor/5/10/2058-5241.5.190092.xml",
       "snippet": "Oct 26, 2020 ... ... evaluated for accuracy and efficacy in patients' care and doctors' workflows. The recent hype around AI triggered hope for development of\u00a0..."
     },
-    "7.1": {
-      "title": "Lessons from the Blue Zones\u00ae - Business Engagement in Building ...",
-      "url": "https://www.ncbi.nlm.nih.gov/books/NBK298903/",
-      "snippet": "The same nine lifestyle characteristics were identified across all five blue zone environments, which Buettner termed the \u201cPower 9 \u00ae \u201d principles."
-    },
     "7.2": {
       "title": "Blue Zones: Lessons From the World's Longest Lived - PMC",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6125071/",
@@ -570,9 +564,9 @@
       "snippet": "Toxic stress accelerates biological aging processes whereas hormetic stress can slow aging, particularly due to the salutary actions during recovery from\u00a0..."
     },
     "9.3": {
-      "title": "#47 \u2013 Matthew Walker, Ph.D., on sleep \u2013 Part I of III: Dangers of poor ...",
-      "url": "https://peterattiamd.com/matthewwalker1/",
-      "snippet": "Apr 1, 2019 ... #47 \u2013 Matthew Walker, Ph.D., on sleep \u2013 Part I of III: Dangers of poor sleep, Alzheimer's risk, mental health, memory consolidation, and more."
+      "title": "The geroscience agenda: Toxic stress, hormetic stress, and the rate ...",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1568163720303020",
+      "snippet": "Toxic stress accelerates biological aging processes whereas hormetic stress can slow aging, particularly due to the salutary actions during recovery from\u00a0..."
     },
     "10.1": {
       "title": "Reversal of epigenetic aging and immunosenescent trends in humans",
@@ -583,11 +577,6 @@
       "title": "How do biological age tests work and are they accurate or helpful ...",
       "url": "https://www.npr.org/sections/health-shots/2024/02/05/1228753141/biological-age-test-dna",
       "snippet": "Feb 5, 2024 ... The one I took is called GrimAge and it's used by many longevity researchers to study aging. ... Steve Horvath, the scientist who pioneered\u00a0..."
-    },
-    "10.3": {
-      "title": "The End of Aging\u2014And Extinction | George Church, Ph.D. on ...",
-      "url": "https://wyss.harvard.edu/media-post/the-end-of-aging-and-extinction-george-church-ph-d-on-longevity-dire-wolves-and-woolly-mammoths/",
-      "snippet": "on Longevity, Dire Wolves, and Woolly Mammoths ... D., joins host Dylan Bohbot to explore the frontiers of gene therapy, de-extinction, and the future of human\u00a0..."
     }
   }
 }

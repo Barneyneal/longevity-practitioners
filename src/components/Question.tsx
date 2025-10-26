@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import useQuizStore from '../store';
 import AnimatedText from './AnimatedText';
 import { motion } from 'framer-motion';
+import LoadingDots from './LoadingDots';
 
 interface QuestionProps {
   quizId: string;
@@ -45,7 +46,7 @@ const Question: React.FC<QuestionProps> = ({
   isLastQuestion,
   isLessonQuiz,
 }) => {
-  const { submitAnswer, previousQuestion, quizzes } = useQuizStore();
+  const { submitAnswer, previousQuestion, quizzes, submitQuiz } = useQuizStore();
   const navigate = useNavigate();
   const { answers, currentQuestion } = quizzes[quizId];
   const [value, setValue] = useState<any>(
@@ -73,6 +74,18 @@ const Question: React.FC<QuestionProps> = ({
       event.preventDefault();
     }
     if (isDisabled) return;
+
+    // For the last question of a lesson quiz, fire the submission and navigate away.
+    if (isLastQuestion && isLessonQuiz) {
+        submitQuiz(quizId).catch(err => {
+            // The submission runs in the background. We can log any errors.
+            console.error("Background quiz submission failed:", err);
+        });
+        navigate('/mastering-longevity');
+        return;
+    }
+
+    // Default behavior for all other questions/quizzes.
     submitAnswer(quizId, questionId, value);
   };
 
@@ -328,7 +341,7 @@ const Question: React.FC<QuestionProps> = ({
             : 'bg-blue-600 hover:bg-blue-700'
             }`}
         >
-          {isLastQuestion ? 'Submit' : 'Continue'}
+          {isLastQuestion && isLessonQuiz ? 'Submit Quiz' : 'Continue'}
         </button>
       </div>
     </div>

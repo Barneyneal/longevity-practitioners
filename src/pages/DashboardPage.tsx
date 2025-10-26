@@ -3,6 +3,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { formatDistanceToNow } from 'date-fns';
 import AnimatedText from '../components/AnimatedText';
+import { useEffect } from 'react';
+import LoadingDots from '../components/LoadingDots';
+import ResultsDisplay from '../components/ResultsDisplay';
+
 
 const formatQuizLabel = (quizId: string) => {
   return quizId === 'longevity' ? 'Longevity Quiz' : 'Cardiac Health';
@@ -16,8 +20,13 @@ const getGreeting = () => {
 };
 
 const DashboardPage: React.FC = () => {
-  const { submissions, user, isFetchingSubmissions, isFetchingUser, resetQuiz, startQuiz } = useQuizStore();
+  const { user, submissions, isFetchingUser, fetchSubmissions, resetQuiz, startQuiz } = useQuizStore();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // When the dashboard loads, try to fetch the latest submissions.
+    fetchSubmissions();
+  }, [fetchSubmissions]);
 
   const handleRetake = (e: React.MouseEvent, quizId: string) => {
     e.preventDefault();
@@ -32,12 +41,10 @@ const DashboardPage: React.FC = () => {
 
   const greeting = getGreeting();
 
-  if (!user) {
-    // If there's no user, you might want to redirect to login or show a specific message.
-    // For now, we'll just show a generic loading or empty state.
+  if (isFetchingUser && !user) {
     return (
       <div className="flex justify-center items-center h-full">
-          <p>Loading user data...</p>
+        <LoadingDots />
       </div>
     );
   }
@@ -45,14 +52,14 @@ const DashboardPage: React.FC = () => {
   return (
     <div className="w-full mx-auto p-6">
       <div className="text-left mb-12">
-        {isFetchingSubmissions && !submissions.length ? (
+        {isFetchingUser && !submissions.length ? (
           <div className="flex justify-center"><LoadingDots /></div>
         ) : (
           user?.firstName && (
             <>
               <AnimatedText
                 el="h1"
-                text={`${greeting} ${user.firstName}, welcome to your practitioner portal.`}
+                text={`${greeting}, ${user.firstName}. Welcome to your practitioner portal.`}
                 animationType="word"
                 className="text-[34px] md:text-4xl font-light mb-2"
                 style={{ lineHeight: '1.2em', paddingBottom: '20px' }}
@@ -146,7 +153,7 @@ const DashboardPage: React.FC = () => {
             </div>
             <div className="col-span-1 h-full flex items-center">
               <div className="flex-grow h-full">
-                <ResultsPollButton submissionId={submission._id} />
+                <ResultsDisplay submissionId={submission._id} />
               </div>
             </div>
           </motion.div>
